@@ -20,6 +20,8 @@ A organizacao das pastas segue o padrao estrutural definido para as entregas do 
 
 ```text
 pi3/
+├── consolidado/
+│   └── 2026-09-04-appa-entrega1-MotorDeBusca.md
 ├── estrutura/
 │   ├── corpus/
 │   │   └── .gitkeep
@@ -27,7 +29,6 @@ pi3/
 │       ├── 2026-08-20-appa-MotorDeBusca.r
 │       ├── 2026-08-25-appa-MotorBuscaTfIdf.r
 │       └── 2026-09-04-appa-MotorBuscaBM25.r
-├── consolidado - entrega1-MotorDeBusca.md
 ├── readme.md
 └── to delete/
     └── .gitkeep
