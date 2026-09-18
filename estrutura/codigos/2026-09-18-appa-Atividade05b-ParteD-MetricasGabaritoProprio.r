@@ -9,10 +9,22 @@
 # setwd("caminho/para/pi3")
 
 # 1. Carregamento dos Motores de Busca e Dados de Julgamento
-source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
+caminho_bm25_lab <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
 
-dir_csv <- "estrutura/codigos/05-julgamento/csv"
-dir_resultados <- "estrutura/resultados"
+if (file.exists(caminho_bm25_lab)) {
+  caminho_base <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main"
+  source(caminho_bm25_lab)
+} else if (file.exists("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")) {
+  caminho_base <- "."
+  source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
+} else {
+  # Fallback direto caso execute fora do diretório padrão
+  caminho_base <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main"
+  source(caminho_bm25_lab)
+}
+
+dir_csv <- file.path(caminho_base, "estrutura/codigos/05-julgamento/csv")
+dir_resultados <- file.path(caminho_base, "estrutura/resultados")
 dir.create(dir_resultados, showWarnings = FALSE, recursive = TRUE)
 
 necessidades <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-necessidades.csv"),
