@@ -52,6 +52,7 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 - `2026-09-15-appa-05c-ficha-corpus.R`: confere linhas, colunas e duplicidades;
 - `2026-09-15-appa-05d-gerar-pool.R`: cria os pares necessidade-documento;
 - `2026-09-15-appa-05a-kappa.R`: calcula a concordancia entre dois juizes;
+- `2026-09-15-appa-05e-gerar-qrels-inicial.R`: preenche a referencia inicial do projeto;
 - `csv/`: corpus, necessidades, pool e arquivo de julgamentos.
 
-Para preparar os arquivos, execute os scripts `05b`, `05c` e `05d` a partir da raiz do repositorio. Depois abra o HTML no navegador, carregue os tres CSVs e exporte o qrels com os julgamentos humanos.
+Para preparar os arquivos, execute os scripts `05b`, `05c`, `05d` e `05e` a partir da raiz do repositorio. O qrels inicial tem 66 pares e serve como referencia para testar o motor. Depois abra o HTML no navegador, carregue os tres CSVs e revise ou substitua esses graus com julgamentos humanos.

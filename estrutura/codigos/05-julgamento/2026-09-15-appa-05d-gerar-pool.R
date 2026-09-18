@@ -5,8 +5,13 @@ arquivo <- grep("^--file=", args, value = TRUE)
 if (length(arquivo)) setwd(dirname(normalizePath(sub("^--file=", "", arquivo[1]))))
 
 dir_csv <- "csv"
-corpus <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-corpus.csv"), stringsAsFactors = FALSE, fileEncoding = "UTF-8")
-necessidades <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-necessidades.csv"), stringsAsFactors = FALSE, fileEncoding = "UTF-8")
+ler_csv_utf8 <- function(caminho) {
+  linhas <- readLines(caminho, warn = FALSE, encoding = "UTF-8")
+  read.csv(textConnection(linhas), stringsAsFactors = FALSE, check.names = FALSE)
+}
+
+corpus <- ler_csv_utf8(file.path(dir_csv, "2026-09-15-appa-05-corpus.csv"))
+necessidades <- ler_csv_utf8(file.path(dir_csv, "2026-09-15-appa-05-necessidades.csv"))
 
 source("..\\2026-09-04-appa-MotorBuscaBm25.r")
 

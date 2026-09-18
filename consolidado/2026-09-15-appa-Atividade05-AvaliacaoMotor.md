@@ -39,4 +39,4 @@ Esse resultado é apenas um teste do pipeline. O gabarito por clube é amplo dem
 
 A coleta ficou em [estrutura/codigos/05-julgamento](../estrutura/codigos/05-julgamento). O HTML mistura os resultados dos modelos, embaralha os documentos e registra notas de 0 a 2 com o nome do juiz. Os arquivos `2026-09-15-appa-05-corpus.csv`, `2026-09-15-appa-05-necessidades.csv` e `2026-09-15-appa-05-pool.csv` ja foram gerados para os 141 paragrafos do corpus.
 
-O arquivo `2026-09-15-appa-05-qrels.csv` esta apenas com o cabecalho porque os julgamentos precisam ser feitos por pessoas. Depois de duas coletas sobre os mesmos itens, o script `2026-09-15-appa-05a-kappa.R` calcula a concordancia entre os juizes.
+O arquivo `2026-09-15-appa-05-qrels.csv` tem 66 julgamentos iniciais, identificados como `referencia_inicial_appa`. Eles foram gerados por regras ligadas ao clube e a termos de cada necessidade para permitir que o fluxo seja executado de ponta a ponta. O arquivo precisa ser revisado no HTML antes de uma conclusao sobre os modelos. Depois de duas coletas humanas sobre os mesmos itens, o script `2026-09-15-appa-05a-kappa.R` calcula a concordancia entre os juizes.
