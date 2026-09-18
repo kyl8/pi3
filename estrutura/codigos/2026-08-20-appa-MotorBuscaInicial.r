@@ -445,7 +445,7 @@ mostrar_documentos <- function() {
 filtro_stopwords <- TRUE
 
 
-repeat {
+if (interactive()) repeat {
   cat("\n========================================\n")
   cat("MOTOR DE BUSCA - BAIXADA SANTISTA\n")
   cat("========================================\n")

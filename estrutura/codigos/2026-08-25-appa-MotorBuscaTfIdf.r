@@ -307,7 +307,7 @@ mostrar_estatisticas <- function() {
   cat("\n")
 }
 
-repeat {
+if (interactive()) repeat {
   cat("\n=======================================================\n")
   cat("SISTEMA DE RECUPERACAO DE INFORMACAO - BAIXADA SANTISTA\n")
   cat("=======================================================\n")

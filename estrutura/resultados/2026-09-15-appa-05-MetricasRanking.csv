@@ -1,0 +1,13 @@
+"consulta";"modelo";"p_at_k";"recall_at_k";"reciprocal_rank"
+"historia santos futebol clube";"BM25";0,8;0,0747663551401869;0,5
+"historia santos futebol clube";"TF-IDF";0,8;0,0747663551401869;1
+"titulos santos";"BM25";0,9;0,0841121495327103;1
+"titulos santos";"TF-IDF";0,9;0,0841121495327103;1
+"portuguesa santista estadio";"BM25";0,8;0,347826086956522;1
+"portuguesa santista estadio";"TF-IDF";0,8;0,347826086956522;1
+"jabaquara clube";"BM25";0,5;0,454545454545455;0,5
+"jabaquara clube";"TF-IDF";0,5;0,454545454545455;0,5
+"rivalidade santos";"BM25";0,9;0,0841121495327103;1
+"rivalidade santos";"TF-IDF";1;0,0934579439252336;1
+"estadio jabaquara";"BM25";0,5;0,454545454545455;0,5
+"estadio jabaquara";"TF-IDF";0,5;0,454545454545455;0,5

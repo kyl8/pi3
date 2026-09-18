@@ -1,0 +1,7 @@
+id,texto_consulta,necessidade,escopo
+q01,historia santos futebol clube,Encontrar um paragrafo que apresente a historia e a formacao do Santos Futebol Clube.,Santos FC
+q02,titulos santos,Encontrar informacoes sobre titulos e conquistas do Santos Futebol Clube.,Santos FC
+q03,portuguesa santista estadio,Encontrar informacoes sobre o estadio ou a sede da Portuguesa Santista.,Portuguesa Santista
+q04,jabaquara clube,Encontrar um paragrafo que apresente a historia ou a identidade do Jabaquara.,Jabaquara
+q05,rivalidade santos,Encontrar informacoes sobre rivalidades ou confrontos do Santos.,Santos FC
+q06,estadio jabaquara,Encontrar informacoes sobre o estadio do Jabaquara.,Jabaquara

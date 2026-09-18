@@ -94,6 +94,10 @@ cat("Corpus indexado com sucesso:", length(docs), "documentos (paragrafos) criad
 # ------------------------------------------------------------------------------
 
 # Lista de stopwords em portugues para desconsiderar palavras puramente gramaticais
+if (!requireNamespace("SnowballC", quietly = TRUE)) {
+  stop("Instale o pacote SnowballC antes de executar este script.")
+}
+
 stopwords_pt <- c(
   "a", "à", "às", "ao", "aos", "as", "o", "os",
   "de", "da", "das", "do", "dos", "e", "é", "em",
@@ -122,11 +126,27 @@ tokenizar <- function(texto) {
   tokens[tokens != ""]
 }
 
-# Tokeniza cada documento e filtra imediatamente as stopwords em portugues
-tokens_docs <- lapply(docs, function(txt) {
-  toks <- tokenizar(txt)
-  toks[!toks %in% stopwords_pt]
-})
+# O mesmo preparo é usado no corpus e nas consultas.
+preparar_termos <- function(texto) {
+  toks <- tokenizar(texto)
+  toks <- toks[!toks %in% stopwords_pt]
+  SnowballC::wordStem(toks, language = "portuguese")
+}
+
+tokens_docs <- lapply(docs, preparar_termos)
+
+# Índice invertido: cada stem aponta para os documentos em que aparece.
+postings <- list()
+for (documento in names(tokens_docs)) {
+  for (termo in unique(tokens_docs[[documento]])) {
+    postings[[termo]] <- c(postings[[termo]], documento)
+  }
+}
+
+# Mantém uma função explícita para consultas e evita termos repetidos.
+preparar_consulta <- function(consulta) {
+  unique(preparar_termos(consulta))
+}
 
 # ------------------------------------------------------------------------------
 # 3. MATRIZ TERMO-DOCUMENTO E METRICAS DO BM25 (SLIDES DA AULA 04)
@@ -187,9 +207,7 @@ bm25_doc <- function(termos, d) {
 
 busca_bm25 <- function(consulta) {
   # Tokeniza o texto recebido na consulta
-  termos_query <- tokenizar(consulta)
-  # Remove as stopwords da consulta
-  termos_query <- termos_query[!termos_query %in% stopwords_pt]
+  termos_query <- preparar_consulta(consulta)
 
   # Verifica se sobrou algum termo valido na consulta
   if (length(termos_query) == 0) {
@@ -255,8 +273,7 @@ cosseno <- function(a, b) {
 }
 
 comparar_ranqueamento <- function(consulta) {
-  termos_query <- tokenizar(consulta)
-  termos_query <- termos_query[!termos_query %in% stopwords_pt]
+  termos_query <- preparar_consulta(consulta)
 
   if (length(termos_query) == 0) {
     cat("\nNenhum termo valido para consulta.\n")
@@ -344,7 +361,12 @@ busca_booleana <- function(expressao) {
       op_atual <- "NOT"
       i <- i + 1
     } else {
-      termo <- tolower(gsub("[[:punct:]]+", "", tokens_raw[i]))
+      termo <- preparar_termos(tokens_raw[i])
+      if (length(termo) == 0) {
+        i <- i + 1
+        next
+      }
+      termo <- termo[1]
       
       if (termo %in% stopwords_pt || termo == "") {
         i <- i + 1
@@ -352,7 +374,11 @@ busca_booleana <- function(expressao) {
       }
 
       termos_usados <- c(termos_usados, termo)
-      vetor_termo <- if (termo %in% vocab) (tdm[termo, ] > 0) else rep(FALSE, ncol(tdm))
+      vetor_termo <- rep(FALSE, length(docs))
+      if (termo %in% names(postings)) {
+        vetor_termo[match(postings[[termo]], names(docs))] <- TRUE
+      }
+      names(vetor_termo) <- names(docs)
 
       if (length(termos_usados) == 1) {
         if (op_atual == "NOT") {
@@ -445,11 +471,24 @@ mostrar_estatisticas <- function() {
   cat("\n")
 }
 
+rankear_bm25 <- function(consulta, limite = ncol(tf)) {
+  termos <- preparar_consulta(consulta)
+  scores <- sapply(colnames(tf), function(d) bm25_doc(termos, d))
+  sort(scores[scores > 0], decreasing = TRUE)[seq_len(min(limite, sum(scores > 0)))]
+}
+
+rankear_tfidf <- function(consulta, limite = ncol(tf)) {
+  termos <- preparar_consulta(consulta)
+  q <- as.integer(table(factor(termos, levels = vocab))) * idf_classico
+  scores <- apply(w_tfidf, 2, function(dvec) cosseno(q, dvec))
+  sort(scores[scores > 0], decreasing = TRUE)[seq_len(min(limite, sum(scores > 0)))]
+}
+
 # ------------------------------------------------------------------------------
 # 9. MENU INTERATIVO PRINCIPAL
 # ------------------------------------------------------------------------------
 
-repeat {
+if (interactive()) repeat {
   cat("\n=======================================================\n")
   cat("SISTEMA DE RECUPERACAO DE INFORMACAO - MOTOR BM25\n")
   cat(sprintf("Baixada Santista | k1: %.2f | b: %.2f\n", k1, b))

@@ -18,13 +18,13 @@ Este documento consolida a primeira entrega do projeto de Recuperacao de Informa
 
 ## 2. Artefatos e Codigos Desenvolvidos
 
-Os codigos foram padronizados dentro da pasta `estrutura/código/` conforme as datas de evolucao dos modelos:
+Os codigos foram padronizados dentro da pasta `estrutura/codigos/` conforme as datas de evolucao dos modelos. A versao BM25 usa `SnowballC` para stemming e mantem um indice invertido para as consultas booleanas:
 
-1. **[2026-08-20-appa-MotorDeBusca.r](estrutura/código/2026-08-20-appa-MotorDeBusca.r):**
+1. **[2026-08-20-appa-MotorBuscaInicial.r](../estrutura/codigos/2026-08-20-appa-MotorBuscaInicial.r):**
    * Primeira versao do motor baseada em correspondencia exata de frequencia de termos e extracao de sentencas dos artigos da Wikipedia.
-2. **[2026-08-25-appa-MotorBuscaTfIdf.r](estrutura/código/2026-08-25-appa-MotorBuscaTfIdf.r):**
+2. **[2026-08-25-appa-MotorBuscaTfIdf.r](../estrutura/codigos/2026-08-25-appa-MotorBuscaTfIdf.r):**
    * Motor de espaco vetorial com ponderacao linear TF-IDF e calculo de similaridade via Cosseno. Suporte a consultas booleanas (AND, OR, NOT).
-3. **[2026-09-04-appa-MotorBuscaBM25.r](estrutura/código/2026-09-04-appa-MotorBuscaBM25.r):**
+3. **[2026-09-04-appa-MotorBuscaBm25.r](../estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r):**
    * Motor probabilistico baseado no algoritmo BM25 (Best Matching 25) com aproximacao 2-Poisson, saturacao de termos, penalizacao de comprimento de documento e modo comparativo direto de ranqueamento.
 
 ---
@@ -49,5 +49,5 @@ Os codigos foram padronizados dentro da pasta `estrutura/código/` conforme as d
 Para executar o motor mais recente (BM25), utilize no interpretador R:
 
 ```R
-source("estrutura/código/2026-09-04-appa-MotorBuscaBM25.r")
+source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
 ```
