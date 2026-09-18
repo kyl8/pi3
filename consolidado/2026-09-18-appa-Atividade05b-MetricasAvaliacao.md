@@ -47,4 +47,4 @@ Com base no cenário canônico da consulta `modelo de recuperacao`:
 
 ## 3. Script Desenvolvido
 O código executável com todos os cálculos encontra-se em:
-`estrutura/código/2026-09-18-appa-Atividade05b-MetricasAvaliacao.R`
+`estrutura/codigos/2026-09-18-appa-Atividade05b-MetricasAvaliacao.r`

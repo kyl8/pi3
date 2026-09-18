@@ -4,6 +4,9 @@
 # Comparação Completa: BM25 vs. TF-IDF (Similaridade do Cosseno)
 # Grupo APPA - 18/09/2026
 # -----------------------------------------------------------------------------
+# IMPORTANTE: executar a partir da raiz do repositório (pi3/)
+# Se necessário, ajuste o diretório de trabalho:
+# setwd("caminho/para/pi3")
 
 # 1. Carregamento dos Motores de Busca e Dados de Julgamento
 source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
@@ -64,7 +67,7 @@ calcular_metricas_consulta <- function(ranking_docs, grau_nomeado, limiar = 1, k
   # nDCG Graduado com tratamento de pooling para não julgados (Módulo 8 e 11)
   g <- grau_nomeado[ranking]
   g[is.na(g)] <- 0  # Documentos fora da pool recebem grau 0
-  idcg_grad <- dcg(sort(grau_nomeado, decreasing = TRUE))
+  idcg_grad <- dcg(head(sort(grau_nomeado, decreasing = TRUE), k))
   ndcg_grad <- if (idcg_grad > 0) dcg(g) / idcg_grad else 0
   
   data.frame(
@@ -128,6 +131,10 @@ resultados_ge2 <- do.call(rbind, lapply(seq_len(nrow(necessidades)), function(i)
     data.frame(id = id_q, consulta = q_txt, modelo = "TF-IDF", limiar = "grau >= 2", m_cos)
   )
 }))
+
+cat("\n--- Tabela de Resultados (Limiar grau >= 2) ---\n")
+cat("Nota: q06 apresentará NA porque não possui documentos com grau 2.\n")
+print(resultados_ge2)
 
 # -----------------------------------------------------------------------------
 # 4. Cálculo de MAP e Comparativo Global (Módulo 12)

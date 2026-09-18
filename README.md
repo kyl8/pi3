@@ -10,7 +10,7 @@ Repositório do grupo APPA para o estudo de recuperação de informação. O mot
 - [estrutura/resultados](estrutura/resultados/): métricas e saídas das execuções;
 - [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio.
 
-Os arquivos atualizados desta etapa usam a identificação `2026-09-15-appa`.
+Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
 ## Scripts
 
