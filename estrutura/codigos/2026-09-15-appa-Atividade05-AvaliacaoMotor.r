@@ -1,8 +1,25 @@
 # Avaliação reproduzível dos dois rankings com um gabarito simples por clube.
 # O gabarito deve ser revisado por pessoas antes de ser usado em um relatório final.
 
-source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
-dir.create("estrutura/resultados", showWarnings = FALSE, recursive = TRUE)
+caminho_bm25_lab <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+caminho_bm25_local <- "C:/Users/Arthur/Documents/IA_workspace/programacao/pi3/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+
+if (file.exists(caminho_bm25_lab)) {
+  caminho_base <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main"
+  source(caminho_bm25_lab)
+} else if (file.exists(caminho_bm25_local)) {
+  caminho_base <- "C:/Users/Arthur/Documents/IA_workspace/programacao/pi3"
+  source(caminho_bm25_local)
+} else if (file.exists("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")) {
+  caminho_base <- "."
+  source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
+} else {
+  caminho_base <- "."
+  source("2026-09-04-appa-MotorBuscaBm25.r")
+}
+
+dir_resultados <- file.path(caminho_base, "estrutura/resultados")
+dir.create(dir_resultados, showWarnings = FALSE, recursive = TRUE)
 
 necessidades <- data.frame(
   id = c("q01", "q02", "q03", "q04", "q05", "q06"),
@@ -32,6 +49,6 @@ resultados <- do.call(rbind, lapply(seq_len(nrow(necessidades)), function(i) {
   )
 }))
 
-write.csv2(resultados, "estrutura/resultados/2026-09-15-appa-05-MetricasRanking.csv", row.names = FALSE)
-write.csv2(necessidades, "estrutura/resultados/2026-09-15-appa-05-Necessidades.csv", row.names = FALSE)
+write.csv2(resultados, file.path(dir_resultados, "2026-09-15-appa-05-MetricasRanking.csv"), row.names = FALSE)
+write.csv2(necessidades, file.path(dir_resultados, "2026-09-15-appa-05-Necessidades.csv"), row.names = FALSE)
 print(resultados)
