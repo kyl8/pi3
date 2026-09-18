@@ -10,15 +10,18 @@
 
 # 1. Carregamento dos Motores de Busca e Dados de Julgamento
 caminho_bm25_lab <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+caminho_bm25_local <- "C:/Users/Arthur/Documents/IA_workspace/programacao/pi3/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
 
 if (file.exists(caminho_bm25_lab)) {
   caminho_base <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main"
   source(caminho_bm25_lab)
+} else if (file.exists(caminho_bm25_local)) {
+  caminho_base <- "C:/Users/Arthur/Documents/IA_workspace/programacao/pi3"
+  source(caminho_bm25_local)
 } else if (file.exists("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")) {
   caminho_base <- "."
   source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
 } else {
-  # Fallback direto caso execute fora do diretório padrão
   caminho_base <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main"
   source(caminho_bm25_lab)
 }

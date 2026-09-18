@@ -14,32 +14,34 @@ Relatório de avaliação comparativa dos modelos de recuperação **BM25** e **
 
 | ID | Consulta | Modelo | P@3 | AP | MRR | nDCG Bin | nDCG Grad |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `q01` | historia santos futebol clube | BM25 | 0,333 | 0,528 | 0,500 | 0,863 | 0,698 |
-| `q01` | historia santos futebol clube | TF-IDF | 0,333 | 0,512 | 1,000 | 0,841 | 0,674 |
-| `q02` | titulos santos | BM25 | 0,667 | 0,707 | 0,500 | 0,833 | 0,638 |
-| `q02` | titulos santos | TF-IDF | 0,667 | 0,685 | 0,500 | 0,812 | 0,621 |
-| `q03` | portuguesa santista estadio | BM25 | 0,667 | 0,771 | 0,500 | 0,823 | 0,693 |
-| `q03` | portuguesa santista estadio | TF-IDF | 0,667 | 0,750 | 0,500 | 0,805 | 0,670 |
-| `q04` | jabaquara clube | BM25 | 0,000 | 0,354 | 0,167 | 0,541 | 0,541 |
-| `q04` | jabaquara clube | TF-IDF | 0,000 | 0,340 | 0,167 | 0,530 | 0,530 |
-| `q05` | rivalidade santos | BM25 | 0,667 | 0,643 | 0,500 | 0,833 | 0,662 |
-| `q05` | rivalidade santos | TF-IDF | 0,667 | 0,620 | 0,500 | 0,810 | 0,645 |
-| `q06` | estadio jabaquara | BM25 | 0,000 | 0,354 | 0,167 | 0,541 | 0,541 |
-| `q06` | estadio jabaquara | TF-IDF | 0,000 | 0,345 | 0,167 | 0,535 | 0,535 |
+| `q01` | historia santos futebol clube | BM25 | 0,667 | 0,544 | 0,500 | 0,817 | 0,700 |
+| `q01` | historia santos futebol clube | TF-IDF | 0,667 | 0,610 | 1,000 | 0,938 | 0,794 |
+| `q02` | titulos santos | BM25 | 1,000 | 0,879 | 1,000 | 0,994 | 0,893 |
+| `q02` | titulos santos | TF-IDF | 1,000 | 0,890 | 1,000 | 0,997 | 0,941 |
+| `q03` | portuguesa santista estadio | BM25 | 1,000 | 1,000 | 1,000 | 1,000 | 0,845 |
+| `q03` | portuguesa santista estadio | TF-IDF | 1,000 | 1,000 | 1,000 | 1,000 | 0,831 |
+| `q04` | jabaquara clube | BM25 | 0,667 | 0,686 | 0,500 | 0,774 | 0,774 |
+| `q04` | jabaquara clube | TF-IDF | 0,667 | 0,593 | 0,500 | 0,735 | 0,735 |
+| `q05` | rivalidade santos | BM25 | 1,000 | 0,818 | 1,000 | 1,000 | 0,958 |
+| `q05` | rivalidade santos | TF-IDF | 1,000 | 0,909 | 1,000 | 1,000 | 1,000 |
+| `q06` | estadio jabaquara | BM25 | 0,667 | 0,573 | 0,500 | 0,724 | 0,724 |
+| `q06` | estadio jabaquara | TF-IDF | 0,667 | 0,579 | 0,500 | 0,730 | 0,730 |
 
 ---
 
 ## 3. Síntese Global e Declaração de Vencedor
 
-- **Mean Average Precision (MAP):**
-  - **BM25:** $\text{MAP} = 0{,}560$
-  - **TF-IDF:** $\text{MAP} = 0{,}542$
+- **Mean Average Precision (MAP Global, grau >= 1):**
+  - **TF-IDF:** $\text{MAP} = 0{,}763$
+  - **BM25:** $\text{MAP} = 0{,}750$
 
-### Qual modelo venceu e por quê?
-O **BM25** apresentou desempenho global superior em MAP ($0{,}560$ vs $0{,}542$) e em nDCG graduado na maioria das consultas. Isso ocorre porque o BM25 atenua o impacto de parágrafos longos excessivamente repetitivos através do fator de normalização de comprimento ($b = 0{,}75$) e da saturação assintótica do termo ($k_1 = 1{,}2$). O TF-IDF clássico, por sua vez, garantiu o primeiro acerto mais cedo na consulta `q01` ($\text{MRR} = 1{,}000$), mas sofreu perda de precisão global na cauda da lista.
+### Análise Comparativa dos Resultados Reais:
+No corpus atual indexado a partir da Wikipédia (141 parágrafos) e avaliado contra os julgamentos do `qrels.csv`, o **TF-IDF clássico com similaridade do cosseno** obteve ligeira vantagem global em MAP ($0{,}763$ contra $0{,}750$). 
+
+O TF-IDF destacou-se com maior precisão no topo em consultas como `q01` ($\text{AP} = 0{,}610$ vs $0{,}544$; $\text{MRR} = 1{,}000$ vs $0{,}500$) e `q05` ($\text{AP} = 0{,}909$ vs $0{,}818$). Em contrapartida, o **BM25** superou o TF-IDF na consulta `q04` (*jabaquara clube*, $\text{AP} = 0{,}686$ vs $0{,}593$) e empatou perfeitamente em `q03` ($\text{AP} = 1{,}000$ em ambos).
 
 ### Ressalva Metodológica:
-Embora o BM25 tenha superado o TF-IDF numericamente, **não é possível afirmar que a diferença é estatisticamente significante**. Com apenas 6 consultas de teste, a variância inerente a cada necessidade de busca pode explicar a oscilação observada. A confirmação rigorosa de superioridade depende de testes estatísticos pareados (teste t ou teste de Wilcoxon), a serem desenvolvidos na Aula 16.
+A diferença observada entre os dois sistemas ($0{,}013$ em MAP) é marginal. Em uma amostra de apenas 6 consultas de teste, a oscilação natural de cada necessidade de informação pode justificar a diferença. Conforme os preceitos da recuperação de informação, **não é possível afirmar significância estatística** sem a aplicação de testes de hipótese pareados (teste t ou teste de postos de Wilcoxon), tópico reservado para a Aula 16.
 
 ---
 
