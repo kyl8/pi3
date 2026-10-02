@@ -1,6 +1,6 @@
 # Consolidado - Entrega 1: Motores de Busca Lexicais e Probabilisticos
 
-Este documento consolida a primeira entrega do projeto de Recuperacao de Informacao, integrando os modelos desenvolvidos pelo grupo **APPA** (Arthur, Pedro, Pedro, Ailana) para a disciplina de Projeto Integrador III.
+Este documento consolida a primeira entrega do projeto de Recuperacao de Informacao, integrando os modelos desenvolvidos pelo grupo **APPA** (Arthur, Pedro, Ailana — com a repeticao da letra P em homenagem ao bisao voador Appa, de Avatar: A Lenda de Aang) para a disciplina de Projeto Integrador III.
 
 ---
 
