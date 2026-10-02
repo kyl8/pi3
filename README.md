@@ -20,10 +20,16 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 - [Avaliação](estrutura/codigos/2026-09-15-appa-Atividade05-AvaliacaoMotor.r): métricas de ranking com consultas de teste.
 - [Métricas de Avaliação (Aula 5.5)](estrutura/codigos/2026-09-18-appa-Atividade05b-MetricasAvaliacao.r): cálculo de P@k, AP, MRR e nDCG (binário e graduado).
 - [Métricas no Gabarito Próprio (Parte D)](estrutura/codigos/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.r): avaliação comparativa entre BM25 e TF-IDF contra o qrels do projeto.
+- [Introdução ao R e Motor de Busca (Aula 00 - Notebook)](estrutura/codigos/Aula_00_Introducao_ao_R_Motor_de_Busca.ipynb): notebook interativo cobrindo vetores, regex, tokenização e contagens.
+- [Execução Completa Aula 00 (Script R)](estrutura/codigos/2026-10-02-appa-Aula00-IntroducaoR.R): script reprodutível com todos os blocos dos módulos 1 a 14.
 
 ## Atividades
 
-- [00: introdução ao R](consolidado/2026-09-15-appa-Atividade00-IntroducaoR.md)
+- [00: introdução ao R (visão geral)](consolidado/2026-09-15-appa-Atividade00-IntroducaoR.md)
+- [00: introdução ao R (teoria e estado do R)](consolidado/2026-10-02-appa-Atividade00-ConsolidadoTeoria.md)
+- [00: introdução ao R (prática e fluxo)](consolidado/2026-10-02-appa-Atividade00-ParteD-FluxoCurso.md)
+- [Entrega 1: corpus do projeto (PDF compilado)](consolidado/entrega-1-corpus.pdf) ([Rnw](consolidado/entrega-1-corpus.Rnw))
+- [Entrega 1: pergunta do projeto (PDF compilado)](consolidado/entrega-1-pergunta.pdf) ([Rnw](consolidado/entrega-1-pergunta.Rnw))
 - [01: corpus e busca direta](consolidado/2026-09-15-appa-Atividade01-CorpusBusca.md)
 - [01b: pesos dos termos](consolidado/2026-09-15-appa-Atividade01b-PesosTermos.md)
 - [02: TF-IDF e cosseno](consolidado/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
