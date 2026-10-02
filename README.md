@@ -29,7 +29,7 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
 ## Ficha do Projeto e Governança
 
-- **[Ficha do Projeto Oficial](consolidado/00_FICHA_PROJETO.md)** (espelhada em [`consolidados/00_FICHA_PROJETO.md`](consolidados/00_FICHA_PROJETO.md)): documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
+- **[Ficha do Projeto Oficial](consolidado/00_FICHA_PROJETO.md)**: documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
 
 ## Entregas Formais
 

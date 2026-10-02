@@ -292,11 +292,6 @@ anexar_estado("consolidado/00_FICHA_PROJETO.md")
 anexar_estado("consolidado/2026-10-02-appa-Atividade01-ParteD-FundacaoProjeto.md")
 anexar_estado("consolidado/aula01_parteD_consolidado.md")
 
-# Sincroniza copias para a pasta consolidados/
-file.copy("consolidado/00_FICHA_PROJETO.md", "consolidados/00_FICHA_PROJETO.md", overwrite = TRUE)
-file.copy("consolidado/aula01_parteD_consolidado.md", "consolidados/aula01_parteD_consolidado.md", overwrite = TRUE)
-file.copy("consolidado/aula01_consolidado.md", "consolidados/aula01_consolidado.md", overwrite = TRUE)
-
 cat("\n==============================================================================\n")
 cat("EXECUCAO DA AULA 01 CONCLUIDA COM SUCESSO!\n")
 cat("Todos os consolidados e a Ficha de Projeto foram atualizados e validados com R.\n")

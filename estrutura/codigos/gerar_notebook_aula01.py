@@ -42,7 +42,7 @@ cells = [
             "# Criacao das pastas padronizadas do repositorio\n",
             "dir.create(\"estrutura/banco-de-dados\", recursive = TRUE, showWarnings = FALSE)\n",
             "dir.create(\"estrutura/codigo\",         recursive = TRUE, showWarnings = FALSE)\n",
-            "dir.create(\"consolidados\",             recursive = TRUE, showWarnings = FALSE)\n",
+            "dir.create(\"consolidado\",              recursive = TRUE, showWarnings = FALSE)\n",
             "\n",
             "cat(\"Motor carregado:\", MOTOR_VERSAO, \"\\n\")"
         ]
