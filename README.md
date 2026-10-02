@@ -29,7 +29,7 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 A pasta [entregas/](entregas/) está organizada em duas divisões principais:
 
 - **[entregas/finalizada/](entregas/finalizada/):** versão final consolidada do grupo APPA:
-  - [Entrega 1: Corpus do Projeto (PDF)](entregas/finalizada/entrega-1-corpus.pdf) ([Fonte Sweave](entregas/finalizada/entrega-1-corpus.Rnw))
+  - [Entrega 1: Corpus do Projeto (PDF)](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.pdf) ([Fonte Sweave](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.Rnw))
 - **[entregas/modelo_base/](entregas/modelo_base/):** modelos e templates originais fornecidos pela disciplina:
   - [Modelo Base: Corpus do Projeto](entregas/modelo_base/entrega-1-corpus.pdf) ([Fonte Sweave](entregas/modelo_base/entrega-1-corpus.Rnw))
   - [Modelo Base: Pergunta do Trabalho](entregas/modelo_base/entrega-1-pergunta.pdf) ([Fonte Sweave](entregas/modelo_base/entrega-1-pergunta.Rnw))

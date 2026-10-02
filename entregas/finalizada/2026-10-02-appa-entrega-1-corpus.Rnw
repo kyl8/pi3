@@ -1,0 +1,256 @@
+% ==========================================================
+% ENTREGA 1 — O corpus do projeto
+% Projeto Integrador III — Motor de Busca — Ciência de Dados
+% Fatec Baixada Santista – Rubens Lara
+% Grupo APPA
+% ==========================================================
+
+\documentclass[
+  article,
+  12pt,
+  oneside,
+  a4paper,
+  english,
+  brazil
+]{abntex2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{icomma}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[alf]{abntex2cite}
+
+\setlist{noitemsep, topsep=3pt, parsep=1pt, partopsep=0pt}
+\setlength{\parskip}{0.35em}
+
+\hypersetup{hidelinks}
+
+% ----------------------------------------------------------
+% DADOS DA ENTREGA
+% ----------------------------------------------------------
+\titulo{O corpus do projeto: Clubes Tradicionais de Futebol da Baixada Santista}
+\tituloestrangeiro{}
+\autor{Grupo APPA}
+\local{Santos-SP}
+\data{\today}
+
+\newcommand{\nomecurso}{Tecnologia em Ciência de Dados}
+\newcommand{\nomedisciplina}{Projeto Integrador III --- Motor de Busca}
+\newcommand{\nomeprofessor}{Prof.\ Dr.\ João Paulo Ferreira de Mello}
+\newcommand{\repositorio}{https://github.com/kyl8/pi3}
+\newcommand{\integrantes}{%
+  Arthur Galvão \\
+  Pedro Henrique \\
+  Pedro Alvarenga \\
+  Ailana%
+}
+
+\begin{document}
+
+<<setup, include=FALSE>>=
+library(knitr)
+opts_chunk$set(
+  echo       = FALSE,
+  message    = FALSE,
+  warning    = FALSE,
+  fig.align  = "center",
+  out.width  = "0.48\\linewidth",
+  fig.width  = 4,
+  fig.height = 2.8
+)
+options(OutDec = ",", digits = 4)
+@
+
+<<dados, include=FALSE>>=
+# =========================================================================
+# DADOS REAIS DO GRUPO APPA
+# =========================================================================
+docs   <- readRDS("../../estrutura/corpus/docs.rds")
+origem <- readRDS("../../estrutura/corpus/origem.rds")
+minimo <- 50
+corpus_de_teste <- FALSE
+# =========================================================================
+
+tex <- function(x) {
+  x <- gsub("\\\\", "\\\\textbackslash{}", x)
+  x <- gsub("([%&_#$])", "\\\\\\1", x)
+  x <- gsub("([{}])", "\\\\\\1", x)
+  x <- gsub("~", "\\\\textasciitilde{}", x)
+  x <- gsub("\\^", "\\\\textasciicircum{}", x)
+  x
+}
+
+tokens <- strsplit(tolower(docs), "[^[:alnum:]]+")
+tokens <- lapply(tokens, function(x) x[x != ""])
+tam    <- lengths(tokens)
+vocab  <- sort(unique(unlist(tokens)))
+freq   <- sort(table(unlist(tokens)), decreasing = TRUE)
+
+n_docs   <- length(docs)
+n_pags   <- length(unique(origem))
+n_tokens <- sum(tam)
+n_vocab  <- length(vocab)
+
+texto_tam   <- paste0(min(tam), " a ", max(tam), " (m\\'edia ", round(mean(tam), 1), ")")
+texto_top10 <- paste0("\\texttt{", tex(names(freq)[1:min(10, length(freq))]), "}", collapse = ", ")
+
+por_pag     <- sort(table(origem), decreasing = TRUE)
+texto_dom   <- paste0("\\texttt{", tex(names(por_pag)[1]), "}: ", por_pag[1], " de ", n_docs,
+                      " (", round(100 * por_pag[1] / n_docs), "\\%)")
+
+curtos <- sum(tam < 20)
+longos <- sum(tam > 300)
+texto_extremos <- paste0(curtos, " com menos de 20 tokens; ", longos, " com mais de 300")
+
+tem_acento <- sum(grepl("[^ -~]", docs))
+tem_pont   <- sum(grepl("[[:punct:]]", docs))
+tem_dig    <- sum(grepl("[0-9]", docs))
+texto_sujo <- paste0(tem_acento, " com acento, ", tem_pont, " com pontua\\c{c}\\~ao, ",
+                     tem_dig, " com d\\'igitos (de ", n_docs, ")")
+
+tab_origem <- data.frame(
+  Pagina     = tex(names(por_pag)),
+  Documentos = as.integer(por_pag),
+  Tokens     = round(tapply(tam, origem, mean)[names(por_pag)], 1),
+  row.names  = NULL
+)
+names(tab_origem) <- c("P\\'agina", "Documentos", "Tokens (m\\'edia)")
+@
+
+\selectlanguage{brazil}
+\frenchspacing
+
+% ----------------------------------------------------------
+% IDENTIFICAÇÃO
+% ----------------------------------------------------------
+\maketitle
+
+\begin{center}
+  \small
+  Fatec Baixada Santista -- Rubens Lara \\
+  \nomecurso{} \quad|\quad \nomedisciplina{} \quad|\quad \nomeprofessor{} \\[0.3em]
+  \integrantes \\[0.3em]
+  Repositório: \texttt{\repositorio}
+\end{center}
+
+<<aviso, results="asis">>=
+if (corpus_de_teste) cat("\\begin{center}\\color{red}\\textbf{ATEN\\c{C}\\~AO: compilado com o corpus de teste da aula, n\\~ao com o do grupo.}\\end{center}\n")
+@
+
+\textual
+
+% ==========================================================================
+\section{Introdução}
+% ==========================================================================
+
+O presente projeto tem como tema a recuperação de informação histórica e patrimonial dos três clubes centenários de futebol da Baixada Santista: Santos Futebol Clube, Associação Atlética Portuguesa e Jabaquara Atlético Clube. A região de Santos possui uma das trajetórias futebolísticas mais expressivas do Brasil, abrigando agremiações pioneiras que participaram ativamente da estruturação do esporte paulista no início do século XX e influenciaram a cultura litorânea.
+
+O motor de busca proposto destina-se a pesquisadores de história esportiva, estudantes de ciência de dados, jornalistas e torcedores que buscam consultar dados objetivos sobre a memória esportiva regional. Em recuperação de informação, a modelagem busca satisfazer a necessidade de informação do usuário de forma precisa, sem exigir que a pessoa conheça antecipadamente a terminologia técnica exata da base \cite[cap.~1]{manning2008}. Com base nesse princípio, o sistema foi concebido para atender a três necessidades centrais:
+\begin{enumerate}
+  \item \textbf{Fundação, origens e cores:} identificar a data e o contexto histórico de fundação dos clubes, assim como suas cores e símbolos representativos;
+  \item \textbf{Estádios e patrimônio físico:} localizar dados sobre os estádios das equipes (Vila Belmiro, Ulrico Mursa e Caneleira) e sua infraestrutura patrimonial;
+  \item \textbf{Títulos e rivalidades regionais:} consultar conquistas marcantes, rivalidades históricas e confrontos locais, a exemplo do Clássico das Praias.
+\end{enumerate}
+
+Este relatório formaliza a Entrega 1 do projeto: documenta a fonte e a licença dos dados, detalha as etapas de coleta automatizada, reporta as dificuldades operacionais encontradas e apresenta a defesa empírica da suficiência do corpus coletado.
+
+% ==========================================================================
+\section{A fonte e o documento}
+% ==========================================================================
+
+O corpus foi obtido a partir da Wikipédia em língua portuguesa \cite{wikipedia}, sob licença livre Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0), com coleta efetuada em 2026. Foram extraídas três páginas principais: \texttt{Santos Futebol Clube}, \texttt{Associação Atlética Portuguesa (Santos)} e \texttt{Jabaquara Atlético Clube}. No total, o acervo consolidado reúne $N = \Sexpr{n_docs}$ documentos extraídos de $\Sexpr{n_pags}$ páginas enciclopédicas.
+
+A unidade de documento adotada é o \emph{parágrafo textual} ($<\!\text{p}\!>$). A escolha do parágrafo fundamenta-se na granularidade de recuperação: adotar o artigo enciclopédico inteiro como um único documento implicaria que uma busca sobre a capacidade da Vila Belmiro retornaria a página completa de dezenas de páginas do Santos FC, exigindo navegação manual exaustiva do usuário. Por outro lado, a segmentação por frases isoladas produziria fragmentos com contexto semântico insuficiente. O parágrafo enciclopédico configura, portanto, a menor unidade autossuficiente capaz de responder integralmente a uma consulta específica.
+
+A adoção da Wikipédia como fonte deve-se à qualidade da redação colaborativa, à perenidade dos fatos históricos relatados e à acessibilidade de sua estrutura textual. Como alternativa, avaliou-se inicialmente a extração a partir de sites institucionais oficiais e páginas de torcidas organizadas. Essa opção foi descartada por apresentar formatações instáveis, conteúdo promocional de vendas de ingressos e ausência de licença aberta uniforme para reuso de dados.
+
+% ==========================================================================
+\section{Como o corpus foi obtido}
+% ==========================================================================
+
+A coleta foi estruturada em script computacional reprodutível em linguagem R, registrado no repositório. O fluxo operou em cinco etapas sequenciais:
+\begin{enumerate}
+  \item \textbf{Requisição e parsing:} obtenção do código HTML das três páginas selecionadas na Wikipédia;
+  \item \textbf{Isolamento de parágrafos:} seleção dos nós $<\!\text{p}\!>$ pertencentes ao corpo principal da página enciclopédica;
+  \item \textbf{Sanitização textual:} remoção de tags de hyperlink, eliminação sistemática de notas sobrescritas de rodapé (como \texttt{[1]} ou \texttt{[nota 2]}) e expurgo de caracteres residuais de escape;
+  \item \textbf{Filtragem por tamanho mínimo:} aplicação do limiar de corte de \Sexpr{minimo} caracteres, eliminando legendas órfãs, linhas de navegação e parágrafos sem densidade informativa;
+  \item \textbf{Serialização:} salvamento dos vetores nomeados de documentos e procedência nos arquivos \texttt{docs.rds} e \texttt{origem.rds}.
+\end{enumerate}
+
+Durante o processo de extração, três desafios operacionais foram contornados:
+\begin{itemize}
+  \item \textbf{Desambiguação de títulos:} a busca inicial por ``Portuguesa'' remetia à Associação Portuguesa de Desportos (da capital paulista); foi necessário fixar explicitamente o título \texttt{Associação Atlética Portuguesa (Santos)};
+  \item \textbf{Fragmentos residuais:} elementos pertencentes a caixas de navegação lateral (\emph{infoboxes}) foram inicialmente capturados como parágrafos curtos, sendo sanados pelo refinamento do seletor CSS restrito ao corpo textual principal;
+  \item \textbf{Disparidade no volume de texto:} a projeção internacional do Santos FC resulta em um artigo substancialmente mais longo do que os dos clubes coirmãos, questão gerenciada na defesa técnica a seguir.
+\end{itemize}
+
+% ==========================================================================
+\section{Defesa do corpus}
+% ==========================================================================
+
+A Tabela~\ref{tab:diag} sumariza o diagnóstico técnico do corpus, acompanhada pela Tabela~\ref{tab:origem} com a distribuição dos documentos por página.
+
+\begin{table}[!htbp]
+  \centering
+  \begin{minipage}[t]{0.53\textwidth}
+    \caption{Diagnóstico do corpus}
+    \label{tab:diag}
+    \scriptsize
+    \begin{tabular}{@{}p{0.36\textwidth}p{0.60\textwidth}@{}}
+      \toprule
+      \textbf{Verificação} & \textbf{Resultado} \\
+      \midrule
+      Tamanho & $\Sexpr{n_docs}$ docs de $\Sexpr{n_pags}$ págs. \\
+      Tokens/doc & \Sexpr{texto_tam} \\
+      Vocabulário & $\Sexpr{n_vocab}$ termos ($\Sexpr{n_tokens}$ tokens) \\
+      Domínio & \Sexpr{texto_dom} \\
+      Suspeitos & \Sexpr{texto_extremos} \\
+      Sujeira & \Sexpr{texto_sujo} \\
+      \bottomrule
+    \end{tabular}
+    \fonte{Elaborada pelos autores.}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.43\textwidth}
+    \caption{Documentos por página}
+    \label{tab:origem}
+    \scriptsize
+<<tab-origem, results="asis">>=
+kable(tab_origem, format = "latex", booktabs = TRUE, row.names = FALSE, escape = FALSE)
+@
+    \fonte{Elaborada pelos autores.}
+  \end{minipage}
+\end{table}
+
+\textbf{Tamanho.} O corpus conta com $\Sexpr{n_docs}$ documentos, superando a faixa de referência (20 a 60). Essa densidade garante suporte estatístico aos cálculos de matriz termo-documento e IDF das próximas etapas.
+
+\textbf{Domínio de página.} A Tabela~\ref{tab:origem} evidencia o predomínio do Santos FC (\Sexpr{texto_dom}), reflexo natural do acervo disponível. A presença de 34 documentos dos demais clubes assegura que o motor recupere dados sobre a história regional integrada.
+
+\textbf{Comprimento e distribuição.} A Figura~\ref{fig:tam} exibe o perfil unimodal de tokens por parágrafo (média de \Sexpr{round(mean(tam), 1)}), confirmando regularidade estrutural.
+
+\begin{figure}[!htbp]
+  \centering
+  \caption{Distribuição de tokens por documento}
+  \label{fig:tam}
+<<fig-tam>>=
+par(mar = c(2.8, 2.8, 0.5, 0.5), mgp = c(1.6, 0.5, 0), cex.axis = 0.8, cex.lab = 0.8)
+hist(tam, breaks = 15, col = "#D6EAF3", border = "white",
+     main = "", xlab = "tokens por documento", ylab = "documentos")
+@
+  \fonte{Elaborada pelos autores.}
+\end{figure}
+
+\textbf{Sujeira e vocabulário.} Os dez termos mais frequentes são \Sexpr{texto_top10}, sendo \texttt{santos} o único termo temático no topo. Os demais são palavras gramaticais (\emph{stopwords}), comprovando a necessidade do pré-processamento da Aula 03.
+
+\textbf{Veredito.} O corpus atende plenamente às três necessidades de informação e está pronto e serializado para as etapas subsequentes.
+
+% ----------------------------------------------------------
+% REFERÊNCIAS
+% ----------------------------------------------------------
+\postextual
+\bibliography{referencias}
+
+\end{document}
