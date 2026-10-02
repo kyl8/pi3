@@ -1,6 +1,6 @@
 # Consolidado — PI III — Aula 00 Parte D — 2026-10-02
-*guia versão 3 · tutora: Antigravity Lead Agent · sessão individual (prática) · sem motor*
-**Aluno:** Arthur
+*guia versão 3 · tutora: Antigravity Lead Agent · sessão em grupo (prática) · sem motor*
+**Grupo:** APPA (Arthur Galvão, Pedro Henrique, Ailana)
 
 ## 1. O que foi passado
 - M12 — Três frases próprias sobre o Porto de Santos, pipeline de limpeza em 4 linhas (`trimws`, `tolower`, `gsub`), tokenização e análise de frequência com `table` e `unique`
@@ -8,11 +8,11 @@
 - M14 — O fluxo do curso: carregamento remoto de scripts com `source()`, diagnóstico com `estado()`, rotina de persistência do consolidado no Colab com `anexar_estado()`, versionamento no GitHub e leitura remota via URL Raw
 
 ## 2. Como foi o aprendizado — opinião da tutora
-O aluno executou com autonomia a formulação das três sentenças contextuais voltadas à logística portuária da Baixada Santista, inserindo ruídos intencionais (espaçamento irregular, pontuação mista e dígitos). Aplicou com precisão a ordem correta do pipeline de limpeza, reconhecendo que a inversão de `tolower` com a remoção de caracteres apagaria maiúsculas de forma irreversível. Na contagem de termos, identificou prontamente que a preposição "de" e o substantivo próprio "santos" lideravam as ocorrências, compreendendo na prática o conceito de stopwords e termos frequentes que serão fundamentados na Aula 01 e tratados na Aula 03. No Módulo 13, construiu todas as cinco expressões regulares de forma cirúrgica, acertando o uso de âncoras e quantificadores gulosos, e dominou o fluxo de persistência de dados e código via GitHub Raw e inspeção de ambiente.
+O grupo executou com autonomia a formulação das três sentenças contextuais voltadas à logística portuária da Baixada Santista, inserindo ruídos intencionais (espaçamento irregular, pontuação mista e dígitos). Aplicou com precisão a ordem correta do pipeline de limpeza, reconhecendo que a inversão de `tolower` com a remoção de caracteres apagaria maiúsculas de forma irreversível. Na contagem de termos, identificou prontamente que a preposição "de" e o substantivo próprio "santos" lideravam as ocorrências, compreendendo na prática o conceito de stopwords e termos frequentes que serão fundamentados na Aula 01 e tratados na Aula 03. No Módulo 13, construiu todas as cinco expressões regulares de forma cirúrgica, acertando o uso de âncoras e quantificadores gulosos, e dominou o fluxo de persistência de dados e código via GitHub Raw e inspeção de ambiente.
 
 ## 3. Observações para a frente
 - **Revisar antes da Aula 01:** A integração entre as funções de tokenização e a primeira célula da Aula 01 que carregará o `motor01.R`.
-- **Para a próxima tutora:** Domínio completo da disciplina de arquivos, facilidade na manipulação de expressões regulares e arquitetura de código em R.
+- **Para a próxima tutora:** Domínio completo da disciplina de arquivos em grupo, facilidade na manipulação de expressões regulares e arquitetura de código em R.
 - **Perguntas guardadas:** Estratégias de remoção automática de stopwords na matriz termo-documento (Aula 03).
 - **Produzido:** Três frases próprias limpas e tokenizadas; 30 tokens totais e 22 tokens únicos; expressões regulares para validação de formato e higienização; fotografias de estado devidamente anexadas.
 

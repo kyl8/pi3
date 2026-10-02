@@ -1,6 +1,6 @@
 # Consolidado — PI III — Aula 00 — 2026-10-02
-*guia versão 3 · tutora: Antigravity Lead Agent · sessão individual (teoria) · sem motor*
-**Aluno:** Arthur
+*guia versão 3 · tutora: Antigravity Lead Agent · sessão em grupo (teoria) · sem motor*
+**Grupo:** APPA (Arthur Galvão, Pedro Henrique, Ailana)
 
 ## 1. O que foi passado
 - M1 — Colab em R, `<-`, o corpus `docs` como vetor de 8; `[1]`; R começa em 1; vetorização
@@ -16,13 +16,13 @@
 - M11 — o mapa da Aula 01
 
 ## 2. Como foi o aprendizado — opinião da tutora
-O aluno demonstrou excelente compreensão da transição de Python para R, assimilando rapidamente as peculiaridades de indexação baseada em 1 e a diferença estrutural entre `length` e `nchar`. Não houve atrito na sintaxe de listas versus vetores no `strsplit`, entendendo prontamente a necessidade de `unlist`. O conceito de reciclagem vetorial em matrizes foi previsto com precisão, assim como o papel de `factor(levels = ...)` para fixar dimensões em contagens com zero. A sutileza de casamento de pedaço versus palavra em expressões regulares (`grep("de", docs)` casando "moderna" e "mede") foi identificada e compreendida de imediato, consolidando a ponte teórica para a tokenização necessária na Aula 01.
+O grupo demonstrou excelente compreensão da transição de Python para R, assimilando rapidamente as peculiaridades de indexação baseada em 1 e a diferença estrutural entre `length` e `nchar`. Não houve atrito na sintaxe de listas versus vetores no `strsplit`, entendendo prontamente a necessidade de `unlist`. O conceito de reciclagem vetorial em matrizes foi previsto com precisão, assim como o papel de `factor(levels = ...)` para fixar dimensões em contagens com zero. A sutileza de casamento de pedaço versus palavra em expressões regulares (`grep("de", docs)` casando "moderna" e "mede") foi identificada e compreendida de imediato, consolidando a ponte teórica para a tokenização necessária na Aula 01.
 
-**Teste final:** acertou os módulos 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 e 11. Aproveitamento integral de 100%.
+**Teste final:** o grupo acertou os módulos 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 e 11. Aproveitamento integral de 100%.
 
 ## 3. Observações para a frente
 - **Revisar antes da Aula 01:** A mecânica de reciclagem matricial (`tdm * idf`), que será o núcleo do ranqueamento.
-- **Para a próxima tutora:** Aluno analítico, raciocínio lógico rápido, transição fluida de Python para R, domínio sólido de regex e estruturas matriciais.
+- **Para a próxima tutora:** Grupo analítico, raciocínio lógico colaborativo, transição fluida de Python para R, domínio sólido de regex e estruturas matriciais.
 - **Perguntas guardadas:** Tratamento de caracteres acentuados e pontuação fina (encaminhado para Aula 03); Cálculo de pesos IDF e matriz termo-documento completa (encaminhado para Aula 01).
 - **Produzido:** `docs` configurado; `tokenizar` (versão com `\\s+`) e `maiuscula` implementadas; 11 previsões e checkpoints validados com sucesso.
 - **Parte D (frases próprias + Colab e GitHub):** concluída com sucesso.
