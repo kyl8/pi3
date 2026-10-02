@@ -2,6 +2,8 @@
 
 Os scripts atuais montam o corpus diretamente a partir de páginas da Wikipédia. Por isso, os textos não ficam duplicados nesta pasta.
 
-As páginas usadas são Santos Futebol Clube, Associação Atlética Portuguesa e Jabaquara Atlético Clube. A quantidade de parágrafos pode mudar quando a Wikipédia for atualizada.
+As páginas usadas são Santos Futebol Clube, Associação Atlética Portuguesa e Jabaquara Atlético Clube.
 
-Para uma entrega reproduzível, o próximo passo é salvar uma cópia versionada do corpus e registrar a data da coleta.
+Para garantir reprodutibilidade estrita nas entregas acadêmicas, a pasta contém a versão serializada do corpus congelada:
+- `docs.rds`: vetor nomeado com os 141 parágrafos textuais (d1 a d141);
+- `origem.rds`: vetor nomeado associando cada documento ao clube correspondente (Santos FC, Portuguesa Santista, Jabaquara).

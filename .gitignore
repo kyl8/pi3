@@ -1,3 +1,9 @@
 # Arquivos temporários e rascunhos
+*.aux
+*.log
+*.blg
+*.bbl
+*.synctex.gz
+*.out
 
 # Saídas geradas pelos scripts ficam versionadas nesta etapa
