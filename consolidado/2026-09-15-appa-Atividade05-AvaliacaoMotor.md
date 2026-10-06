@@ -33,7 +33,7 @@ Esse resultado é apenas um teste do pipeline. O gabarito por clube é amplo dem
 
 ## Material
 
-[Aula 05](../materiais-aulas/Aula%2005%20-%20Julgamento%2C%20Pooling%20e%20Concord%C3%A2ncia%20Entre%20Ju%C3%ADzes.PDF), [guia de estudo](../materiais-aulas/Aula%2005a%20-%20GUIA_ESTUDO_aula05.md) e [orientação para julgamento](../materiais-aulas/Aula%2005b%20-%20PROMPT_LLM_julgamento_relevancia.md).
+[Aula 05](../materiais-aulas/Aula%2005a%20-%20Julgamento%2C%20Pooling%20e%20Concord%C3%A2ncia%20Entre%20Ju%C3%ADzes.PDF), [guia de estudo](../materiais-aulas/Aula%2005a%20-%20GUIA_ESTUDO_aula05.md) e [orientação para julgamento](../materiais-aulas/Aula%2005a%20-%20PROMPT_LLM_julgamento_relevancia.md).
 
 ## Arquivos da coleta humana
 
