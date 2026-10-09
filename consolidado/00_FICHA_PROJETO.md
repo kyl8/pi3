@@ -260,3 +260,4 @@
 `anexar_estado`, `busca_booleana`, `estado`, `tokenizar`
 <!-- estado-R:fim -->
 
+

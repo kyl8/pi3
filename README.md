@@ -23,6 +23,7 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 - [Métricas no Gabarito Próprio (Parte D)](estrutura/codigos/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.r): avaliação comparativa entre BM25 e TF-IDF contra o qrels do projeto.
 - [Realimenta��o de Relev�ncia e Rocchio](estrutura/codigos/2026-10-09-appa-Atividade06-RocchioFeedback.r): implementa��o de Rocchio para expans�o de consulta.
 - [Espa�o Vetorial e Cosseno (Aula 02)](estrutura/codigos/2026-10-09-appa-Aula02-EspacoVetorial.R): implementa��es geradas via tutora (cosseno, normaliza��o, etc).
+- [Motor Cosseno (Parte D)](estrutura/codigos/2026-10-09-appa-Aula02-ParteD-MotorCosseno.R): script da sess�o de grupo ranqueando o corpus real com o modelo do espa�o vetorial.
 - [Introdução ao R e Motor de Busca (Aula 00 - Notebook)](estrutura/codigos/Aula_00_Introducao_ao_R_Motor_de_Busca.ipynb): notebook interativo cobrindo vetores, regex, tokenização e contagens.
 - [Execução Completa Aula 00 (Script R)](estrutura/codigos/2026-10-02-appa-Aula00-IntroducaoR.R): script reprodutível com todos os blocos dos módulos 1 a 14 da Aula 00.
 - [Recuperação de Informação e Motor de Busca (Aula 01 - Notebook)](estrutura/codigos/Aula_01_Recuperacao_de_Informacao_e_Motor_de_Busca.ipynb) (e [`aula01.ipynb`](estrutura/codigo/aula01.ipynb)): notebook interativo com os 10 módulos teóricos e os 3 módulos práticos da Parte D.
@@ -89,6 +90,7 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 - `csv/`: corpus, necessidades, pool e arquivo de julgamentos.
 
 Para preparar os arquivos, execute os scripts `05b`, `05c`, `05d` e `05e` a partir da raiz do repositorio. O qrels inicial tem 66 pares e serve como referencia para testar o motor. Depois abra o HTML no navegador, carregue os tres CSVs e revise ou substitua esses graus com julgamentos humanos.
+
 
 
 
