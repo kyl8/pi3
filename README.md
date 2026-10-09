@@ -52,6 +52,8 @@ A pasta [entregas/](entregas/) está organizada em duas divisões principais:
 - [01: corpus e busca direta (legado)](consolidado/2026-09-15-appa-Atividade01-CorpusBusca.md)
 - [01b: pesos dos termos (legado)](consolidado/2026-09-15-appa-Atividade01b-PesosTermos.md)
 - [02: TF-IDF e cosseno](consolidado/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
+- [02: teoria e cosseno (novo)](consolidado/2026-10-09-appa-Atividade02-ConsolidadoTeoria.md)
+- [02: pr�tica e motor de busca (novo)](consolidado/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
 - [03: pré-processamento e índice](consolidado/2026-09-15-appa-Atividade03-PreProcessamentoIndice.md)
 - [04: Poisson, saturação e BM25](consolidado/2026-09-15-appa-Atividade04-PoissonBm25.md)
 - [05: avaliação do motor](consolidado/2026-09-15-appa-Atividade05-AvaliacaoMotor.md)
@@ -86,5 +88,6 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 - `csv/`: corpus, necessidades, pool e arquivo de julgamentos.
 
 Para preparar os arquivos, execute os scripts `05b`, `05c`, `05d` e `05e` a partir da raiz do repositorio. O qrels inicial tem 66 pares e serve como referencia para testar o motor. Depois abra o HTML no navegador, carregue os tres CSVs e revise ou substitua esses graus com julgamentos humanos.
+
 
 
