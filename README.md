@@ -2,6 +2,9 @@
 
 Repositório do grupo APPA para o estudo de recuperação de informação. O motor usa textos sobre clubes tradicionais da Baixada Santista e evolui de uma busca por ocorrência para TF-IDF, busca booleana e BM25.
 
+> **Módulos Iniciais (Aulas 00 e 01):**
+> Os artefatos fundamentais das Aulas 00 e 01 (introdução ao R, tokenização, extração do corpus e busca booleana) foram isolados e organizados no repositório dedicado: **[Arthur-galvao/pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)**.
+
 ## Estrutura
 
 - [entregas](entregas/): relatórios formais e entregas acadêmicas em LaTeX/Sweave;
@@ -9,26 +12,22 @@ Repositório do grupo APPA para o estudo de recuperação de informação. O mot
 - [estrutura/codigos](estrutura/codigos/): scripts em R;
 - [estrutura/corpus](estrutura/corpus/): informações e artefatos do corpus;
 - [estrutura/resultados](estrutura/resultados/): métricas e saídas das execuções;
-- [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio.
+- [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio das aulas avançadas (Aulas 02 a 06);
+- [tutoras](tutoras/): guias de estudo autônomos das aulas do projeto (Aulas 02 a 06).
 
 Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
 ## Scripts
 
-- [MotorDeBusca](estrutura/codigos/2026-08-20-appa-MotorBuscaInicial.r): busca direta, frases e estatísticas;
 - [MotorBuscaTfIdf](estrutura/codigos/2026-08-25-appa-MotorBuscaTfIdf.r): TF-IDF, cosseno e operadores booleanos;
-- [MotorBuscaBM25](estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r): BM25 e comparação com TF-IDF.
-- [Avaliação](estrutura/codigos/2026-09-15-appa-Atividade05-AvaliacaoMotor.r): métricas de ranking com consultas de teste.
-- [Métricas de Avaliação (Aula 5.5)](estrutura/codigos/2026-09-18-appa-Atividade05b-MetricasAvaliacao.r): cálculo de P@k, AP, MRR e nDCG (binário e graduado).
-- [Métricas no Gabarito Próprio (Parte D)](estrutura/codigos/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.r): avaliação comparativa entre BM25 e TF-IDF contra o qrels do projeto.
-- [Realimenta��o de Relev�ncia e Rocchio](estrutura/codigos/2026-10-09-appa-Atividade06-RocchioFeedback.r): implementa��o de Rocchio para expans�o de consulta.
-- [Espa�o Vetorial e Cosseno (Aula 02)](estrutura/codigos/2026-10-09-appa-Aula02-EspacoVetorial.R): implementa��es geradas via tutora (cosseno, normaliza��o, etc).
-- [Motor Cosseno (Parte D)](estrutura/codigos/2026-10-09-appa-Aula02-ParteD-MotorCosseno.R): script da sess�o de grupo ranqueando o corpus real com o modelo do espa�o vetorial.
-- [Introdução ao R e Motor de Busca (Aula 00 - Notebook)](estrutura/codigos/Aula_00_Introducao_ao_R_Motor_de_Busca.ipynb): notebook interativo cobrindo vetores, regex, tokenização e contagens.
-- [Execução Completa Aula 00 (Script R)](estrutura/codigos/2026-10-02-appa-Aula00-IntroducaoR.R): script reprodutível com todos os blocos dos módulos 1 a 14 da Aula 00.
-- [Recuperação de Informação e Motor de Busca (Aula 01 - Notebook)](estrutura/codigos/Aula_01_Recuperacao_de_Informacao_e_Motor_de_Busca.ipynb) (e [`aula01.ipynb`](estrutura/codigo/aula01.ipynb)): notebook interativo com os 10 módulos teóricos e os 3 módulos práticos da Parte D.
-- [Execução Completa Aula 01 (Script R)](estrutura/codigos/2026-10-02-appa-Aula01-RecuperacaoInformacao.R): script unificado com validação de matrizes TDM, TF-IDF, buscas booleanas e anexação de estado.
-- [Arquivo de Configuração do Grupo (`config.R`)](config.R) (e [`estrutura/codigo/config.R`](estrutura/codigo/config.R)): parâmetros do grupo APPA (`minimo = 50`, `grupo = "APPA"`).
+- [MotorBuscaBM25](estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r): BM25 e comparação com TF-IDF;
+- [Avaliação](estrutura/codigos/2026-09-15-appa-Atividade05-AvaliacaoMotor.r): métricas de ranking com consultas de teste;
+- [Métricas de Avaliação (Aula 5.5)](estrutura/codigos/2026-09-18-appa-Atividade05b-MetricasAvaliacao.r): cálculo de P@k, AP, MRR e nDCG (binário e graduado);
+- [Métricas no Gabarito Próprio (Parte D)](estrutura/codigos/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.r): avaliação comparativa entre BM25 e TF-IDF contra o qrels do projeto;
+- [Espaço Vetorial e Cosseno (Aula 02)](estrutura/codigos/2026-10-09-appa-Aula02-EspacoVetorial.R): implementações geradas via tutora (cosseno, normalização, etc);
+- [Motor Cosseno (Parte D)](estrutura/codigos/2026-10-09-appa-Aula02-ParteD-MotorCosseno.R): script da sessão de grupo ranqueando o corpus real com o modelo do espaço vetorial;
+- [Realimentação de Relevância e Rocchio](estrutura/codigos/2026-10-09-appa-Atividade06-RocchioFeedback.r): implementação de Rocchio para expansão de consulta;
+- [Arquivo de Configuração do Grupo (`config.R`)](config.R) (e [`estrutura/codigos/config.R`](estrutura/codigos/config.R)): parâmetros canônicos do grupo APPA (`minimo = 50`, `grupo = "APPA"`).
 
 ## Ficha do Projeto e Governança
 
@@ -46,22 +45,16 @@ A pasta [entregas/](entregas/) está organizada em duas divisões principais:
 
 ## Atividades e Consolidados
 
-- [00: introdução ao R (visão geral)](consolidado/2026-09-15-appa-Atividade00-IntroducaoR.md)
-- [00: introdução ao R (teoria e estado do R)](consolidado/2026-10-02-appa-Atividade00-ConsolidadoTeoria.md)
-- [00: introdução ao R (prática e fluxo)](consolidado/2026-10-02-appa-Atividade00-ParteD-FluxoCurso.md)
-- [01: teoria, TDM e TF-IDF (estado do R anexado)](consolidado/2026-10-02-appa-Atividade01-ConsolidadoTeoria.md) (e [`aula01_consolidado.md`](consolidado/aula01_consolidado.md))
-- [01: prática e fundação do projeto (estado do R anexado)](consolidado/2026-10-02-appa-Atividade01-ParteD-FundacaoProjeto.md) (e [`aula01_parteD_consolidado.md`](consolidado/aula01_parteD_consolidado.md))
-- [01: corpus e busca direta (legado)](consolidado/2026-09-15-appa-Atividade01-CorpusBusca.md)
-- [01b: pesos dos termos (legado)](consolidado/2026-09-15-appa-Atividade01b-PesosTermos.md)
+- **Aulas 00 e 01 (Fundamentos):** Disponíveis no repositório [pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)
 - [02: TF-IDF e cosseno](consolidado/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
 - [02: teoria e cosseno (novo)](consolidado/2026-10-09-appa-Atividade02-ConsolidadoTeoria.md)
-- [02: pr�tica e motor de busca (novo)](consolidado/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
+- [02: prática e motor de busca (novo)](consolidado/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
 - [03: pré-processamento e índice](consolidado/2026-09-15-appa-Atividade03-PreProcessamentoIndice.md)
 - [04: Poisson, saturação e BM25](consolidado/2026-09-15-appa-Atividade04-PoissonBm25.md)
 - [05: avaliação do motor](consolidado/2026-09-15-appa-Atividade05-AvaliacaoMotor.md)
 - [05b: métricas de avaliação teóricas](consolidado/2026-09-18-appa-Atividade05b-MetricasAvaliacao.md)
 - [05b: métricas no gabarito próprio (Parte D)](consolidado/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.md)
-- [06: expans�o de consulta e Rocchio](consolidado/2026-10-09-appa-Atividade06-RocchioFeedback.md)
+- [06: expansão de consulta e Rocchio](consolidado/2026-10-09-appa-Atividade06-RocchioFeedback.md)
 
 ## Como executar
 
@@ -81,18 +74,10 @@ install.packages("SnowballC")
 
 A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 
-- `2026-09-15-appa-05-julgar.html`: pagina offline para dar notas 0, 1 ou 2;
-- `2026-09-15-appa-05b-montar-corpus.R`: salva os 141 paragrafos do corpus atual;
+- `2026-09-15-appa-05-julgar.html`: página offline para dar notas 0, 1 ou 2;
+- `2026-09-15-appa-05b-montar-corpus.R`: salva os 141 parágrafos do corpus atual;
 - `2026-09-15-appa-05c-ficha-corpus.R`: confere linhas, colunas e duplicidades;
 - `2026-09-15-appa-05d-gerar-pool.R`: cria os pares necessidade-documento;
-- `2026-09-15-appa-05a-kappa.R`: calcula a concordancia entre dois juizes;
-- `2026-09-15-appa-05e-gerar-qrels-inicial.R`: preenche a referencia inicial do projeto;
+- `2026-09-15-appa-05a-kappa.R`: calcula a concordância entre dois juízes;
+- `2026-09-15-appa-05e-gerar-qrels-inicial.R`: preenche a referência inicial do projeto;
 - `csv/`: corpus, necessidades, pool e arquivo de julgamentos.
-
-Para preparar os arquivos, execute os scripts `05b`, `05c`, `05d` e `05e` a partir da raiz do repositorio. O qrels inicial tem 66 pares e serve como referencia para testar o motor. Depois abra o HTML no navegador, carregue os tres CSVs e revise ou substitua esses graus com julgamentos humanos.
-
-
-
-
-
-
