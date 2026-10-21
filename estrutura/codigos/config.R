@@ -1,34 +1,13 @@
-# ==========================================================================
-#  config.R  --  as decisoes do grupo, para o R
-#  Copie para  estrutura/codigo/config.R  no repositorio do grupo.
-# ==========================================================================
-#
-#  A ficha do projeto diz as decisoes em prosa (e o porque).
-#  Este arquivo diz as mesmas decisoes para o R. Os dois tem que bater.
-#
-#  Cada Parte D acrescenta um campo. Nao apague campos antigos: se uma
-#  decisao mudar, mude o valor e registre na ficha (secao 6), com o motivo.
-#
-#  Sem acento nas strings (locale do Colab/Windows).
-# ==========================================================================
-
+# Arquivo canônico de configuração do motor de busca (estrutura/codigos/config.R)
 cfg <- list(
-  # --- Aula 01: o que e um documento ------------------------------------
-  minimo = 50,                  # paragrafo com mais de 50 caracteres
-
-  # --- Aula 03: limpeza e stopwords (descomente quando decidirem) -------
-  # limpar    = TRUE,           # usar a limpeza da Aula 03
-  # acentos   = "translit",     # "manter" (acento vira espaco) ou "translit" (i, c, a...)
-  # stopwords = c("de", "o", "a", "e", "em", "dos", "com", "para"),
-
-  # --- Aula 04: BM25 ------------------------------------------------------
-  # k1 = 1.2,
-  # b  = 0.75,
-
-  # --- Aula 5,5: metricas -------------------------------------------------
-  # limiar = 2,                 # grau minimo para contar como relevante
-  # juizes = c("ana", "bruno"), # quem vale no gabarito, em ordem de prioridade (ler_qrels)
-
-  # --- fim ----------------------------------------------------------------
-  grupo = "APPA"                # ultimo campo, sem virgula depois
+  corpus_dir = "estrutura/corpus",
+  resultados_dir = "estrutura/resultados",
+  minimo = 50,
+  limpar = TRUE,
+  acentos = "translit",
+  stopwords = TRUE,
+  stemming = TRUE,
+  k1 = 1.5,
+  b = 0.75,
+  grupo = "APPA"
 )

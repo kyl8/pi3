@@ -48,3 +48,6 @@ Com base no cenário canônico da consulta `modelo de recuperacao`:
 ## 3. Script Desenvolvido
 O código executável com todos os cálculos encontra-se em:
 `estrutura/codigos/2026-09-18-appa-Atividade05b-MetricasAvaliacao.r`
+
+## Nota de Revisão Metodológica (Alinhamento com Aula 05a/05b - Kappa de Cohen e NDCG)
+- **Concordância Acaso ($p_e$) no Kappa de Cohen e Proteção no NDCG**: A probabilidade de concordância esperada ao acaso é calculada pelo produto das marginais reais dos dois juízes ($p_e = \sum_c P(J_1 = c) P(J_2 = c)$), e o cálculo de $\text{NDCG}@K = \frac{\text{DCG}@K}{\text{IDCG}@K}$ define $\text{NDCG}@K = 0$ quando $\text{IDCG}@K = 0$.

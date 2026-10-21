@@ -1,3 +1,4 @@
+source("estrutura/codigos/config.R", encoding = "UTF-8")
 # ==============================================================================
 # MOTOR DE BUSCA - BAIXADA SANTISTA (ESPAÇO VETORIAL & BOOLEANO)
 # Granularidade: Parágrafos como documentos (d1, d2, ..., dN)
@@ -42,7 +43,7 @@ extrair_paragrafos_wiki <- function(titulo) {
   }, FUN.VALUE = character(1), USE.NAMES = FALSE)
 
   # Filtro: descarta linhas vazias ou fragmentos menores que 50 caracteres (ex: notas soltas)
-  paragrafos_limpos[nchar(paragrafos_limpos) >= 50]
+  paragrafos_limpos[nchar(paragrafos_limpos) >= cfg$minimo]
 }
 
 cat("\nExtraindo paragrafos da Wikipedia...\n")
@@ -117,7 +118,7 @@ rownames(tdm) <- vocab
 tf  <- tdm
 N   <- ncol(tdm)
 df  <- rowSums(tdm > 0)
-idf <- log(N / df)
+idf <- log10((N + 1) / (df + 1))
 w   <- tf * idf
 
 # ------------------------------------------------------------------------------

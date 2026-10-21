@@ -1,14 +1,14 @@
 # Avaliação reproduzível dos dois rankings com um gabarito simples por clube.
 # O gabarito deve ser revisado por pessoas antes de ser usado em um relatório final.
 
-caminho_bm25_lab <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
-caminho_bm25_local <- "C:/Users/Arthur/Documents/IA_workspace/programacao/pi3/estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+caminho_bm25_lab <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+caminho_bm25_local <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
 
 if (file.exists(caminho_bm25_lab)) {
-  caminho_base <- "C:/Users/lab31/Downloads/pi3-main (1)/pi3-main"
+  caminho_base <- "."
   source(caminho_bm25_lab)
 } else if (file.exists(caminho_bm25_local)) {
-  caminho_base <- "C:/Users/Arthur/Documents/IA_workspace/programacao/pi3"
+  caminho_base <- "."
   source(caminho_bm25_local)
 } else if (file.exists("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")) {
   caminho_base <- "."
@@ -33,7 +33,7 @@ avaliar_ranking <- function(ranking, clube_esperado, k = 10) {
   relevantes <- as.integer(doc_origem[names(ranking)] == clube_esperado)
   primeiro <- which(relevantes == 1)
   data.frame(
-    p_at_k = mean(relevantes),
+    p_at_k = sum(head(relevantes, k), na.rm = TRUE) / k,
     recall_at_k = ifelse(sum(doc_origem == clube_esperado) > 0, sum(relevantes) / sum(doc_origem == clube_esperado), NA),
     reciprocal_rank = ifelse(length(primeiro), 1 / primeiro[1], 0)
   )

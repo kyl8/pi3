@@ -27,3 +27,6 @@ O script é [2026-09-04-appa-MotorBuscaBm25.r](../estrutura/codigos/2026-09-04-a
 ## Material
 
 [Aula 04](../materiais-aulas/Aula%2004%20-%20Satura%C3%A7%C3%A3o%2C%20Tamanho%20de%20Documento%20e%20Ranqueamento.PDF).
+
+## Nota de Revisão Metodológica (Alinhamento com Aula 04 e Guia de Estudo 04)
+- **Normalização pelo Comprimento do Documento ($|d|/\text{avgdl}$) e Nomeação de Vocabulário**: O fator de penalização de tamanho no BM25 utiliza a razão entre o tamanho individual do documento $|d|$ e o comprimento médio da coleção $\text{avgdl}$: $K = k_1\left(1 - b + b\frac{|d|}{\text{avgdl}}\right)$, com o vetor `idf` devidamente indexado pelos termos de `vocab`.

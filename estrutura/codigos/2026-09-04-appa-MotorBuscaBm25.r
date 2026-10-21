@@ -176,6 +176,7 @@ avgdl <- mean(dl)
 
 # IDF probabilistico com suavizacao (+0.5) e limitador de valor negativo (+1)
 idf <- log((N - df + 0.5) / (df + 0.5) + 1)
+names(idf) <- vocab
 
 # IDF classico utilizado para o modelo vetorial TF-IDF de comparacao
 idf_classico <- log(N / df)

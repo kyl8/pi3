@@ -51,12 +51,12 @@ dcg <- function(r) {
 
 # nDCG Binário
 idcg_bin <- dcg(sort(rel, decreasing = TRUE))
-ndcg_bin <- dcg(rel) / idcg_bin
+ndcg_bin <- ifelse(idcg_bin == 0, 0, dcg(rel) / idcg_bin)
 
 # nDCG Graduado (usa os graus reais 0, 1, 2)
 g <- grau[ranking]
 idcg_grad <- dcg(sort(g, decreasing = TRUE))
-ndcg_grad <- dcg(g) / idcg_grad
+ndcg_grad <- ifelse(idcg_grad == 0, 0, dcg(g) / idcg_grad)
 
 cat("\n--- Módulos 7 e 8: nDCG ---\n")
 cat("nDCG Binário:", round(ndcg_bin, 3), "\n")

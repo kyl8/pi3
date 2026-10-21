@@ -27,7 +27,7 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 - [Espaço Vetorial e Cosseno (Aula 02)](estrutura/codigos/2026-10-09-appa-Aula02-EspacoVetorial.R): implementações geradas via tutora (cosseno, normalização, etc);
 - [Motor Cosseno (Parte D)](estrutura/codigos/2026-10-09-appa-Aula02-ParteD-MotorCosseno.R): script da sessão de grupo ranqueando o corpus real com o modelo do espaço vetorial;
 - [Realimentação de Relevância e Rocchio](estrutura/codigos/2026-10-09-appa-Atividade06-RocchioFeedback.r): implementação de Rocchio para expansão de consulta;
-- [Arquivo de Configuração do Grupo (`config.R`)](config.R) (e [`estrutura/codigos/config.R`](estrutura/codigos/config.R)): parâmetros canônicos do grupo APPA (`minimo = 50`, `grupo = "APPA"`).
+- [Arquivo de Configuração do Grupo (`estrutura/codigos/config.R`)](estrutura/codigos/config.R): parâmetros canônicos do grupo APPA (`minimo = 50`, `grupo = "APPA"`).
 
 ## Ficha do Projeto e Governança
 

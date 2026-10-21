@@ -23,3 +23,6 @@ Na busca booleana, a ordem não é calculada pelo score. O resultado é obtido c
 ## Material
 
 [Aula 02](../materiais-aulas/Aula%2002%20-%20Vetores%20TF-IDF%20e%20Similaridade%20do%20Cosseno.PDF).
+
+## Nota de Revisão Metodológica (Alinhamento com Aula 02 e Guia de Estudo 02)
+- **Base Logarítmica ($\log_{10}$) e Normalização do Cosseno**: A ponderação TF-IDF segue a definição normativa com logaritmo na base 10 ($\text{TF}(t,d) = 1 + \log_{10}(f_{t,d})$ para $f_{t,d} > 0$ e $\text{IDF}(t) = \log_{10}\left(\frac{N+1}{\text{DF}_t+1}\right)$), e a similaridade do cosseno divide o produto escalar pelo produto das normas euclidianas $\|\vec{q}\|_2 \|\vec{d}\|_2$, mantendo a pontuação estritamente em $[0, 1]$.

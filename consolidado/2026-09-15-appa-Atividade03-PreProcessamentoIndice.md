@@ -17,3 +17,6 @@ O ranking continua usando a matriz termo documento, porque precisa da frequênci
 ## Material
 
 [Aula 03](../materiais-aulas/Aula%2003%20-%20Limpeza%20de%20Texto%2C%20Stopwords%2C%20Stemming%20e%20o%20Indice.PDF).
+
+## Nota de Revisão Metodológica (Alinhamento com Aula 03 e Guia de Estudo 03)
+- **Pipeline de Pré-processamento e Índice Invertido**: A transliteração/remoção de acentos precede a remoção de *stopwords* e o *stemming* RSLP, e cada lista de postagens (*posting list*) do índice invertido armazena diretamente o par `(doc_id, freq)` ($f_{t,d}$) para consulta em tempo constante no BM25.

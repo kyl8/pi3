@@ -32,7 +32,7 @@ cosseno <- function(a, b) {
 rocchio <- function(q, Dr, Dnr = character(0), a = 1, b = 0.75, g = 0.15) {
   cr <- if (length(Dr) > 0) rowMeans(w[, Dr, drop = FALSE]) else rep(0, length(q))
   cnr <- if (length(Dnr) > 0) rowMeans(w[, Dnr, drop = FALSE]) else rep(0, length(q))
-  a * q + b * cr - g * cnr
+  pmax(0, a * q + b * cr - g * cnr)
 }
 
 # 2. Escolher uma consulta, marcar 1-2 relevantes e comparar o ranking antes/depois.

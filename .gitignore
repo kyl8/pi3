@@ -1,9 +1,12 @@
-# Arquivos temporários e rascunhos
+.Rhistory
+.RData
+.Rproj.user/
 *.aux
 *.log
-*.blg
-*.bbl
-*.synctex.gz
 *.out
-
-# Saídas geradas pelos scripts ficam versionadas nesta etapa
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+entregas/finalizada/*.tex
+entregas/modelo_base/*.tex
