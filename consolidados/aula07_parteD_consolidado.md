@@ -29,7 +29,7 @@ retrospectivo sem reajustar a escolha a partir dele. No fechamento, alinhamos a 
 - **Para a Aula 08:** corpus e parâmetros congelados; medir o reordenador com o mesmo gabarito,
   ampliando julgamentos e consultas independentes antes de generalizar os resultados.
 - **Perguntas guardadas:** reordenação, Aula 08; RAG, Aula 14; escala, Aula 15.
-- **Produzido:** [resolução completa](../resolucoes/Pedro_Henrique/aula07_parteD_resolvido.md),
+- **Produzido:** [resolução completa](../resolucoes/aula07_parteD_resolvido.md),
   código, notebook, CSVs, comparação textual, ficha e estados do R.
 - **Ficha atualizada:** cabeçalho, identificação do grupo e seções 5, 6 e 7 revisados.
 
@@ -41,7 +41,7 @@ retrospectivo sem reajustar a escolha a partir dele. No fechamento, alinhamos a 
 5. Enviar ficha e consolidado a `consolidados/`, e configuração e notebook a `estrutura/codigo/` do repositório.
 6. Conferir que a ficha termina com “Estado do R” e a configuração contém `modelo`, `lsa_k` e `rrf_c`.
 7. Conferir os mesmos valores na seção 6 da ficha e no `config.R`.
-8. Cada integrante envia seu próprio consolidado da teoria a `consolidados/<nome>/`; o de Pedro está disponível no caminho indicado.
+8. Os consolidados da teoria ficam diretamente em `consolidados/`; o desta aula está em `consolidados/aula07_consolidado.md`.
 
 ---
 

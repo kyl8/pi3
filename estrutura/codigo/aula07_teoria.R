@@ -22,5 +22,5 @@ busca$rrf2 <- rrf(ranking_bm25("busca", ix, cfg), busca$lsa2); busca$rrf4 <- rrf
 salvar(do.call(rbind, lapply(names(busca), function(nome) { rk <- busca[[nome]]; data.frame(modelo = nome, posicao = seq_along(rk), documento = names(rk), score = unname(rk), texto = unname(docs[names(rk)])) })), "tarefa_individual_busca") # Permite ler ganho e ruido nos textos.
 png(file.path(out, "teoria_documentos_lsa2.png"), width = 1000, height = 750, res = 120) # Abre a figura opcional dos oito pontos.
 plot(m2$D, type = "n", asp = 1, xlab = "Coordenada latente 1", ylab = "Coordenada latente 2", main = "Aula 07: os oito documentos no LSA"); text(m2$D, labels = rownames(m2$D)); dev.off() # Mostra proximidades sem rotular eixos como temas.
-if (file.exists("consolidados/Pedro_Henrique/aula07_consolidado.md")) anexar_estado("consolidados/Pedro_Henrique/aula07_consolidado.md", env = environment()) # Anexa estado real ao consolidado individual existente.
+if (file.exists("consolidados/aula07_consolidado.md")) anexar_estado("consolidados/aula07_consolidado.md", env = environment()) # Anexa estado real ao consolidado individual existente.
 print(read.csv(file.path(out, "teoria_metricas_canonicas.csv"))) # Exibe os numeros da conferencia.

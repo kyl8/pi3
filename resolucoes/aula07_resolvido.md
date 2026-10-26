@@ -3,7 +3,7 @@
 **Pedro Henrique · APPA · 25/10/2026 · Guia versão 2.**
 **Apoio:** ChatGPT.
 Caderno de teoria, checkpoints, teste e tarefa individual.
-O [guia original](../../tutoras/GUIA_ESTUDO_aula07.md) usa os oito documentos do curso e a consulta `modelo de recuperacao`.
+O [guia original](../tutoras/GUIA_ESTUDO_aula07.md) usa os oito documentos do curso e a consulta `modelo de recuperacao`.
 
 ## Diagnóstico
 Sem termos em comum, o cosseno lexical é zero. O Rocchio acrescenta termos presentes nos
@@ -66,6 +66,6 @@ Com $k=4$, `d5` e `d7` voltam ao topo. Isso mostra o efeito de mudar a dimensão
 sem transformar esta única consulta em conjunto de desenvolvimento.
 
 O código primeiro monta a matriz, depois calcula a SVD e a energia, projeta consultas,
-compara cossenos e funde posições. O [script](../../estrutura/codigo/aula07_teoria.R)
-comenta cada linha. Os [rankings com os textos](../../estrutura/resultados/guias/aula07/tarefa_individual_busca.csv)
+compara cossenos e funde posições. O [script](../estrutura/codigo/aula07_teoria.R)
+comenta cada linha. Os [rankings com os textos](../estrutura/resultados/guias/aula07/tarefa_individual_busca.csv)
 permitem conferir a leitura. Não reutilizei o gabarito de `modelo de recuperacao` para medir AP de “busca”.

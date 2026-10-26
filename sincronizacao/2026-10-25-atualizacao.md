@@ -16,7 +16,7 @@ Referência: [Danilo, PI III](https://github.com/danilopradooficial/projetointeg
 | 05b, métricas | cinco métricas em rankings completos e gabarito assistido separado |
 | 06, Rocchio | feedback completo/residual; PRF comparado no desenvolvimento e desligado |
 | 07, LSA e RRF | seis dimensões candidatas, escolha no dev, relato retrospectivo e config persistido |
-| Todos os guias | `tutoras/`, `resolucoes/Pedro_Henrique/`, `consolidados/` e notebooks em `estrutura/codigo/` |
+| Todos os guias | `tutoras/`, `resolucoes/`, `consolidados/` e notebooks em `estrutura/codigo/` |
 | Enunciado e modelos | `entregas/modelo_professor/`, preservados com autoria |
 
 ## Reproduzir o teste do enunciado

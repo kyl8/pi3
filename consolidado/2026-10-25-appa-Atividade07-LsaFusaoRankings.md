@@ -36,7 +36,7 @@ o espaço denso ajuda e onde introduz vizinhos que não respondem à pergunta.
 ## Guias da Aula 07 v2
 Os [guias completos](../tutoras/GUIA_ESTUDO_aula07.md) e sua
 [Parte D](../tutoras/GUIA_ESTUDO_aula07_parteD.md) agora têm resoluções, consolidados,
-notebooks e estado do R. A [análise textual da Parte D](../resolucoes/Pedro_Henrique/aula07_parteD_resolvido.md)
+notebooks e estado do R. A [análise textual da Parte D](../resolucoes/aula07_parteD_resolvido.md)
 responde aos checkpoints 7–9 e apresenta um ganho e uma perda, lendo os documentos.
 Na execução atual, o arquivo `LsaPorConsultaTodosK.csv` contém todos os candidatos do
 desenvolvimento e somente BM25 e a escolha congelada no teste. Não se varrem candidatos no teste.

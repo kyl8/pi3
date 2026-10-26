@@ -94,10 +94,10 @@ retrospectivo sem reajustar a escolha a partir dele. No fechamento, alinhamos a 
 `config.R` e `ranking_motor`. A análise considera a dimensão da pool e a origem assistida do gabarito.
 
 ## Arquivos e fechamento
-- [Consolidado do grupo](../../consolidados/aula07_parteD_consolidado.md)
-- [Código executável](../../estrutura/codigo/aula07.R) e [notebook](../../estrutura/codigo/aula07.ipynb)
-- [Comparação do top-5](../../estrutura/resultados/2026-10-25-appa-07-ComparacaoTop5.csv)
-- [Termos compartilhados](../../estrutura/resultados/2026-10-25-appa-07-TermosTop5.csv)
-- [Rankings com textos](../../estrutura/resultados/2026-10-25-appa-07-LsaRrfTop5.csv)
-- [Placar de desenvolvimento e teste](../../estrutura/resultados/2026-10-25-appa-07-LsaPlacarDevTeste.csv)
-- [Top-5 do motor configurado](../../estrutura/resultados/2026-10-25-appa-07-RankingMotorTop5.csv)
+- [Consolidado do grupo](../consolidados/aula07_parteD_consolidado.md)
+- [Código executável](../estrutura/codigo/aula07.R) e [notebook](../estrutura/codigo/aula07.ipynb)
+- [Comparação do top-5](../estrutura/resultados/2026-10-25-appa-07-ComparacaoTop5.csv)
+- [Termos compartilhados](../estrutura/resultados/2026-10-25-appa-07-TermosTop5.csv)
+- [Rankings com textos](../estrutura/resultados/2026-10-25-appa-07-LsaRrfTop5.csv)
+- [Placar de desenvolvimento e teste](../estrutura/resultados/2026-10-25-appa-07-LsaPlacarDevTeste.csv)
+- [Top-5 do motor configurado](../estrutura/resultados/2026-10-25-appa-07-RankingMotorTop5.csv)

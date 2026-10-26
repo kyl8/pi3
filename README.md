@@ -89,8 +89,8 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 ## Atualização de 25/10/2026
 
 - [Mapa completo e limites da atualização](sincronizacao/2026-10-25-atualizacao.md)
-- [Resoluções individuais de todos os guias](resolucoes/Pedro_Henrique/)
-- [Consolidados individuais](consolidados/Pedro_Henrique/)
+- [Resoluções individuais de todos os guias](resolucoes/)
+- [Consolidados individuais](consolidados/)
 - [Consolidados das Partes D](consolidados/)
 - [07: LSA e fusão de rankings](consolidado/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
 - [Guias originais completos 00–07](tutoras/)
@@ -114,9 +114,9 @@ No Windows desta workspace, `powershell -ExecutionPolicy Bypass -File .\executar
 
 O LSA/RRF já estava implementado; os dois guias de `D:/Guia_7` agora também estão incorporados.
 
-- [Teoria resolvida: seis módulos, checkpoints, teste e tarefa individual](resolucoes/Pedro_Henrique/aula07_resolvido.md)
-- [Consolidado individual com estado real do R](consolidados/Pedro_Henrique/aula07_consolidado.md)
-- [Parte D resolvida: comparação dos textos e decisão](resolucoes/Pedro_Henrique/aula07_parteD_resolvido.md)
+- [Teoria resolvida: seis módulos, checkpoints, teste e tarefa individual](resolucoes/aula07_resolvido.md)
+- [Consolidado individual com estado real do R](consolidados/aula07_consolidado.md)
+- [Parte D resolvida: comparação dos textos e decisão](resolucoes/aula07_parteD_resolvido.md)
 - [Consolidado do grupo com estado real do R](consolidados/aula07_parteD_consolidado.md)
 - [Notebook da teoria](estrutura/codigo/aula07_teoria.ipynb) e [notebook da Parte D](estrutura/codigo/aula07.ipynb)
 - [Guias originais](tutoras/) e [verificações da Aula 07](sincronizacao/2026-10-25-aula07-verificacoes.csv)

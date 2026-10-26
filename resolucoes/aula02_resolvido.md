@@ -4,7 +4,7 @@
 **Aluno:** Pedro Henrique · **Grupo:** APPA · **Data:** 2026-10-25.
 **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 Caderno de resoluções: checkpoints, respostas e exemplos da disciplina.
-Fonte: [guia original](../../tutoras/GUIA_ESTUDO_aula02.md); exemplos e gabaritos da disciplina.
+Fonte: [guia original](../tutoras/GUIA_ESTUDO_aula02.md); exemplos e gabaritos da disciplina.
 
 ### Checkpoint 1
 
