@@ -1,0 +1,134 @@
+BLOCO 1
+f <- 0:5                                  # os valores de f que vamos testar
+round(exp(-2) * 2^f / factorial(f), 3)    # P(X = f) com lambda = 2, para cada f de uma vez
+SAIDA:
+$value
+[1] 0.135 0.271 0.271 0.180 0.090 0.036
+
+$visible
+[1] TRUE
+
+
+BLOCO 2
+w2p <- function(f, p = 0.6, q = 0.1, lam = 3, mu = 0.2) {    # o peso 2-Poisson do Módulo 4
+  num <- p * exp(-lam) * lam^f + (1 - p) * exp(-mu) * mu^f   # mistura, dado relevante
+  den <- q * exp(-lam) * lam^f + (1 - q) * exp(-mu) * mu^f   # mistura, dado irrelevante
+  log(num / den)                                             # o log da razão
+}                                                            # fim da função
+round(w2p(c(0, 1, 2, 3, 5, 8)) - w2p(0), 3)                  # a curva, já normalizada
+SAIDA:
+$value
+[1] 0.000 0.685 2.064 2.482 2.522 2.522
+
+$visible
+[1] TRUE
+
+
+BLOCO 3
+f <- 0:8                                                   # ocorrências do termo
+plot(f, f, type = "b",                                     # o TF linear: uma reta
+     xlab = "ocorrências (f)", ylab = "contribuição")      # nomes dos eixos
+lines(f, f * 2.2 / (f + 1.2), type = "b")                  # o BM25 com k1 = 1,2: dobra e para
+SAIDA:
+$value
+NULL
+
+$visible
+[1] FALSE
+
+
+BLOCO 4
+ix$tf[c("modelo", "de", "recuperacao"), ]   # as linhas dos três termos da consulta
+SAIDA:
+$value
+            d1 d2 d3 d4 d5 d6 d7 d8
+modelo       0  1  1  0  0  0  0  0
+de           1  1  2  0  0  1  0  1
+recuperacao  1  0  0  1  0  0  0  0
+
+$visible
+[1] TRUE
+
+
+BLOCO 5
+dl    <- colSums(ix$tf)                                     # |d|: quantas palavras tem cada documento
+avgdl <- mean(dl)                                           # avgdl: o tamanho MÉDIO
+idf_b <- log((ix$N - ix$df + 0.5) / (ix$df + 0.5) + 1)      # o IDF do Módulo 8, um por termo
+dl                                                          # mostra os 8 tamanhos
+SAIDA:
+$value
+d1 d2 d3 d4 d5 d6 d7 d8
+ 7  9  9  6  9  8  9  7
+
+$visible
+[1] TRUE
+
+
+BLOCO 6
+bm25_doc <- function(termos, d, k1 = 1.2, b = 0.75) {   # escore BM25 de UM documento d
+  s <- 0                                                 # acumulador do somatório
+  for (t in termos) {                                    # a SOMA sobre os termos da consulta
+    if (!t %in% ix$vocab) next                           # termo fora do vocabulário: pula
+    f <- ix$tf[t, d]                                     # f: frequência do termo NESTE documento
+    if (f == 0) next                                     # termo ausente: contribui 0 (por quê?)
+    K <- k1 * (1 - b + b * dl[[d]] / avgdl)              # o K do Módulo 7
+    s <- s + idf_b[[t]] * (f * (k1 + 1)) / (f + K)       # a contribuição do termo
+  }                                                      # fim do for
+  s                                                      # devolve a soma
+}                                                        # fim da função
+SAIDA:
+$value
+function (termos, d, k1 = 1.2, b = 0.75)
+{
+    s <- 0
+    for (t in termos) {
+        if (!t %in% ix$vocab)
+            next
+        f <- ix$tf[t, d]
+        if (f == 0)
+            next
+        K <- k1 * (1 - b + b * dl[[d]]/avgdl)
+        s <- s + idf_b[[t]] * (f * (k1 + 1))/(f + K)
+    }
+    s
+}
+<environment: 0x00000203cdc7e920>
+
+$visible
+[1] FALSE
+
+
+BLOCO 7
+consulta <- preparar("modelo de recuperacao", cfg)                     # a MESMA limpeza do índice (motor)
+scores <- sapply(colnames(ix$tf), function(d) bm25_doc(consulta, d))   # um escore por documento
+round(sort(scores, decreasing = TRUE), 3)                              # do maior ao menor
+SAIDA:
+$value
+   d3    d1    d2    d4    d8    d6    d5    d7
+1.873 1.869 1.687 1.427 0.519 0.492 0.000 0.000
+
+$visible
+[1] TRUE
+
+
+BLOCO 8
+sat <- function(f, k1 = 1.2) (f * (k1 + 1)) / (f + k1)   # a saturação, sem o tamanho
+round(sat(1:5), 3)                                       # f = 1 a 5
+SAIDA:
+$value
+[1] 1.000 1.375 1.571 1.692 1.774
+
+$visible
+[1] TRUE
+
+
+BLOCO 9
+s2 <- sapply(colnames(ix$tf), function(d) bm25_doc(consulta, d, k1 = 0.5))   # troque k1 ou b aqui
+round(sort(s2, decreasing = TRUE), 3)                                        # a ordem mudou?
+SAIDA:
+$value
+   d1    d3    d2    d4    d8    d6    d5    d7
+1.831 1.822 1.720 1.366 0.508 0.492 0.000 0.000
+
+$visible
+[1] TRUE

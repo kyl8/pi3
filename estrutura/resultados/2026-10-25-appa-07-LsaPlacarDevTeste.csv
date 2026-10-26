@@ -1,0 +1,7 @@
+"conjunto","modelo","AP"
+"dev","bm25",0.594297831797832
+"teste_retrospectivo","bm25",0.388606510236945
+"dev","hibrido",0.653318903318903
+"teste_retrospectivo","hibrido",0.242005494505494
+"dev","lsa",0.583711950817214
+"teste_retrospectivo","lsa",0.117096383375453

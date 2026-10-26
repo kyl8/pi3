@@ -3,7 +3,7 @@
 Repositório do grupo APPA para o estudo de recuperação de informação. O motor usa textos sobre clubes tradicionais da Baixada Santista e evolui de uma busca por ocorrência para TF-IDF, busca booleana e BM25.
 
 > **Módulos Iniciais (Aulas 00 e 01):**
-> Os artefatos fundamentais das Aulas 00 e 01 (introdução ao R, tokenização, extração do corpus e busca booleana) foram isolados e organizados no repositório dedicado: **[Arthur-galvao/pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)**.
+> Os artefatos fundamentais das Aulas 00 e 01 (introdução ao R, tokenização, extração do corpus e busca booleana) também têm um histórico no repositório dedicado: **[Arthur-galvao/pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)**.
 
 ## Estrutura
 
@@ -81,3 +81,28 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 - `2026-09-15-appa-05a-kappa.R`: calcula a concordância entre dois juízes;
 - `2026-09-15-appa-05e-gerar-qrels-inicial.R`: preenche a referência inicial do projeto;
 - `csv/`: corpus, necessidades, pool e arquivo de julgamentos.
+
+
+## Atualização de 25/10/2026
+
+- [Mapa completo e limites da atualização](sincronizacao/2026-10-25-atualizacao.md)
+- [Resoluções individuais de todos os guias](resolucoes/Pedro_Henrique/)
+- [Consolidados individuais](consolidados/Pedro_Henrique/)
+- [Consolidados das Partes D](consolidados/)
+- [07: LSA e fusão de rankings](consolidado/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
+- [Guias originais completos 00–06](tutoras/)
+
+```powershell
+Rscript estrutura/codigos/executar_guias_teoria.R
+Rscript estrutura/codigos/2026-10-25-appa-GuiasEstudo.R
+Rscript estrutura/codigos/aula07_lsa.R
+```
+
+Os motores do professor estão fixados localmente com autoria e commit. As métricas usam
+o corpus congelado e o julgamento assistido identificado; os votos humanos continuam separados.
+
+A atualização inclui os fundamentos localmente: [Shannon](consolidado/2026-10-25-appa-Atividade01b-Shannon.md), coleta reproduzível e demonstração em `estrutura/codigo/aula02.R`.
+
+Reexecutar as novas etapas: `Rscript estrutura/codigos/executar_atualizacao.R`. Dependências: SnowballC e ggplot2 (PI); mgcv e glmnet (Estatística). Os PDFs históricos permanecem preservados; revisões atuais estão nos consolidados em Markdown.
+
+No Windows desta workspace, `powershell -ExecutionPolicy Bypass -File .\executar_atualizacao.ps1` localiza o R preparado em `../tmp/R/bin` automaticamente. Em outro clone, use R instalado no PATH.

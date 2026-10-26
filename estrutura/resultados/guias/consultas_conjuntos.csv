@@ -1,0 +1,7 @@
+"id","texto_consulta","necessidade","escopo","conjunto"
+"q01","historia santos futebol clube","Encontrar um paragrafo que apresente a historia e a formacao do Santos Futebol Clube.","Santos FC","dev"
+"q02","titulos santos","Encontrar informacoes sobre titulos e conquistas do Santos Futebol Clube.","Santos FC","teste_retrospectivo"
+"q03","portuguesa santista estadio","Encontrar informacoes sobre o estadio ou a sede da Portuguesa Santista.","Portuguesa Santista","dev"
+"q04","jabaquara clube","Encontrar um paragrafo que apresente a historia ou a identidade do Jabaquara.","Jabaquara","teste_retrospectivo"
+"q05","rivalidade santos","Encontrar informacoes sobre rivalidades ou confrontos do Santos.","Santos FC","dev"
+"q06","estadio jabaquara","Encontrar informacoes sobre o estadio do Jabaquara.","Jabaquara","dev"

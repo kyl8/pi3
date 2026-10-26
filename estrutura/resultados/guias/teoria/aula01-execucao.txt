@@ -1,0 +1,269 @@
+BLOCO 1
+docs <- c(                                                          # vetor de caracteres, com nomes
+  d1 = "recuperacao de informacao ordena documentos por relevancia", # 7 palavras
+  d2 = "o modelo de espaco vetorial representa documentos como vetores", # 9
+  d3 = "bm25 e um modelo probabilistico de ranqueamento de texto",   # 9
+  d4 = "aprendizado estatistico fundamenta a recuperacao moderna",   # 6
+  d5 = "o indice invertido acelera a busca em muitos documentos",    # 9
+  d6 = "embeddings capturam a semantica de palavras e documentos",   # 8
+  d7 = "a avaliacao mede a relevancia dos resultados da busca",      # 9
+  d8 = "ciencia de dados combina estatistica e programacao"          # 7
+)                                                                   # fecha o c(...)
+SAIDA:
+$value
+                                                              d1
+    "recuperacao de informacao ordena documentos por relevancia"
+                                                              d2
+"o modelo de espaco vetorial representa documentos como vetores"
+                                                              d3
+      "bm25 e um modelo probabilistico de ranqueamento de texto"
+                                                              d4
+      "aprendizado estatistico fundamenta a recuperacao moderna"
+                                                              d5
+       "o indice invertido acelera a busca em muitos documentos"
+                                                              d6
+      "embeddings capturam a semantica de palavras e documentos"
+                                                              d7
+         "a avaliacao mede a relevancia dos resultados da busca"
+                                                              d8
+            "ciencia de dados combina estatistica e programacao"
+
+$visible
+[1] FALSE
+
+
+BLOCO 2
+tokenizar <- function(texto) {                    # (já carregada pelo motor01.R)
+  t <- unlist(strsplit(tolower(texto), "\\s+"))   # minúsculas; quebra em um ou mais espaços
+  t[nzchar(t)]                                    # tira o "" que sobra de espaço na ponta
+}
+SAIDA:
+$value
+function (texto)
+{
+    t <- unlist(strsplit(tolower(texto), "\\s+"))
+    t[nzchar(t)]
+}
+<environment: 0x00000203c9e4abf8>
+
+$visible
+[1] FALSE
+
+
+BLOCO 3
+tokens <- lapply(docs, tokenizar)   # aplica a cada documento -> lista de 8 vetores
+tokens[["d1"]]                      # os termos de d1
+SAIDA:
+$value
+[1] "recuperacao" "de"          "informacao"  "ordena"      "documentos"
+[6] "por"         "relevancia"
+
+$visible
+[1] TRUE
+
+
+BLOCO 4
+vocab <- sort(unique(unlist(tokens)))   # junta tudo, tira repetidos, ordena
+length(vocab)                           # quantos termos distintos
+SAIDA:
+$value
+[1] 45
+
+$visible
+[1] TRUE
+
+
+BLOCO 5
+freq <- table(unlist(tokens))          # conta quantas vezes cada termo aparece no corpus todo
+sort(freq, decreasing = TRUE)[1:6]     # do mais frequente ao menos; só os 6 primeiros
+SAIDA:
+$value
+
+        de          a documentos          e      busca     modelo
+         6          5          4          3          2          2
+
+$visible
+[1] TRUE
+
+
+BLOCO 6
+docs9 <- c(docs, d9 = "porto de santos")                     # uma cópia com um 9º documento
+length(sort(unique(unlist(lapply(docs9, tokenizar)))))       # o vocabulário cresce quanto?
+SAIDA:
+$value
+[1] 47
+
+$visible
+[1] TRUE
+
+
+BLOCO 7
+tdm <- sapply(tokens, function(tk) {              # para cada documento (tk = seus tokens)...
+  as.integer(table(factor(tk, levels = vocab)))   # ...conta cada termo do vocab neste doc
+})                                                # sapply empilha os 8 vetores em colunas
+rownames(tdm) <- vocab                            # dá nome às linhas: os termos
+SAIDA:
+$value
+ [1] "a"              "acelera"        "aprendizado"    "avaliacao"
+ [5] "bm25"           "busca"          "capturam"       "ciencia"
+ [9] "combina"        "como"           "da"             "dados"
+[13] "de"             "documentos"     "dos"            "e"
+[17] "em"             "embeddings"     "espaco"         "estatistica"
+[21] "estatistico"    "fundamenta"     "indice"         "informacao"
+[25] "invertido"      "mede"           "modelo"         "moderna"
+[29] "muitos"         "o"              "ordena"         "palavras"
+[33] "por"            "probabilistico" "programacao"    "ranqueamento"
+[37] "recuperacao"    "relevancia"     "representa"     "resultados"
+[41] "semantica"      "texto"          "um"             "vetores"
+[45] "vetorial"
+
+$visible
+[1] FALSE
+
+
+BLOCO 8
+busca_booleana <- function(termo, tdm) {                # recebe um termo e a matriz
+  termo <- tolower(termo)                               # mesma normalização da tokenização
+  if (!termo %in% rownames(tdm)) return(character(0))   # termo inexistente: devolve vazio
+  colnames(tdm)[tdm[termo, ] > 0]                       # nomes das colunas com contagem > 0
+}                                                       # fim da função
+SAIDA:
+$value
+function (termo, tdm)
+{
+    termo <- tolower(termo)
+    if (!termo %in% rownames(tdm))
+        return(character(0))
+    colnames(tdm)[tdm[termo, ] > 0]
+}
+<environment: 0x00000203c9e4abf8>
+
+$visible
+[1] FALSE
+
+
+BLOCO 9
+df <- 1:8                                    # em quantos docs o termo aparece: 1 a 8
+plot(df, log(8 / df), type = "b",            # o idf de cada caso, pontos ligados por linha
+     xlab = "df", ylab = "idf = log(8/df)")  # nomes dos eixos
+SAIDA:
+$value
+NULL
+
+$visible
+[1] FALSE
+
+
+BLOCO 10
+N   <- ncol(tdm)             # 8 documentos
+df  <- rowSums(tdm > 0)      # em quantos docs cada termo aparece (TRUE conta como 1)
+idf <- log(N / df)           # um idf por termo: vetor de 45
+tfidf <- tdm * idf           # cada linha da matriz vezes o seu idf
+SAIDA:
+$value
+                      d1        d2        d3        d4        d5        d6
+a              0.0000000 0.0000000 0.0000000 0.6931472 0.6931472 0.6931472
+acelera        0.0000000 0.0000000 0.0000000 0.0000000 2.0794415 0.0000000
+aprendizado    0.0000000 0.0000000 0.0000000 2.0794415 0.0000000 0.0000000
+avaliacao      0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+bm25           0.0000000 0.0000000 2.0794415 0.0000000 0.0000000 0.0000000
+busca          0.0000000 0.0000000 0.0000000 0.0000000 1.3862944 0.0000000
+capturam       0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 2.0794415
+ciencia        0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+combina        0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+como           0.0000000 2.0794415 0.0000000 0.0000000 0.0000000 0.0000000
+da             0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+dados          0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+de             0.4700036 0.4700036 0.9400073 0.0000000 0.0000000 0.4700036
+documentos     0.6931472 0.6931472 0.0000000 0.0000000 0.6931472 0.6931472
+dos            0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+e              0.0000000 0.0000000 0.9808293 0.0000000 0.0000000 0.9808293
+em             0.0000000 0.0000000 0.0000000 0.0000000 2.0794415 0.0000000
+embeddings     0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 2.0794415
+espaco         0.0000000 2.0794415 0.0000000 0.0000000 0.0000000 0.0000000
+estatistica    0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+estatistico    0.0000000 0.0000000 0.0000000 2.0794415 0.0000000 0.0000000
+fundamenta     0.0000000 0.0000000 0.0000000 2.0794415 0.0000000 0.0000000
+indice         0.0000000 0.0000000 0.0000000 0.0000000 2.0794415 0.0000000
+informacao     2.0794415 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+invertido      0.0000000 0.0000000 0.0000000 0.0000000 2.0794415 0.0000000
+mede           0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+modelo         0.0000000 1.3862944 1.3862944 0.0000000 0.0000000 0.0000000
+moderna        0.0000000 0.0000000 0.0000000 2.0794415 0.0000000 0.0000000
+muitos         0.0000000 0.0000000 0.0000000 0.0000000 2.0794415 0.0000000
+o              0.0000000 1.3862944 0.0000000 0.0000000 1.3862944 0.0000000
+ordena         2.0794415 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+palavras       0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 2.0794415
+por            2.0794415 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+probabilistico 0.0000000 0.0000000 2.0794415 0.0000000 0.0000000 0.0000000
+programacao    0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+ranqueamento   0.0000000 0.0000000 2.0794415 0.0000000 0.0000000 0.0000000
+recuperacao    1.3862944 0.0000000 0.0000000 1.3862944 0.0000000 0.0000000
+relevancia     1.3862944 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+representa     0.0000000 2.0794415 0.0000000 0.0000000 0.0000000 0.0000000
+resultados     0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+semantica      0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 2.0794415
+texto          0.0000000 0.0000000 2.0794415 0.0000000 0.0000000 0.0000000
+um             0.0000000 0.0000000 2.0794415 0.0000000 0.0000000 0.0000000
+vetores        0.0000000 2.0794415 0.0000000 0.0000000 0.0000000 0.0000000
+vetorial       0.0000000 2.0794415 0.0000000 0.0000000 0.0000000 0.0000000
+                     d7        d8
+a              1.386294 0.0000000
+acelera        0.000000 0.0000000
+aprendizado    0.000000 0.0000000
+avaliacao      2.079442 0.0000000
+bm25           0.000000 0.0000000
+busca          1.386294 0.0000000
+capturam       0.000000 0.0000000
+ciencia        0.000000 2.0794415
+combina        0.000000 2.0794415
+como           0.000000 0.0000000
+da             2.079442 0.0000000
+dados          0.000000 2.0794415
+de             0.000000 0.4700036
+documentos     0.000000 0.0000000
+dos            2.079442 0.0000000
+e              0.000000 0.9808293
+em             0.000000 0.0000000
+embeddings     0.000000 0.0000000
+espaco         0.000000 0.0000000
+estatistica    0.000000 2.0794415
+estatistico    0.000000 0.0000000
+fundamenta     0.000000 0.0000000
+indice         0.000000 0.0000000
+informacao     0.000000 0.0000000
+invertido      0.000000 0.0000000
+mede           2.079442 0.0000000
+modelo         0.000000 0.0000000
+moderna        0.000000 0.0000000
+muitos         0.000000 0.0000000
+o              0.000000 0.0000000
+ordena         0.000000 0.0000000
+palavras       0.000000 0.0000000
+por            0.000000 0.0000000
+probabilistico 0.000000 0.0000000
+programacao    0.000000 2.0794415
+ranqueamento   0.000000 0.0000000
+recuperacao    0.000000 0.0000000
+relevancia     1.386294 0.0000000
+representa     0.000000 0.0000000
+resultados     2.079442 0.0000000
+semantica      0.000000 0.0000000
+texto          0.000000 0.0000000
+um             0.000000 0.0000000
+vetores        0.000000 0.0000000
+vetorial       0.000000 0.0000000
+
+$visible
+[1] FALSE
+
+
+BLOCO 11
+grep("recupera", docs)             # acha "recuperacao": casa PEDACO -> [1] 1 4
+busca_booleana("recupera", tdm)    # o TERMO "recupera" nao existe -> character(0)
+SAIDA:
+$value
+character(0)
+
+$visible
+[1] TRUE

@@ -10,3 +10,6 @@
 *.synctex.gz
 entregas/finalizada/*.tex
 entregas/modelo_base/*.tex
+
+Rplots.pdf
+estrutura/resultados/sinistros_prontos.rds
