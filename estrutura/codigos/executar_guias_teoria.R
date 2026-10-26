@@ -3,7 +3,7 @@ if (.Platform$OS.type == "windows") invisible(Sys.setlocale("LC_CTYPE", "English
 options(repos = c(CRAN = "https://cloud.r-project.org")) # Define o espelho para a celula de dependencia da Aula 03.
 dir.create("estrutura/codigos/guias", recursive = TRUE, showWarnings = FALSE) # Guarda os trechos literais extraidos.
 dir.create("estrutura/resultados/guias/teoria", recursive = TRUE, showWarnings = FALSE) # Guarda as transcricoes computacionais.
-arquivos <- list.files("tutoras", pattern = "^GUIA_ESTUDO_aula[0-9]+b?\\.md$", full.names = TRUE) # Seleciona as oito teorias.
+arquivos <- list.files("tutoras", pattern = "^GUIA_ESTUDO_aula[0-9]+b?\\.md$", full.names = TRUE) # Seleciona todas as teorias locais, incluindo a Aula 07.
 log <- list() # Acumula o status de cada bloco.
 for (arquivo in arquivos) { # Executa cada aula isoladamente.
   nome <- sub("GUIA_ESTUDO_", "", sub("\\.md$", "", basename(arquivo))) # Define nome local do roteiro.

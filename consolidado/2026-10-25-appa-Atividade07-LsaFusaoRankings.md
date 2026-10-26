@@ -16,7 +16,6 @@ Explorei $k\in\{2,10,20,50,80,141\}$. A maior MAP de desenvolvimento foi
 | dev | hibrido | 0.653318903318903 |
 | teste_retrospectivo | hibrido | 0.242005494505494 |
 | dev | lsa | 0.583711950817214 |
-| teste_retrospectivo | lsa | 0.117096383375453 |
 
 O híbrido perde para BM25 no teste retrospectivo, embora tenha sido escolhido no desenvolvimento.
 Mantenho a escolha registrada; não reajusto $k$ olhando o teste. Essas consultas já tinham sido usadas
@@ -33,3 +32,11 @@ o espaço denso ajuda e onde introduz vizinhos que não respondem à pergunta.
 - [Todos os AP](../estrutura/resultados/2026-10-25-appa-07-LsaPorConsultaTodosK.csv)
 - [Placar](../estrutura/resultados/2026-10-25-appa-07-LsaPlacarDevTeste.csv)
 - [Top-5 com textos](../estrutura/resultados/2026-10-25-appa-07-LsaRrfTop5.csv)
+
+## Guias da Aula 07 v2
+Os [guias completos](../tutoras/GUIA_ESTUDO_aula07.md) e sua
+[Parte D](../tutoras/GUIA_ESTUDO_aula07_parteD.md) agora têm resoluções, consolidados,
+notebooks e estado do R. A [análise textual da Parte D](../resolucoes/Pedro_Henrique/aula07_parteD_resolvido.md)
+responde aos checkpoints 7–9 e apresenta um ganho e uma perda, lendo os documentos.
+Na execução atual, o arquivo `LsaPorConsultaTodosK.csv` contém todos os candidatos do
+desenvolvimento e somente BM25 e a escolha congelada no teste. Não se varrem candidatos no teste.

@@ -1,0 +1,16 @@
+{
+  "versao_guia": 2,
+  "data_guia": "2026-10-22",
+  "fontes": [
+    {
+      "origem": "D:\\Guia_7\\GUIA_ESTUDO_aula07.md",
+      "destino": "tutoras/GUIA_ESTUDO_aula07.md",
+      "sha256": "57ad4095e9ca9aed7a737c2ad7d7fd4a247524f54c66231a688862b2ca8942d7"
+    },
+    {
+      "origem": "D:\\Guia_7\\GUIA_ESTUDO_aula07_parteD.md",
+      "destino": "tutoras/GUIA_ESTUDO_aula07_parteD.md",
+      "sha256": "a93c222204553c6226cddf13ec6ef5fdddfacd1b87885ba7ab1a5b82dc318590"
+    }
+  ]
+}

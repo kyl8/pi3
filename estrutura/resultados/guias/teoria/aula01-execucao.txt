@@ -44,7 +44,7 @@ function (texto)
     t <- unlist(strsplit(tolower(texto), "\\s+"))
     t[nzchar(t)]
 }
-<environment: 0x00000203c9e4abf8>
+<environment: 0x0000027e2207bbc8>
 
 $visible
 [1] FALSE
@@ -136,7 +136,7 @@ function (termo, tdm)
         return(character(0))
     colnames(tdm)[tdm[termo, ] > 0]
 }
-<environment: 0x00000203c9e4abf8>
+<environment: 0x0000027e2207bbc8>
 
 $visible
 [1] FALSE

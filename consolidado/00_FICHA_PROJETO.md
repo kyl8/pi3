@@ -1,5 +1,5 @@
 # Ficha do Projeto — Motor de Busca
-*criada na Aula 01 · última atualização: 2026-10-25, guias 00–06 e Aula 07*
+*criada na Aula 01 · última atualização: Aula 07 Parte D, 25/10/2026, motor07*
 
 ## 1. Identificação do Projeto, Repositório e Equipe
 - **Nome do Grupo:** APPA
@@ -54,7 +54,7 @@
 | 05 | corpus congelado; pool e julgamento assistido completos | 66 pares; votos humanos ainda ausentes |
 | 05b | métricas no ranking completo | `aula05b_metricas_grupo.csv` |
 | 06 | realimentação explícita e residual; PRF desligado | `prf_k=0`; candidatos no desenvolvimento |
-| 07 | seleção de LSA e RRF no desenvolvimento | `modelo=hibrido`, `lsa_k=20`, `rrf_c=60` |
+| 07 | LSA e busca híbrida; guias v2 completos | `estrutura/codigo/aula07.ipynb`; `modelo=hibrido`, `lsa_k=20`, `rrf_c=60` |
 
 ## 6. Decisões e parâmetros
 - Fonte canônica das avaliações: CSV congelado da Aula 05; não recoletar páginas para recalcular estas métricas.
@@ -66,6 +66,14 @@
 - Pseudo-feedback não usado: `prf_k=0`; pesos Rocchio $(1;0{,}75;0{,}15)$; negativos truncados em zero.
 - Híbrido $k=20$ escolhido no desenvolvimento; piora no teste retrospectivo registrada, sem retocar a seleção.
 
+- Aula 07, guias v2: modelo do motor `hibrido`, $k=20$, $c=60$;
+  MAP dev BM25 $0,594298$, LSA $0,583712$, híbrido $0,653319$;
+  teste retrospectivo BM25 $0,388607\to 0,242005$, sem reajuste.
+  Apenas a configuração escolhida e BM25 são medidos no teste pela execução atual.
+  Leitura de `q01`: três em comum nos top-5; LSA inclui o hino do Santos (`d55`),
+  BM25 inclui o confronto do Jabaquara (`d139`) por quatro termos coincidentes.
+  Ganho lido em `q05`; perda em `q04`, por aproximar textos da Portuguesa à consulta sobre Jabaquara.
+
 ## 7. Diário de bordo
 - 2026-10-02 — fundação do corpus APPA, histórico preservado nas entregas anteriores.
 - 2026-10-25 — sincronização com Danilo `677788d`; guias 00–06 resolvidos, exemplos executados e
@@ -73,16 +81,19 @@
 - Preparação solicitada por Pedro e executada com Codex. Presença, rodízio de digitadores e
   avaliação individual dos colegas não foram observados. Julgamentos humanos permanecem como dependência externa.
 
+- 25/10/2026 — guias da Aula 07 v2 incorporados; teoria e tarefa individual executadas, Partes D e notebooks preparados; estados reais anexados por R. Participação dos colegas não observada.
+
 ---
 
 <!-- estado-R:inicio -->
 ## Estado do R ao fim da sessão
-*gerado por `anexar_estado()` em 2026-10-25 21:46 · R version 4.6.1 (2026-06-24 ucrt) · motor08 v2 2026-10-22 · não edite à mão*
+*gerado por `anexar_estado()` em 2026-10-25 22:01 · R version 4.6.1 (2026-06-24 ucrt) · motor07 v1 2026-10-15 · não edite à mão*
 
 ### Objetos
 
 | objeto | tipo | tamanho | valor / amostra |
 |---|---|---|---|
+| `MOTOR_VERSAO` | character | 1 | motor07 v1 2026-10-15 |
 | `cfg$corpus_dir` | character | 1 | estrutura/corpus |
 | `cfg$resultados_dir` | character | 1 | estrutura/resultados |
 | `cfg$minimo` | numeric | 1 | 50 |
@@ -101,6 +112,13 @@
 | `cfg$rrf_c` | numeric | 1 | 60 |
 | `cfg$grupo` | character | 1 | APPA |
 | `docs` | character, nomeado | 141 | d1 Santos Futebol Clube , mais..., d2 O Santos tornou-se no futeb..., d3 Ao longo de sua história, o..., d4 O Santos foi eleito pela FI..., d5 O Santos Futebol Clube foi ..., d6 As cores iniciais do Santos..., ... |
+| `escolha` | data.frame | 1 × 3 | colunas: modelo, k, AP |
+| `graus$q01` | integer, nomeado | 13 | d1 2, d110 0, d137 0, d4 1, d40 1, d5 2, ... |
+| `graus$q02` | integer, nomeado | 11 | d107 0, d137 0, d26 0, d36 0, d68 2, d70 0, ... |
+| `graus$q03` | integer, nomeado | 10 | d108 1, d109 0, d114 0, d115 0, d116 0, d118 0, ... |
+| `graus$q04` | integer, nomeado | 10 | d108 1, d110 1, d114 1, d115 0, d131 2, d133 2, ... |
+| `graus$q05` | integer, nomeado | 12 | d107 2, d137 0, d26 0, d36 0, d48 1, d68 2, ... |
+| `graus$q06` | integer, nomeado | 10 | d108 0, d110 0, d114 0, d115 0, d131 1, d133 0, ... |
 | `ix$tokens` | list | 141 | elementos: d1, d2, d3, d4, d5, d6, d7, d8, ... |
 | `ix$vocab` | character | 1902 | 0, 000, 068, 1, 10, 100, ... |
 | `ix$tf` | matrix | 1902 × 141 | linhas: 0, 000, 068, ... \| colunas: d1, d2, d3, d4, ... |
@@ -113,8 +131,13 @@
 | `ix$dl` | numeric, nomeado | 141 | d1 77, d2 71, d3 99, d4 75, d5 64, d6 28, ... |
 | `ix$avgdl` | numeric | 1 | 56.92 |
 | `ix$idf_bm25` | numeric, nomeado | 1902 | 0 2.353, 000 3.703, 068 4.55, 1 1.606, 10 2.816, 100 4.55, ... |
+| `modelo_teste$U` | matrix | 1902 × 20 | linhas: (sem nomes) \| colunas: (sem nomes) |
+| `modelo_teste$D` | matrix | 141 × 20 | linhas: d1, d2, d3, ... \| colunas: (sem nomes) |
+| `nec` | data.frame | 6 × 6 | colunas: consulta, texto_consulta, necessidade, escopo, conjunto, id |
+| `placar` | data.frame | 5 × 3 | colunas: conjunto, modelo, AP |
+| `tab_dev` | data.frame | 18 × 3 | colunas: modelo, k, AP |
 
 ### Funções definidas
 
-(nenhuma)
+`ap_modelo`, `lsa`, `ranking_lsa`, `ranking_modelo`, `ranking_motor`, `rrf`
 <!-- estado-R:fim -->

@@ -54,7 +54,7 @@ function (q, Dr, Dnr = character(0), ix, a = 1, b = 0.75, g = 0.15)
     else 0
     a * q + b * cr - g * cnr
 }
-<environment: 0x00000203d0d50350>
+<environment: 0x0000027e27335b50>
 
 $visible
 [1] FALSE

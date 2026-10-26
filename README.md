@@ -12,8 +12,8 @@ Repositório do grupo APPA para o estudo de recuperação de informação. O mot
 - [estrutura/codigos](estrutura/codigos/): scripts em R;
 - [estrutura/corpus](estrutura/corpus/): informações e artefatos do corpus;
 - [estrutura/resultados](estrutura/resultados/): métricas e saídas das execuções;
-- [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio das aulas avançadas (Aulas 02 a 06);
-- [tutoras](tutoras/): guias de estudo autônomos das aulas do projeto (Aulas 02 a 06).
+- [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio das aulas avançadas (Aulas 00 a 07);
+- [tutoras](tutoras/): guias de estudo autônomos das aulas do projeto (Aulas 00 a 07).
 
 Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
@@ -90,7 +90,7 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 - [Consolidados individuais](consolidados/Pedro_Henrique/)
 - [Consolidados das Partes D](consolidados/)
 - [07: LSA e fusão de rankings](consolidado/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
-- [Guias originais completos 00–06](tutoras/)
+- [Guias originais completos 00–07](tutoras/)
 
 ```powershell
 Rscript estrutura/codigos/executar_guias_teoria.R
@@ -106,3 +106,23 @@ A atualização inclui os fundamentos localmente: [Shannon](consolidado/2026-10-
 Reexecutar as novas etapas: `Rscript estrutura/codigos/executar_atualizacao.R`. Dependências: SnowballC e ggplot2 (PI); mgcv e glmnet (Estatística). Os PDFs históricos permanecem preservados; revisões atuais estão nos consolidados em Markdown.
 
 No Windows desta workspace, `powershell -ExecutionPolicy Bypass -File .\executar_atualizacao.ps1` localiza o R preparado em `../tmp/R/bin` automaticamente. Em outro clone, use R instalado no PATH.
+
+## Guias da Aula 07 — versão 2
+
+O LSA/RRF já estava implementado; os dois guias de `D:/Guia_7` agora também estão incorporados.
+
+- [Teoria resolvida: seis módulos, checkpoints, teste e tarefa individual](resolucoes/Pedro_Henrique/aula07_resolvido.md)
+- [Consolidado individual com estado real do R](consolidados/Pedro_Henrique/aula07_consolidado.md)
+- [Parte D resolvida: comparação dos textos e decisão](resolucoes/Pedro_Henrique/aula07_parteD_resolvido.md)
+- [Consolidado do grupo com estado real do R](consolidados/aula07_parteD_consolidado.md)
+- [Notebook da teoria](estrutura/codigo/aula07_teoria.ipynb) e [notebook da Parte D](estrutura/codigo/aula07.ipynb)
+- [Guias originais](tutoras/) e [verificações da Aula 07](sincronizacao/2026-10-25-aula07-verificacoes.csv)
+
+```powershell
+Rscript estrutura/codigo/aula07_teoria.R
+Rscript estrutura/codigo/aula07.R
+```
+
+A avaliação atual varre os candidatos apenas no desenvolvimento e mede no teste somente BM25
+e o escolhido. As consultas de teste já eram conhecidas: a ressalva de teste retrospectivo permanece.
+As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, com `prf_k=0`.

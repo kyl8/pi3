@@ -1,0 +1,31 @@
+"consulta","documento","origem_top5","termos_comuns","n_termos_comuns","grau"
+"q01","d4","ambos","histor sant futebol club",4,1
+"q01","d95","ambos","histor sant futebol club",4,1
+"q01","d2","ambos","histor sant futebol club",4,NA
+"q01","d139","so_bm25","histor sant futebol club",4,NA
+"q01","d109","so_bm25","histor futebol club",3,NA
+"q01","d55","so_lsa","sant futebol club",3,1
+"q01","d15","so_lsa","sant club",2,NA
+"q03","d129","ambos","portugues santist estadi",3,2
+"q03","d135","ambos","portugues estadi",2,NA
+"q03","d128","so_bm25","portugues santist estadi",3,NA
+"q03","d113","so_bm25","portugues santist estadi",3,NA
+"q03","d115","so_bm25","portugues santist",2,0
+"q03","d30","so_lsa","estadi",1,NA
+"q03","d28","so_lsa","estadi",1,NA
+"q03","d29","so_lsa","estadi",1,NA
+"q05","d69","ambos","rival sant",2,2
+"q05","d8","so_bm25","rival sant",2,1
+"q05","d48","ambos","rival sant",2,1
+"q05","d74","ambos","rival sant",2,2
+"q05","d75","ambos","rival sant",2,2
+"q05","d115","so_lsa","sant",1,NA
+"q06","d110","so_bm25","jabaqu",1,0
+"q06","d131","so_bm25","jabaqu",1,1
+"q06","d133","so_bm25","jabaqu",1,0
+"q06","d129","ambos","estadi",1,NA
+"q06","d27","so_bm25","estadi",1,NA
+"q06","d30","so_lsa","estadi",1,NA
+"q06","d135","so_lsa","estadi",1,NA
+"q06","d28","so_lsa","estadi",1,NA
+"q06","d112","so_lsa","estadi",1,NA

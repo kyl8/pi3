@@ -5,4 +5,5 @@ source("estrutura/banco-de-dados/coletar.R", local = new.env(parent = globalenv(
 source("estrutura/codigos/2026-10-25-appa-FundamentosShannon.R", local = new.env(parent = globalenv()), encoding = "UTF-8") # Reexecuta a etapa com os dados proprios.
 source("estrutura/codigos/2026-10-25-appa-GuiasEstudo.R", local = new.env(parent = globalenv()), encoding = "UTF-8") # Reexecuta a etapa com os dados proprios.
 source("estrutura/codigo/aula02.R", local = new.env(parent = globalenv()), encoding = "UTF-8") # Reexecuta a etapa com os dados proprios.
+source("estrutura/codigo/aula07_teoria.R", local = new.env(parent = globalenv()), encoding = "UTF-8") # Executa teoria, tarefa individual e estado do R da Aula 07.
 source("estrutura/codigos/aula07_lsa.R", local = new.env(parent = globalenv()), encoding = "UTF-8") # Reexecuta a etapa com os dados proprios.
