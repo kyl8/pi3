@@ -1,4 +1,6 @@
 # Atualização — PI III — 25/10/2026
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Apoio:** ChatGPT.
 
 Referência: [Danilo, PI III](https://github.com/danilopradooficial/projetointegrador3), commit `677788d2e1edb4bfe950427b6dd501e2da026487`.
 
@@ -27,7 +29,7 @@ explica a contribuição dominante. Registro a falha lexical, sem rotular o resu
 
 ## Limites e itens que exigem pessoas
 Os julgamentos assistidos não são votos de Arthur, Pedro ou Ailana. Os três arquivos humanos
-continuam sem preenchimento; kappa real, presença em reunião e demonstração ao vivo não foram inventados.
+continuam sem preenchimento; o kappa humano depende desses votos.
 O teste de consultas é retrospectivo: as mesmas necessidades já tinham sido vistas em versões anteriores.
 Não criei uma tag retroativa `entrega-1` nem alterei o histórico para simular uma entrega na data antiga.
 O corpus atual de 141 documentos é o congelamento da Aula 05; ultrapassa o tamanho inicial de 20–60

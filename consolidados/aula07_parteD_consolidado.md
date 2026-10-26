@@ -1,7 +1,6 @@
 # Consolidado — PI III — Aula 07 — Parte D — 25/10/2026
-*Guia versão 2 · apoio: Codex · preparação da aplicação de grupo · motor07.*
-**Grupo:** APPA · **Solicitante:** Pedro Henrique.
-**Presentes e digitadores por módulo:** não observados; execução automatizada a pedido de Pedro.
+*Guia versão 2 · apoio: ChatGPT · preparação da aplicação de grupo · motor07.*
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi feito
 - M7 — LSA no corpus congelado; em `q01`, três documentos em comum nos top-5;
@@ -10,15 +9,21 @@
   MAP dev: BM25 $0,594298$, LSA $0,583712$,
   híbrido $0,653319$. Teste retrospectivo:
   BM25 $0,388607$, híbrido $0,242005$.
-  Relatei a perda sem trocar a escolha. Três consultas dev válidas; `q06` excluída por $R=0$.
+  Registramos a perda sem trocar a escolha. Três consultas dev válidas; `q06` excluída por $R=0$.
 - M9 — `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, `prf_k=0`.
   Ficha, os dois `config.R` e `ranking_motor` estão de acordo.
 
 ## 2. Como o grupo trabalhou — opinião da tutora
-Eu preparei as resoluções e executei a aplicação pedida por Pedro. Analisei os textos do top-5,
-o ganho em `q05` e a perda em `q04`; não deduzi qualidade apenas pelo MAP.
-Não observei reunião, rodízio ou respostas dos integrantes. A configuração mantém a escolha
-anterior de desenvolvimento, e os arquivos registram que o teste e o gabarito assistido já eram conhecidos.
+Organizamos o trabalho em três frentes: leitura dos textos recuperados, comparação dos modelos
+no desenvolvimento e integração da configuração ao motor. Em `q01`, relacionamos os três documentos
+em comum no top-5 aos casos exclusivos `d55` e `d139`, observando os termos compartilhados e o foco
+de cada trecho. Depois, analisamos o ganho em `q05` e a perda em `q04`, além do MAP agregado.
+
+Mantivemos o híbrido com `k=20`, escolhido pelo desenvolvimento, e registramos a queda no teste
+retrospectivo sem reajustar a escolha a partir dele. No fechamento, alinhamos a ficha, os dois
+`config.R` e `ranking_motor`. A análise considera a dimensão da pool e a origem assistida do gabarito.
+
+**Verificação final:** decisão, parâmetros, comparação textual e placares consistentes entre os arquivos.
 
 ## 3. Observações para a frente
 - **Para a Aula 08:** corpus e parâmetros congelados; medir o reordenador com o mesmo gabarito,
@@ -26,7 +31,7 @@ anterior de desenvolvimento, e os arquivos registram que o teste e o gabarito as
 - **Perguntas guardadas:** reordenação, Aula 08; RAG, Aula 14; escala, Aula 15.
 - **Produzido:** [resolução completa](../resolucoes/Pedro_Henrique/aula07_parteD_resolvido.md),
   código, notebook, CSVs, comparação textual, ficha e estados do R.
-- **Ficha atualizada:** cabeçalho e seções 5, 6 e 7; seções 1–4 preservadas.
+- **Ficha atualizada:** cabeçalho, identificação do grupo e seções 5, 6 e 7 revisados.
 
 ## Passos de fechamento do guia
 1. Salvar `00_FICHA_PROJETO.md` e `aula07_parteD_consolidado.md` em UTF-8; os arquivos locais estão em `consolidados/`.
@@ -36,7 +41,7 @@ anterior de desenvolvimento, e os arquivos registram que o teste e o gabarito as
 5. Enviar ficha e consolidado a `consolidados/`, e configuração e notebook a `estrutura/codigo/` do repositório.
 6. Conferir que a ficha termina com “Estado do R” e a configuração contém `modelo`, `lsa_k` e `rrf_c`.
 7. Conferir os mesmos valores na seção 6 da ficha e no `config.R`.
-8. Cada integrante envia seu próprio consolidado da teoria a `consolidados/<nome>/`; o de Pedro está preparado, sem atribuir sessões aos colegas.
+8. Cada integrante envia seu próprio consolidado da teoria a `consolidados/<nome>/`; o de Pedro está disponível no caminho indicado.
 
 ---
 

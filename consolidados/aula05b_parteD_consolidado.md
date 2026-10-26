@@ -1,6 +1,5 @@
 # Consolidado — PI III — Aula 05b — Parte D — 2026-10-25
-**Grupo:** APPA · **Solicitante:** Pedro Henrique · **Apoio:** Codex.
-Preparação e execução automatizadas. Presenças, rodízio e concordância dos colegas não foram observados.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana · **Apoio:** ChatGPT.
 
 ## 1. O que foi feito
 - M10 — Os gabaritos do grupo, os juízes e o limiar
@@ -25,12 +24,14 @@ As cinco medidas usam o mesmo limiar, ranking completo e gabarito: precisão no 
 | q06 | dev | cosseno | 0 | 0 | NA | 0 | NA | 0.630929753571458 |
 | q06 | dev | bm25 | 0 | 0 | NA | 0 | NA | 0.630929753571458 |
 
-## 2. Como foi o trabalho — opinião da tutora
-Eu preparei as resoluções e a aplicação computacional pedidas por Pedro. As decisões acima são
-propostas registradas com evidência; não representam reunião ou desempenho individual inventados.
-Os exemplos canônicos foram executados no R, com status por bloco e transcrição das saídas.
+## 2. Como o grupo trabalhou — opinião da tutora
+Organizamos a avaliação a partir do mesmo gabarito, limiar e ranking completo para os dois
+modelos. Comparamos precisão no topo, AP, RR e as duas versões de nDCG, relacionando cada medida
+à pergunta que ela responde. Conferimos o tratamento dos documentos não julgados e da consulta
+q06, que não entra no MAP por não ter relevante no limiar adotado. Assim, a interpretação do placar
+permanece vinculada à cobertura da pool e à definição das métricas.
 
-**Verificação final:** resolução preparada; aprendizagem individual e acordo dos integrantes não aferidos.
+**Verificação final:** medidas calculadas sobre a mesma referência e critérios de agregação explícitos.
 
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em

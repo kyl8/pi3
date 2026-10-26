@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula05 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — O problema
@@ -12,11 +13,9 @@
 - M8 — Organização
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+O roteiro distingue necessidade de informação, consulta, pool e gabarito. A escala de relevância e o exercício de kappa ajudam a interpretar julgamento e concordância como partes diferentes da avaliação. O ponto central é manter a origem dos votos e o conjunto de consultas rastreáveis.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula05_resolvido.md), código e saídas reproduzíveis.

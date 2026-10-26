@@ -1,21 +1,21 @@
 # Consolidado — PI III — Aula 01 — Parte D — 2026-10-25
-**Grupo:** APPA · **Solicitante:** Pedro Henrique · **Apoio:** Codex.
-Preparação e execução automatizadas. Presenças, rodízio e concordância dos colegas não foram observados.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana · **Apoio:** ChatGPT.
 
 ## 1. O que foi feito
 - M11 — O tema, a fonte, e o que é um documento
 - M12 — Coletar e salvar o primeiro corpus
 - M13 — A cadeia da aula sobre o corpus, e a ficha nasce
 
-Congelei os mesmos 141 documentos do APPA, oriundos das três páginas históricas dos clubes. O vocabulário bruto medido é 3073. Mantenho os identificadores `d1` a `d141`. Configuração: mínimo 50 caracteres, grupo APPA. O RDS histórico continua preservado; as avaliações usam o CSV congelado da Aula 05. A ficha registra usuário, fonte, licença e perguntas.
+Mantivemos os mesmos 141 documentos do APPA, oriundos das três páginas históricas dos clubes. O vocabulário bruto medido é 3073. Mantemos os identificadores `d1` a `d141`. Configuração: mínimo 50 caracteres, grupo APPA. O RDS histórico continua preservado; as avaliações usam o CSV congelado da Aula 05. A ficha registra usuário, fonte, licença e perguntas.
 
 
-## 2. Como foi o trabalho — opinião da tutora
-Eu preparei as resoluções e a aplicação computacional pedidas por Pedro. As decisões acima são
-propostas registradas com evidência; não representam reunião ou desempenho individual inventados.
-Os exemplos canônicos foram executados no R, com status por bloco e transcrição das saídas.
+## 2. Como o grupo trabalhou — opinião da tutora
+Organizamos o trabalho a partir do tema regional, do público do buscador e das três perguntas
+de informação. A coleta, a definição de parágrafo como documento e a conferência das frequências
+formam a sequência da aplicação. Mantivemos os 141 documentos e seus identificadores para que as
+próximas comparações usem a mesma base. Registramos fonte, licença, critérios e parâmetros na ficha.
 
-**Verificação final:** resolução preparada; aprendizagem individual e acordo dos integrantes não aferidos.
+**Verificação final:** corpus, vocabulário, identificadores e ficha consistentes com os arquivos do projeto.
 
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em

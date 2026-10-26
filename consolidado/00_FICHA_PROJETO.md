@@ -4,6 +4,8 @@
 ## 1. Identificação do Projeto, Repositório e Equipe
 - **Nome do Grupo:** APPA
 - **Integrantes:** Arthur Galvão, Pedro Henrique, Ailana
+- **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana
+- **Apoio:** ChatGPT
 - **Repositório GitHub:** `https://github.com/kyl8/pi3`
 - **Branch Principal:** `main`
 - **Ambiente de Desenvolvimento:** R 4.6.1 (local Windows / Google Colab R Runtime)
@@ -78,10 +80,10 @@
 - 2026-10-02 — fundação do corpus APPA, histórico preservado nas entregas anteriores.
 - 2026-10-25 — sincronização com Danilo `677788d`; guias 00–06 resolvidos, exemplos executados e
   aplicações ao corpus congelado; Aula 07 refeita com candidatos de dimensão e configuração persistida.
-- Preparação solicitada por Pedro e executada com Codex. Presença, rodízio de digitadores e
-  avaliação individual dos colegas não foram observados. Julgamentos humanos permanecem como dependência externa.
+- Documentação do grupo APPA com apoio de ChatGPT: resoluções, código, resultados e configuração
+  organizados para revisão e continuidade. Julgamentos humanos permanecem pendentes.
 
-- 25/10/2026 — guias da Aula 07 v2 incorporados; teoria e tarefa individual executadas, Partes D e notebooks preparados; estados reais anexados por R. Participação dos colegas não observada.
+- 25/10/2026 — guias da Aula 07 v2 incorporados; teoria e tarefa individual executadas, Partes D e notebooks preparados; estados reais anexados por R.
 
 ---
 

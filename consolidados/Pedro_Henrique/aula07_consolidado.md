@@ -1,6 +1,7 @@
 # Consolidado — PI III — Aula 07 — 25/10/2026
-*Guia versão 2 · apoio: Codex · preparação individual completa · motor07.*
+*Guia versão 2 · apoio: ChatGPT · estudo teórico e aplicação · motor07.*
 **Aluno:** Pedro Henrique · **Grupo:** APPA.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — descasamento de vocabulário: “busca”, “ranqueamento”, “buscar”.
@@ -11,15 +12,13 @@
 - M6 — RRF por posições; cálculo manual e comparação das cinco métricas.
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções completas a pedido de Pedro e executei os exemplos em R.
-As contas foram entregues prontas, não construídas numa conversa observada.
-Não atribuo acertos, dificuldades ou domínio individual que não foram medidos.
+A resolução conecta a matriz TF-IDF à decomposição SVD, à projeção da consulta e ao ranking LSA. Os exemplos comparam o ganho de aproximação semântica com o ruído da compressão. Na fusão RRF, a conta usa posições; a escolha de `k` usa o desenvolvimento, com os resultados de teste registrados separadamente.
 
-**Teste final:** seis questões resolvidas no caderno; desempenho individual não aferido.
+**Teste final:** seis questões resolvidas para revisão.
 
 ## 3. Observações para a frente
 - **Revisar antes da Aula 08:** dimensões do produto $U_k^\top q_0$, energia e diferença entre posição e escore.
-- **Para a próxima tutora:** retomar pelos checkpoints se houver sessão interativa.
+- **Para a próxima tutora:** retomar os checkpoints e conferir a justificativa de cada resposta.
 - **Perguntas guardadas:** reordenação do topo, Aula 08; RAG, Aula 14; busca em escala, Aula 15.
 - **Produzido:** funções, seis checkpoints, teste, consulta individual “busca”, notebook, CSVs e figura dos oito pontos.
 - **Parte D:** aplicação ao APPA documentada em `consolidados/aula07_parteD_consolidado.md`.

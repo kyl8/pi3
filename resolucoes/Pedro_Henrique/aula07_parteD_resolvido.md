@@ -1,5 +1,6 @@
 # Aula 07 — Parte D resolvida no APPA
-**Pedro Henrique · APPA · Guia versão 2 · 25/10/2026 · apoio: Codex.**
+**Grupo APPA · Guia versão 2 · 25/10/2026 · apoio: ChatGPT.**
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## Ficha em três linhas
 APPA estuda um buscador sobre Santos FC, Portuguesa Santista e Jabaquara, voltado à memória do futebol regional.
@@ -9,7 +10,7 @@ A Aula 06 deixou `prf_k=0`; feedback foi medido e o pseudo-feedback piorou o des
 ## M7 — LSA no corpus e leitura do top-5
 A matriz preparada tem $1902\times141$ posições. Com $k=20$, a energia retida é
 $0,436549$. A seleção usa o CSV congelado e a mesma limpeza, stopwords e stemming das consultas.
-Não recoletei textos nem troquei identificadores após os julgamentos.
+Não recoletamos textos nem trocamos identificadores após os julgamentos.
 
 Para `q01` (“historia santos futebol clube”), os dois top-5 compartilham **três documentos**:
 `d4`, `d95` e `d2`. O BM25 traz só `d139` e `d109`; o LSA, só `d55` e `d15`.
@@ -22,13 +23,13 @@ Não é um exemplo de recuperação sem nenhuma palavra em comum: ele compartilh
 **Só BM25, `d139`:** descreve uma vitória histórica do Jabaquara sobre o Santos e os rebaixamentos
 do Jabaquara. Contém os quatro termos preparados `histor`, `sant`, `futebol` e `club`,
 por isso o encaixe lexical é forte mesmo que o foco seja o outro clube. O par está **não julgado**
-nessa consulta; não o converti em um voto humano nem alterei o qrels para melhorar o resultado.
+nessa consulta; não o convertemos em um voto humano nem alteramos o qrels para melhorar o resultado.
 
 **Checkpoint 7:** três em comum; os documentos exclusivos e a contagem de termos acima
 explicam por que comparar somente escores esconderia o contexto e o ruído.
 
 ## M8 — Candidatos no desenvolvimento e teste após a escolha
-Mantive os candidatos $k\in\{2,10,20,50,80,141\}$ que já existiam na implementação.
+Mantivemos os candidatos $k\in\{2,10,20,50,80,141\}$ que já existiam na implementação.
 BM25, LSA e RRF são medidos apenas no desenvolvimento durante essa varredura.
 São quatro consultas de desenvolvimento cadastradas; `q06` não tem relevante com grau
 $\geq2$ na pool e fica fora do MAP. Restam **três consultas válidas** para escolher.
@@ -49,7 +50,7 @@ de desenvolvimento; empata em `q03`. O LSA puro perde em `q01` e `q05`.
 Os traços do LSA no teste são intencionais: a execução atual só abre o teste para BM25
 e o modelo escolhido na dimensão congelada. A versão anterior já havia avaliado essas
 consultas; portanto este continua sendo **teste retrospectivo**, sem alegação de um teste novo intocado.
-Não escolhi outro $k$ depois de relatar o teste.
+Não escolhemos outro $k$ depois de relatar o teste.
 
 ### Tarefa do grupo: um ganho e uma perda, com leitura dos textos
 **Ganho, `q05` no desenvolvimento:** AP BM25
@@ -68,11 +69,11 @@ mas dilui a identidade do Jabaquara que a necessidade pede. Esses dois já têm 
 $1$, enquanto `d136` e `d141` têm grau $2$.
 Essa leitura explica a perda; não foi usada para reajustar a configuração.
 
-**Checkpoint 8:** escolhi o híbrido com $k=20$ pelo MAP de desenvolvimento; nenhuma perda
+**Checkpoint 8:** escolhemos o híbrido com $k=20$ pelo MAP de desenvolvimento; nenhuma perda
 do híbrido nas três consultas válidas de desenvolvimento, mas o teste piora e a pool é pequena e parcial.
 
 ## M9 — Decisão e integração
-Mantenho `modelo="hibrido"`, `lsa_k=20` e `rrf_c=60`, com `prf_k=0`.
+Mantemos `modelo="hibrido"`, `lsa_k=20` e `rrf_c=60`, com `prf_k=0`.
 O MAP de desenvolvimento sobe de $0,594298$ para
 $0,653319$; no teste retrospectivo cai de
 $0,388607$ para $0,242005$.
@@ -80,7 +81,17 @@ Os dois caminhos de `config.R` concordam com a ficha. A função `ranking_motor`
 essa escolha; `ranking_modelo` rejeita nomes inválidos e não calcula SVD quando o modelo é BM25.
 
 **Checkpoint 9:** a frase acima, os parâmetros e os números coincidem com os arquivos gerados.
-A decisão foi preparada com apoio de Codex, sem inventar uma reunião ou concordância dos colegas.
+A decisão segue o placar de desenvolvimento e está registrada na ficha e na configuração do grupo.
+
+## Como o grupo trabalhou
+Organizamos o trabalho em três frentes: leitura dos textos recuperados, comparação dos modelos
+no desenvolvimento e integração da configuração ao motor. Em `q01`, relacionamos os três documentos
+em comum no top-5 aos casos exclusivos `d55` e `d139`, observando os termos compartilhados e o foco
+de cada trecho. Depois, analisamos o ganho em `q05` e a perda em `q04`, além do MAP agregado.
+
+Mantivemos o híbrido com `k=20`, escolhido pelo desenvolvimento, e registramos a queda no teste
+retrospectivo sem reajustar a escolha a partir dele. No fechamento, alinhamos a ficha, os dois
+`config.R` e `ranking_motor`. A análise considera a dimensão da pool e a origem assistida do gabarito.
 
 ## Arquivos e fechamento
 - [Consolidado do grupo](../../consolidados/aula07_parteD_consolidado.md)

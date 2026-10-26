@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula02 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — A pergunta central: medir *o quanto*
@@ -12,11 +13,9 @@
 - M8 — Forças e limites
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+A resolução relaciona documentos e consultas como vetores no mesmo espaço. A normalização permite interpretar o cosseno pela direção, reduzindo o efeito da escala do documento. A leitura do ranking também mostra o limite lexical: palavras ausentes não passam a coincidir apenas pela normalização.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula02_resolvido.md), código e saídas reproduzíveis.

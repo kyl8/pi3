@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula01 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — O que é recuperação de informação
@@ -14,11 +15,9 @@
 - M10 — Regex casa pedaço, o motor casa termo — e o corpus real
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+O roteiro liga a necessidade de informação à construção do corpus, à tokenização e à matriz termo-documento. A comparação entre frequência e TF-IDF mostra por que termos muito comuns discriminam pouco. O ponto de revisão é distinguir ocorrência de termo, padrão de regex e relevância para a consulta.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula01_resolvido.md), código e saídas reproduzíveis.

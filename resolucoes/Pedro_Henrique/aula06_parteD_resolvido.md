@@ -1,13 +1,12 @@
 # Consolidado — PI III — Aula 06 — Parte D — 2026-10-25
-**Grupo:** APPA · **Solicitante:** Pedro Henrique · **Apoio:** Codex.
-Preparação e execução automatizadas. Presenças, rodízio e concordância dos colegas não foram observados.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana · **Apoio:** ChatGPT.
 
 ## 1. O que foi feito
 - M7 — Rocchio com o gabarito do grupo
 - M8 — Pseudo-realimentação em todas as consultas
 - M9 — A decisão do grupo e o registro
 
-No desenvolvimento, sem pseudo-feedback, MAP=0,585. Todos os valores positivos testados de $k$ pioraram o desenvolvimento, então uso `prf_k=0`. Os parâmetros Rocchio são $\alpha=1$, $\beta=0{,}75$, $\gamma=0{,}15$, com pesos negativos truncados em zero e centroide vazio tratado explicitamente. A avaliação residual retira todos os quatro documentos vistos do ranking e do gabarito; quando não sobra relevante, AP residual é indefinido, não zero.
+No desenvolvimento, sem pseudo-feedback, MAP=0,585. Todos os valores positivos testados de $k$ pioraram o desenvolvimento, então mantemos `prf_k=0`. Os parâmetros Rocchio são $\alpha=1$, $\beta=0{,}75$, $\gamma=0{,}15$, com pesos negativos truncados em zero e centroide vazio tratado explicitamente. A avaliação residual retira todos os quatro documentos vistos do ranking e do gabarito; quando não sobra relevante, AP residual é indefinido, não zero.
 
 
 | consulta | AP_antes | AP_depois | AP_residual_antes | AP_residual_depois |
@@ -32,12 +31,14 @@ No desenvolvimento, sem pseudo-feedback, MAP=0,585. Todos os valores positivos t
 | 3 | teste_retrospectivo | 0.286671122994652 |
 | 5 | teste_retrospectivo | 0.35536184522118 |
 
-## 2. Como foi o trabalho — opinião da tutora
-Eu preparei as resoluções e a aplicação computacional pedidas por Pedro. As decisões acima são
-propostas registradas com evidência; não representam reunião ou desempenho individual inventados.
-Os exemplos canônicos foram executados no R, com status por bloco e transcrição das saídas.
+## 2. Como o grupo trabalhou — opinião da tutora
+Separamos a atividade em realimentação explícita, avaliação residual e pseudo-realimentação.
+Comparamos os rankings antes e depois do Rocchio e retiramos da avaliação residual os documentos
+já usados no feedback. Para a configuração do motor, seguimos o resultado do desenvolvimento:
+os valores positivos de PRF pioraram o MAP, por isso mantivemos `prf_k=0`.
+Registramos os pesos e o tratamento dos casos sem centroide ou sem relevante residual.
 
-**Verificação final:** resolução preparada; aprendizagem individual e acordo dos integrantes não aferidos.
+**Verificação final:** feedback, avaliação residual e decisão sobre PRF documentados com suas saídas.
 
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em

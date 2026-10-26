@@ -1,5 +1,8 @@
 # Projeto Integrador III
 
+**Grupo:** APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Apoio:** ChatGPT.
+
 Repositório do grupo APPA para o estudo de recuperação de informação. O motor usa textos sobre clubes tradicionais da Baixada Santista e evolui de uma busca por ocorrência para TF-IDF, busca booleana e BM25.
 
 > **Módulos Iniciais (Aulas 00 e 01):**

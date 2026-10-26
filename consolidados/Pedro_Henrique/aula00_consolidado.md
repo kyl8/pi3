@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula00 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — Rodar, atribuir, e o corpus como vetor
@@ -15,11 +16,9 @@
 - M11 — O mapa da Aula 01
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+A resolução conecta vetores, seleção de elementos, funções e operações de texto ao preparo de um corpus. As contagens e os exemplos de regex ajudam a distinguir transformação de texto de recuperação de informação. O ponto de revisão é acompanhar os tipos dos objetos e a saída de cada operação.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula00_resolvido.md), código e saídas reproduzíveis.

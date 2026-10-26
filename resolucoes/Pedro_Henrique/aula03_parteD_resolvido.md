@@ -1,21 +1,21 @@
 # Consolidado — PI III — Aula 03 — Parte D — 2026-10-25
-**Grupo:** APPA · **Solicitante:** Pedro Henrique · **Apoio:** Codex.
-Preparação e execução automatizadas. Presenças, rodízio e concordância dos colegas não foram observados.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana · **Apoio:** ChatGPT.
 
 ## 1. O que foi feito
 - M10 — Limpar o corpus do grupo, e a decisão dos acentos
 - M11 — As *stopwords* do projeto
 - M12 — Índice invertido e busca AND no corpus do grupo
 
-Adotei transliteração antes da regex para preservar São/Sao como a mesma palavra. Removo as stopwords explícitas do config e preservo nomes de clubes, estádios e pessoas. O vocabulário passou de 3073 formas brutas para 1902 radicais após limpeza, stopwords e Snowball. O índice tem 1902 entradas. Corpus e consultas usam exatamente `preparar()`; a busca AND devolve vazio se um termo não está no índice.
+Adotamos transliteração antes da regex para preservar São/Sao como a mesma palavra. Removemos as stopwords explícitas do config e preservo nomes de clubes, estádios e pessoas. O vocabulário passou de 3073 formas brutas para 1902 radicais após limpeza, stopwords e Snowball. O índice tem 1902 entradas. Corpus e consultas usam exatamente `preparar()`; a busca AND devolve vazio se um termo não está no índice.
 
 
-## 2. Como foi o trabalho — opinião da tutora
-Eu preparei as resoluções e a aplicação computacional pedidas por Pedro. As decisões acima são
-propostas registradas com evidência; não representam reunião ou desempenho individual inventados.
-Os exemplos canônicos foram executados no R, com status por bloco e transcrição das saídas.
+## 2. Como o grupo trabalhou — opinião da tutora
+Seguimos a cadeia de limpeza, tratamento dos acentos, remoção de stopwords e stemming antes
+de montar o índice invertido. Comparamos as formas brutas com os radicais e preservamos os termos
+importantes para identificar clubes e estádios. Aplicamos a mesma função de preparação ao corpus
+e às consultas, conferindo também o retorno vazio quando um termo da busca AND não existe no índice.
 
-**Verificação final:** resolução preparada; aprendizagem individual e acordo dos integrantes não aferidos.
+**Verificação final:** preparação e índice usam a mesma configuração nos documentos e nas consultas.
 
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em

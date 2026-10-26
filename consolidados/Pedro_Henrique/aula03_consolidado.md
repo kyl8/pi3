@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula03 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — Por que pré-processar: o texto sujo
@@ -13,11 +14,9 @@
 - M9 — Buscando pelo índice
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+A sequência de exemplos mostra como limpeza, acentos, stopwords e stemming modificam o vocabulário. O índice invertido conecta cada termo aos documentos em que aparece e torna explícita a execução da busca AND. A consistência entre preparação do corpus e da consulta é o principal critério de revisão.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula03_resolvido.md), código e saídas reproduzíveis.

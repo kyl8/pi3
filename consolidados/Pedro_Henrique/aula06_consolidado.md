@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula06 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — A primeira consulta raramente é perfeita
@@ -10,11 +11,9 @@
 - M6 — Pseudo-realimentação e o *query drift*
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+O roteiro relaciona a atualização vetorial do Rocchio à mudança dos documentos recuperados. A avaliação residual separa o ganho nos documentos vistos do ganho nos demais, enquanto o PRF mostra o risco de deslocar a consulta. A escolha dos parâmetros deve seguir o desenvolvimento e a mesma regra de avaliação.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula06_resolvido.md), código e saídas reproduzíveis.

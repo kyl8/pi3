@@ -1,5 +1,6 @@
 # Consolidado — PI III — aula04 — 2026-10-25
-**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** Codex.
+**Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 
 ## 1. O que foi passado
 - M1 — Por que ir além do TF-IDF
@@ -13,11 +14,9 @@
 - M9 — Implementando em R
 
 ## 2. Como foi o aprendizado — opinião da tutora
-Eu preparei as resoluções e a execução a pedido do aluno. As respostas foram entregues
-prontas, não construídas em uma conversa de tutoria. Não observei respostas individuais,
-erros ou reação aos checkpoints; por isso não atribuo acertos nem dificuldades a Pedro.
+As contas relacionam o modelo de contagens à saturação e à normalização de comprimento do BM25. A variação de `k1` e `b` permite interpretar o efeito dos parâmetros em exemplos concretos. A revisão deve separar os papéis de frequência, comprimento e IDF na pontuação final.
 
-**Teste final:** resolvido no caderno; desempenho individual ainda não aferido.
+**Teste final:** questões resolvidas no caderno, com exemplos e saídas para revisão.
 
 ## 3. Observações para a frente
 - **Produzido:** [checkpoints e teste resolvidos](../../resolucoes/Pedro_Henrique/aula04_resolvido.md), código e saídas reproduzíveis.

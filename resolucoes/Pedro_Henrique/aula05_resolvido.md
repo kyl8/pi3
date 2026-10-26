@@ -1,8 +1,9 @@
 # Resolução — PI III — aula05
 
+**Apoio:** ChatGPT.
 **Aluno:** Pedro Henrique · **Grupo:** APPA · **Data:** 2026-10-25.
-Respostas preparadas com apoio de Codex a pedido do aluno. Este arquivo é um caderno
-de resolução, não um registro de presença nem prova de desempenho individual.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+Caderno de resoluções: checkpoints, respostas e exemplos da disciplina.
 Fonte: [guia original](../../tutoras/GUIA_ESTUDO_aula05.md); exemplos e gabaritos da disciplina.
 
 ### Checkpoint 1

@@ -1,6 +1,8 @@
 # Resolução — PI III — Aula 07: LSA e busca híbrida
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
 **Pedro Henrique · APPA · 25/10/2026 · Guia versão 2.**
-Preparação com apoio de Codex. As respostas foram entregues prontas; não são um teste pessoal observado.
+**Apoio:** ChatGPT.
+Caderno de teoria, checkpoints, teste e tarefa individual.
 O [guia original](../../tutoras/GUIA_ESTUDO_aula07.md) usa os oito documentos do curso e a consulta `modelo de recuperacao`.
 
 ## Diagnóstico

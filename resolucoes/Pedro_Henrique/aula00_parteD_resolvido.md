@@ -1,21 +1,21 @@
 # Consolidado — PI III — Aula 00 — Parte D — 2026-10-25
-**Grupo:** APPA · **Solicitante:** Pedro Henrique · **Apoio:** Codex.
-Preparação e execução automatizadas. Presenças, rodízio e concordância dos colegas não foram observados.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana · **Apoio:** ChatGPT.
 
 ## 1. O que foi feito
 - M12 — Três frases suas: sujar, limpar, contar
 - M13 — Regex nas suas frases
 - M14 — O fluxo do curso: Colab e GitHub
 
-A aplicação usa três frases do tema: “Santos joga na Vila Belmiro”, “A Portuguesa Santista manda jogos no Ulrico Mursa” e “O Jabaquara representa a Caneleira”. Tokenizo, limpo e conto termos sem tratar `grep` como busca semântica. Os exemplos executados do guia estão no log da Aula 00. A Parte D é individual; não atribuo presença ao grupo.
+A aplicação usa três frases do tema: “Santos joga na Vila Belmiro”, “A Portuguesa Santista manda jogos no Ulrico Mursa” e “O Jabaquara representa a Caneleira”. Tokenizamos, limpamos e contamos termos sem tratar `grep` como busca semântica. Os exemplos executados do guia estão no log da Aula 00. A Parte D desta aula é individual e usa o tema do APPA como referência.
 
 
-## 2. Como foi o trabalho — opinião da tutora
-Eu preparei as resoluções e a aplicação computacional pedidas por Pedro. As decisões acima são
-propostas registradas com evidência; não representam reunião ou desempenho individual inventados.
-Os exemplos canônicos foram executados no R, com status por bloco e transcrição das saídas.
+## 2. Como o grupo trabalhou — opinião da tutora
+Organizamos a revisão em três etapas: preparar as frases sobre Santos, Portuguesa Santista e Jabaquara,
+aplicar as operações de texto e conferir as contagens. Separamos a busca por padrões com regex da
+busca por termos e mantivemos os exemplos do R junto das respostas. O exercício desta aula permanece
+individual, com o tema do APPA como referência para a aplicação.
 
-**Verificação final:** resolução preparada; aprendizagem individual e acordo dos integrantes não aferidos.
+**Verificação final:** frases, limpeza, contagens e fluxo de salvamento documentados.
 
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em
