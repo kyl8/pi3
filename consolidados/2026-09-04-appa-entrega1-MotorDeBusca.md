@@ -20,7 +20,7 @@ Este documento consolida a primeira entrega do projeto de Recuperacao de Informa
 
 Os codigos foram padronizados dentro da pasta `estrutura/codigos/` conforme as datas de evolucao dos modelos. A versao BM25 usa `SnowballC` para stemming e mantem um indice invertido para as consultas booleanas:
 
-1. **[2026-08-20-appa-MotorBuscaInicial.r](../estrutura/codigos/2026-08-20-appa-MotorBuscaInicial.r):**
+1. **Versao inicial — 20/08/2026 (historico):**
    * Primeira versao do motor baseada em correspondencia exata de frequencia de termos e extracao de sentencas dos artigos da Wikipedia.
 2. **[2026-08-25-appa-MotorBuscaTfIdf.r](../estrutura/codigos/2026-08-25-appa-MotorBuscaTfIdf.r):**
    * Motor de espaco vetorial com ponderacao linear TF-IDF e calculo de similaridade via Cosseno. Suporte a consultas booleanas (AND, OR, NOT).

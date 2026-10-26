@@ -11,7 +11,7 @@ Repositório do grupo APPA para o estudo de recuperação de informação. O mot
 ## Estrutura
 
 - [entregas](entregas/): relatórios formais e entregas acadêmicas em LaTeX/Sweave;
-- [consolidado](consolidado/): atividades documentadas;
+- [consolidados](consolidados/): atividades documentadas;
 - [estrutura/codigos](estrutura/codigos/): scripts em R;
 - [estrutura/corpus](estrutura/corpus/): informações e artefatos do corpus;
 - [estrutura/resultados](estrutura/resultados/): métricas e saídas das execuções;
@@ -34,11 +34,11 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
 ## Ficha do Projeto e Governança
 
-- **[Ficha do Projeto Oficial](consolidado/00_FICHA_PROJETO.md)**: documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
+- **[Ficha do Projeto Oficial](consolidados/00_FICHA_PROJETO.md)**: documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
 
 ## Entregas Formais
 
-A pasta [entregas/](entregas/) está organizada em duas divisões principais:
+A pasta [entregas/](entregas/) reúne a entrega final e os modelos da disciplina:
 
 - **[entregas/finalizada/](entregas/finalizada/):** versão final consolidada do grupo APPA:
   - [Entrega 1: Corpus do Projeto (PDF)](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.pdf) ([Fonte Sweave](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.Rnw))
@@ -49,15 +49,15 @@ A pasta [entregas/](entregas/) está organizada em duas divisões principais:
 ## Atividades e Consolidados
 
 - **Aulas 00 e 01 (Fundamentos):** Disponíveis no repositório [pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)
-- [02: TF-IDF e cosseno](consolidado/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
-- [02: teoria e cosseno (novo)](consolidado/2026-10-09-appa-Atividade02-ConsolidadoTeoria.md)
-- [02: prática e motor de busca (novo)](consolidado/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
-- [03: pré-processamento e índice](consolidado/2026-09-15-appa-Atividade03-PreProcessamentoIndice.md)
-- [04: Poisson, saturação e BM25](consolidado/2026-09-15-appa-Atividade04-PoissonBm25.md)
-- [05: avaliação do motor](consolidado/2026-09-15-appa-Atividade05-AvaliacaoMotor.md)
-- [05b: métricas de avaliação teóricas](consolidado/2026-09-18-appa-Atividade05b-MetricasAvaliacao.md)
-- [05b: métricas no gabarito próprio (Parte D)](consolidado/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.md)
-- [06: expansão de consulta e Rocchio](consolidado/2026-10-09-appa-Atividade06-RocchioFeedback.md)
+- [02: TF-IDF e cosseno](consolidados/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
+- [02: teoria e cosseno (novo)](consolidados/2026-10-09-appa-Atividade02-ConsolidadoTeoria.md)
+- [02: prática e motor de busca (novo)](consolidados/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
+- [03: pré-processamento e índice](consolidados/2026-09-15-appa-Atividade03-PreProcessamentoIndice.md)
+- [04: Poisson, saturação e BM25](consolidados/2026-09-15-appa-Atividade04-PoissonBm25.md)
+- [05: avaliação do motor](consolidados/2026-09-15-appa-Atividade05-AvaliacaoMotor.md)
+- [05b: métricas de avaliação teóricas](consolidados/2026-09-18-appa-Atividade05b-MetricasAvaliacao.md)
+- [05b: métricas no gabarito próprio (Parte D)](consolidados/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.md)
+- [06: expansão de consulta e Rocchio](consolidados/2026-10-09-appa-Atividade06-RocchioFeedback.md)
 
 ## Como executar
 
@@ -85,14 +85,11 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 - `2026-09-15-appa-05e-gerar-qrels-inicial.R`: preenche a referência inicial do projeto;
 - `csv/`: corpus, necessidades, pool e arquivo de julgamentos.
 
+## Guias e aplicações
 
-## Atualização de 25/10/2026
-
-- [Mapa completo e limites da atualização](sincronizacao/2026-10-25-atualizacao.md)
 - [Resoluções individuais de todos os guias](resolucoes/)
-- [Consolidados individuais](consolidados/)
-- [Consolidados das Partes D](consolidados/)
-- [07: LSA e fusão de rankings](consolidado/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
+- [Consolidados da teoria e das Partes D](consolidados/)
+- [07: LSA e fusão de rankings](consolidados/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
 - [Guias originais completos 00–07](tutoras/)
 
 ```powershell
@@ -104,22 +101,21 @@ Rscript estrutura/codigos/aula07_lsa.R
 Os motores do professor estão fixados localmente com autoria e commit. As métricas usam
 o corpus congelado e o julgamento assistido identificado; os votos humanos continuam separados.
 
-A atualização inclui os fundamentos localmente: [Shannon](consolidado/2026-10-25-appa-Atividade01b-Shannon.md), coleta reproduzível e demonstração em `estrutura/codigo/aula02.R`.
+A atualização inclui os fundamentos localmente: [Shannon](consolidados/2026-10-25-appa-Atividade01b-Shannon.md), coleta reproduzível e demonstração em `estrutura/codigo/aula02.R`.
 
-Reexecutar as novas etapas: `Rscript estrutura/codigos/executar_atualizacao.R`. Dependências: SnowballC e ggplot2 (PI); mgcv e glmnet (Estatística). Os PDFs históricos permanecem preservados; revisões atuais estão nos consolidados em Markdown.
+Executar todas as etapas: `Rscript estrutura/codigos/executar_atualizacao.R`. Dependências: SnowballC e ggplot2. Os PDFs históricos permanecem preservados; revisões atuais estão nos consolidados em Markdown.
 
-No Windows desta workspace, `powershell -ExecutionPolicy Bypass -File .\executar_atualizacao.ps1` localiza o R preparado em `../tmp/R/bin` automaticamente. Em outro clone, use R instalado no PATH.
+No Windows, execute `powershell -ExecutionPolicy Bypass -File .\executar_atualizacao.ps1`. Em outro ambiente, use R instalado no PATH.
 
 ## Guias da Aula 07 — versão 2
 
-O LSA/RRF já estava implementado; os dois guias de `D:/Guia_7` agora também estão incorporados.
+A Aula 07 compara LSA, BM25 e fusão RRF no corpus do APPA.
 
 - [Teoria resolvida: seis módulos, checkpoints, teste e tarefa individual](resolucoes/aula07_resolvido.md)
 - [Consolidado individual com estado real do R](consolidados/aula07_consolidado.md)
 - [Parte D resolvida: comparação dos textos e decisão](resolucoes/aula07_parteD_resolvido.md)
 - [Consolidado do grupo com estado real do R](consolidados/aula07_parteD_consolidado.md)
 - [Notebook da teoria](estrutura/codigo/aula07_teoria.ipynb) e [notebook da Parte D](estrutura/codigo/aula07.ipynb)
-- [Guias originais](tutoras/) e [verificações da Aula 07](sincronizacao/2026-10-25-aula07-verificacoes.csv)
 
 ```powershell
 Rscript estrutura/codigo/aula07_teoria.R
@@ -129,3 +125,7 @@ Rscript estrutura/codigo/aula07.R
 A avaliação atual varre os candidatos apenas no desenvolvimento e mede no teste somente BM25
 e o escolhido. As consultas de teste já eram conhecidas: a ressalva de teste retrospectivo permanece.
 As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, com `prf_k=0`.
+
+## Referências
+
+Materiais da disciplina: [Danilo — Projeto Integrador III](https://github.com/danilopradooficial/projetointegrador3), versão `677788d`. Motor de referência: [origem e autoria](estrutura/codigos/motor-professor/ORIGEM.md).

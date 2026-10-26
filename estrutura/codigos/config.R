@@ -1,4 +1,4 @@
-# Configuracao APPA; selecao assistida de 2026-10-25, ver sincronizacao.
+# Configuracao APPA; parametros escolhidos no desenvolvimento; ver consolidados/00_FICHA_PROJETO.md.
 cfg <-
 list(corpus_dir = "estrutura/corpus", resultados_dir = "estrutura/resultados",
     minimo = 50, limpar = TRUE, acentos = "translit", stopwords = c("a",

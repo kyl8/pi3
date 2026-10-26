@@ -6,7 +6,7 @@
 - M13 — Regex nas suas frases
 - M14 — O fluxo do curso: Colab e GitHub
 
-A aplicação usa três frases do tema: “Santos joga na Vila Belmiro”, “A Portuguesa Santista manda jogos no Ulrico Mursa” e “O Jabaquara representa a Caneleira”. Tokenizamos, limpamos e contamos termos sem tratar `grep` como busca semântica. Os exemplos executados do guia estão no log da Aula 00. A Parte D desta aula é individual e usa o tema do APPA como referência.
+A aplicação usa três frases do tema: “Santos joga na Vila Belmiro”, “A Portuguesa Santista manda jogos no Ulrico Mursa” e “O Jabaquara representa a Caneleira”. Tokenizamos, limpamos e contamos termos sem tratar `grep` como busca semântica. Os exemplos do guia estão em `estrutura/codigos/guias/aula00_teoria.R`. A Parte D desta aula é individual e usa o tema do APPA como referência.
 
 
 ## 2. Como o grupo trabalhou — opinião da tutora
@@ -20,6 +20,6 @@ individual, com o tema do APPA como referência para a aplicação.
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em
   `estrutura/codigos/guias/` e saídas em `estrutura/resultados/guias/`.
-- **Ficha:** decisões e parâmetros atualizados em `consolidado/00_FICHA_PROJETO.md`.
+- **Ficha:** decisões e parâmetros atualizados em `consolidados/00_FICHA_PROJETO.md`.
 - **Perguntas guardadas:** ampliar julgamentos, testar consultas inéditas e medir concordância humana.
 - **Limite da evidência:** resultados sobre pool parcial e referência assistida; não equivalem a validação por três juízes humanos.

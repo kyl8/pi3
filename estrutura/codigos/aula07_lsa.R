@@ -45,7 +45,7 @@ for (i in which(nec$conjunto == "teste_retrospectivo")) { # Abre o teste depois 
 } # Termina o relato retrospectivo.
 if (length(linhas_teste)) tab <- rbind(tab, do.call(rbind, linhas_teste)) # Mantem dev completo e teste da unica escolha.
 cfg$prf_k <- read.csv("estrutura/resultados/guias/aula06_escolha.csv")$prf_k # Mantem a escolha de pseudo-feedback no dev.
-writeLines(trimws(c("# Configuracao APPA; selecao assistida de 2026-10-25, ver sincronizacao.", "cfg <-", capture.output(dput(cfg))), which = "right"), "estrutura/codigos/config.R") # Persiste os parametros sem espacos finais.
+writeLines(trimws(c("# Configuracao APPA; parametros escolhidos no desenvolvimento; ver consolidados/00_FICHA_PROJETO.md.", "cfg <-", capture.output(dput(cfg))), which = "right"), "estrutura/codigos/config.R") # Persiste os parametros sem espacos finais.
 file.copy("estrutura/codigos/config.R", "estrutura/codigo/config.R", overwrite = TRUE) # Mantem o caminho exigido pelos guias sincronizado.
 prefixo <- "estrutura/resultados/2026-10-25-appa-07-" # Centraliza as saidas da aula sete.
 salvar <- function(x, nome) write.csv(x, paste0(prefixo, nome, ".csv"), row.names = FALSE, fileEncoding = "UTF-8") # Grava evidencias sem arredondamento interno.
@@ -81,5 +81,4 @@ for (metodo in c("bm25", "lsa", "hibrido")) { # Desenha as curvas dos candidatos
 legend("bottomright", c("BM25", "LSA", "RRF"), col = c("gray40", "steelblue", "firebrick"), lty = 1, pch = 1); dev.off() # Fecha figura com legenda.
 print(escolha); print(placar) # Mostra a escolha e as limitacoes documentadas no consolidado.
 memoria <- list2env(list(MOTOR_VERSAO = MOTOR_VERSAO, docs = docs, cfg = cfg, ix = ix, modelo_teste = modelo_teste, nec = nec, graus = graus, tab_dev = dev, placar = placar, escolha = escolha, lsa = lsa, ranking_lsa = ranking_lsa, rrf = rrf, ranking_modelo = ranking_modelo, ap_modelo = ap_modelo, ranking_motor = ranking_motor)) # Seleciona os objetos reais relevantes para continuar a proxima aula.
-for (arquivo in c("consolidado/00_FICHA_PROJETO.md", "consolidados/aula07_parteD_consolidado.md")) if (file.exists(arquivo)) anexar_estado(arquivo, env = memoria) # O motor gera o estado a partir dos objetos calculados.
-file.copy("consolidado/00_FICHA_PROJETO.md", "consolidados/00_FICHA_PROJETO.md", overwrite = TRUE) # Mantem a ficha no caminho exigido pelo guia.
+for (arquivo in c("consolidados/00_FICHA_PROJETO.md", "consolidados/aula07_parteD_consolidado.md")) if (file.exists(arquivo)) anexar_estado(arquivo, env = memoria) # O motor gera o estado a partir dos objetos calculados.

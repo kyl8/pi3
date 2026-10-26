@@ -23,7 +23,7 @@ Essa abordagem tem a vantagem de não exigir esforço adicional do usuário. Con
 
 ## Material
 
-- [Aula 06 - Rocchio, expansão de consulta e pseudo-feedback](../materiais-aulas/Aula%2006%20-%20Rocchio.PDF)
+- [Aula 06 - Rocchio, expansão de consulta e pseudo-feedback](../materiais-aulas/Aula%2006%20-%20Rocchio%2C%20Expans%C3%A3o%20de%20Consulta%20e%20Pseudo-Feedback.PDF)
 
 ## Nota de Revisão Metodológica (Alinhamento com Aula 06 e Guia de Estudo 06)
 - **Truncagem de Pesos Negativos em Rocchio**: Na atualização $\vec{q}_m = \alpha\vec{q}_0 + \frac{\beta}{|D_r|}\sum_{d \in D_r}\vec{d} - \frac{\gamma}{|D_{nr}|}\sum_{d \in D_{nr}}\vec{d}$, aplica-se a regra de corte $w_{t,q_m} = \max(0, w_{t,q_m})$ para impedir pesos negativos no vetor expandido.

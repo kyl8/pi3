@@ -1,7 +1,0 @@
-"verificacao","resultado"
-"Trocar sinais da SVD preserva escores","ok"
-"Consulta fora do vocabulario devolve zeros","ok"
-"LSA completo preserva proporcionalidade e ordem lexical","ok"
-"Dimensao acima do limite e rejeitada","ok"
-"Modelo invalido e rejeitado","ok"
-"BM25 dispensa SVD e dimensao LSA","ok"

@@ -21,6 +21,6 @@ Os parâmetros e os rankings ficaram registrados para comparação com as etapas
 ## 3. Observações para a frente
 - **Produzido:** código `estrutura/codigos/2026-10-25-appa-GuiasEstudo.R`, roteiros em
   `estrutura/codigos/guias/` e saídas em `estrutura/resultados/guias/`.
-- **Ficha:** decisões e parâmetros atualizados em `consolidado/00_FICHA_PROJETO.md`.
+- **Ficha:** decisões e parâmetros atualizados em `consolidados/00_FICHA_PROJETO.md`.
 - **Perguntas guardadas:** ampliar julgamentos, testar consultas inéditas e medir concordância humana.
 - **Limite da evidência:** resultados sobre pool parcial e referência assistida; não equivalem a validação por três juízes humanos.

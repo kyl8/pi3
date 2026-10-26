@@ -10,6 +10,12 @@
 *.synctex.gz
 entregas/finalizada/*.tex
 entregas/modelo_base/*.tex
+!entregas/modelo_base/entrega-meio-semestre.tex
 
 Rplots.pdf
 estrutura/resultados/sinistros_prontos.rds
+
+# Registros locais de execucao
+estrutura/resultados/guias/teoria/*-execucao.txt
+estrutura/resultados/guias/teoria-status.csv
+estrutura/resultados/guias/sessionInfo.txt
