@@ -118,7 +118,7 @@ rownames(tdm) <- vocab
 tf  <- tdm
 N   <- ncol(tdm)
 df  <- rowSums(tdm > 0)
-idf <- log10((N + 1) / (df + 1))
+idf <- log(N / df) # IDF classico da aula 02 (mesmo dos demais scripts)
 w   <- tf * idf
 
 # ------------------------------------------------------------------------------

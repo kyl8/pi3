@@ -10,9 +10,13 @@
 *.synctex.gz
 
 Rplots.pdf
-estrutura/resultados/sinistros_prontos.rds
 
 # Registros locais de execucao
 estrutura/resultados/guias/teoria/*-execucao.txt
 estrutura/resultados/guias/teoria-status.csv
 estrutura/resultados/guias/sessionInfo.txt
+
+# Checkpoints de notebooks e arquivos soltos criados por scripts
+.ipynb_checkpoints/
+/config.R
+*.Rcheck

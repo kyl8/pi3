@@ -18,9 +18,9 @@ termos_fortes <- list(
   q01 = "fund|hist|cri|orig|primeir|form",
   q02 = "titul|campe|ta[cç]|conquist|trofe",
   q03 = "estadi|ulrico|sede|campo",
-  q04 = "fund|hist|hespanha|agremia|clube",
-  q05 = "rival|class|confront|corinth|palmeir|sao paulo",
-  q06 = "estadi|ulrico|campo"
+  q04 = "fund|hist|hespanha|agremia",
+  q05 = "rival|class|confront|corinth|palmeir|s[aã]o paulo",
+  q06 = "estadi|campo"
 )
 clube_esperado <- c(
   q01 = "Santos FC", q02 = "Santos FC", q03 = "Portuguesa Santista",

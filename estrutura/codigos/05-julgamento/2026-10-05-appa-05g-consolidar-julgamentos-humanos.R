@@ -61,8 +61,7 @@ kappas <- data.frame(
 write.csv(kappas, file.path(dir_juizes, "kappas.csv"), row.names = FALSE, fileEncoding = "UTF-8")
 
 if (anyNA(maioria)) {
-  cat("Ha", sum(is.na(maioria)), "pares sem maioria. Consulte divergencias.csv e registre o desempate humano.\n")
-  quit(save = "no", status = 1)
+  stop("Ha ", sum(is.na(maioria)), " pares sem maioria. Consulte divergencias.csv e registre o desempate humano.", call. = FALSE)
 }
 
 qrels_final <- data.frame(

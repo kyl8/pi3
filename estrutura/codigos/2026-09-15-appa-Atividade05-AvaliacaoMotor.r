@@ -1,22 +1,10 @@
 # Avaliação reproduzível dos dois rankings com um gabarito simples por clube.
 # O gabarito deve ser revisado por pessoas antes de ser usado em um relatório final.
 
-caminho_bm25_lab <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
-caminho_bm25_local <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
-
-if (file.exists(caminho_bm25_lab)) {
-  caminho_base <- "."
-  source(caminho_bm25_lab)
-} else if (file.exists(caminho_bm25_local)) {
-  caminho_base <- "."
-  source(caminho_bm25_local)
-} else if (file.exists("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")) {
-  caminho_base <- "."
-  source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
-} else {
-  caminho_base <- "."
-  source("2026-09-04-appa-MotorBuscaBm25.r")
-}
+caminho_bm25 <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+if (!file.exists(caminho_bm25)) setwd("../..") # Aceita execucao a partir de estrutura/codigos.
+caminho_base <- "."
+source(caminho_bm25)
 
 dir_resultados <- file.path(caminho_base, "estrutura/resultados")
 dir.create(dir_resultados, showWarnings = FALSE, recursive = TRUE)

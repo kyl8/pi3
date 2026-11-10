@@ -1,9 +1,11 @@
 # Corpus
 
-Os scripts atuais montam o corpus diretamente a partir de páginas da Wikipédia. Por isso, os textos não ficam duplicados nesta pasta.
+O corpus do grupo é congelado, para que os identificadores `d1` a `d141` não mudem quando a Wikipédia for editada.
 
-As páginas usadas são Santos Futebol Clube, Associação Atlética Portuguesa e Jabaquara Atlético Clube.
+- `fontes-congeladas/*.txt`: um parágrafo por linha de cada artigo (Santos FC, Portuguesa Santista, Jabaquara);
+- `docs.rds`: vetor nomeado com os 141 parágrafos (`d1` a `d141`);
+- `origem.rds`: vetor nomeado associando cada documento ao clube correspondente.
 
-Para garantir reprodutibilidade estrita nas entregas acadêmicas, a pasta contém a versão serializada do corpus congelada:
-- `docs.rds`: vetor nomeado com os 141 parágrafos textuais (d1 a d141);
-- `origem.rds`: vetor nomeado associando cada documento ao clube correspondente (Santos FC, Portuguesa Santista, Jabaquara).
+`estrutura/banco-de-dados/coletar.R` reconstrói `docs.rds` e `origem.rds` a partir das fontes congeladas e confere o resultado com `estrutura/codigos/05-julgamento/csv/2026-09-15-appa-05-corpus.csv` antes de gravar.
+
+Os scripts de setembro (`2026-08-25-appa-MotorBuscaTfIdf.r`, `2026-09-04-appa-MotorBuscaBm25.r`) ainda baixam a Wikipédia ao vivo e podem gerar um corpus diferente; para avaliações, use sempre o corpus congelado.

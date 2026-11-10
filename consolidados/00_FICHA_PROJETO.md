@@ -20,13 +20,13 @@
   3. *Qual a trajetória e importância histórica do Jabaquara Atlético Clube em Santos?*
 
 ## 3. Fonte dos Dados, Licença e Critério de Documento
-- **Fonte:** Wikipédia em Língua Portuguesa via API oficial (`https://pt.wikipedia.org/w/api.php`, parâmetros `action=query&prop=extracts&explaintext=1`).
+- **Fonte:** Wikipédia em Língua Portuguesa, HTML renderizado (`https://pt.wikipedia.org/w/index.php?title=...&action=render`), coletado em setembro de 2026 pelos scripts `2026-09-04-appa-MotorBuscaBm25.r` / `05b-montar-corpus.R` e congelado em `estrutura/corpus/fontes-congeladas/*.txt`.
 - **Licença de Uso:** Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0).
 - **Páginas Coletadas (Títulos Exatos):**
   - `Santos Futebol Clube`
-  - `Associação Atlética Portuguesa (Santos)`
+  - `Associação Atlética Portuguesa`
   - `Jabaquara Atlético Clube`
-- **Unidade Documental (O que é um documento):** Parágrafo (`\n+`). Justificativa: o parágrafo constitui a menor unidade textual semanticamente autocontida capaz de responder pontualmente a uma necessidade de busca, evitando a diluição informacional de artigos completos e a fragmentação excessiva de sentenças isoladas.
+- **Unidade Documental (O que é um documento):** Parágrafo (elemento `<p>` do HTML, com ao menos 50 caracteres). Justificativa: o parágrafo constitui a menor unidade textual semanticamente autocontida capaz de responder pontualmente a uma necessidade de busca, evitando a diluição informacional de artigos completos e a fragmentação excessiva de sentenças isoladas.
 - **Critério de Retenção:** Parágrafos com mais de `cfg$minimo` caracteres (50 caracteres) para preservar notas históricas concisas sobre a Briosa e o Jabaquara.
 
 ## 4. Características do Corpus e Estatísticas Textuais

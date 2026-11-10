@@ -49,8 +49,7 @@ Dr <- c("d2", "d3")
 Dnr <- c("d4")
 
 qm <- rocchio(qw, Dr, Dnr)
-# Zera os pesos negativos (opcional)
-qm[qm < 0] <- 0
+# rocchio() ja trunca pesos negativos em zero (pmax)
 
 novo <- apply(w, 2, function(d) cosseno(qm, d))
 ranking_novo <- sort(novo, decreasing = TRUE)
@@ -63,7 +62,6 @@ top2_docs <- names(ranking_base)[1:2]
 cat("\nTop-2 documentos da busca inicial:", paste(top2_docs, collapse = ", "), "\n")
 
 qm_pseudo <- rocchio(qw, Dr = top2_docs, Dnr = character(0))
-qm_pseudo[qm_pseudo < 0] <- 0
 
 novo_pseudo <- apply(w, 2, function(d) cosseno(qm_pseudo, d))
 ranking_pseudo <- sort(novo_pseudo, decreasing = TRUE)

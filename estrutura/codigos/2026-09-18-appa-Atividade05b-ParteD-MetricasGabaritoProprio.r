@@ -9,22 +9,10 @@
 # setwd("caminho/para/pi3")
 
 # 1. Carregamento dos Motores de Busca e Dados de Julgamento
-caminho_bm25_lab <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
-caminho_bm25_local <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
-
-if (file.exists(caminho_bm25_lab)) {
-  caminho_base <- "."
-  source(caminho_bm25_lab)
-} else if (file.exists(caminho_bm25_local)) {
-  caminho_base <- "."
-  source(caminho_bm25_local)
-} else if (file.exists("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")) {
-  caminho_base <- "."
-  source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
-} else {
-  caminho_base <- "."
-  source(caminho_bm25_lab)
-}
+caminho_bm25 <- "estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r"
+if (!file.exists(caminho_bm25)) setwd("../..") # Aceita execucao a partir de estrutura/codigos.
+caminho_base <- "."
+source(caminho_bm25)
 
 dir_csv <- file.path(caminho_base, "estrutura/codigos/05-julgamento/csv")
 dir_resultados <- file.path(caminho_base, "estrutura/resultados")
@@ -55,7 +43,7 @@ calcular_metricas_consulta <- function(ranking_docs, grau_nomeado, limiar = 1, k
     return(data.frame(
       P_at_3 = NA,
       AP = NA,
-      MRR = NA,
+      RR = NA,
       nDCG_bin = NA,
       nDCG_grad = NA,
       R_total = 0
@@ -76,7 +64,8 @@ calcular_metricas_consulta <- function(ranking_docs, grau_nomeado, limiar = 1, k
   mrr <- if (length(primeiro) > 0) 1 / primeiro[1] else 0
   
   # nDCG Binário (Módulo 7)
-  idcg_bin <- dcg(sort(rel, decreasing = TRUE))
+  # Ideal: todos os relevantes do gabarito (ate k) no topo, nao so os que o motor recuperou.
+  idcg_bin <- dcg(c(rep(1, min(R, k)), rep(0, k - min(R, k))))
   ndcg_bin <- if (idcg_bin > 0) dcg(rel) / idcg_bin else 0
   
   # nDCG Graduado com tratamento de pooling para não julgados (Módulo 8 e 11)
@@ -86,9 +75,9 @@ calcular_metricas_consulta <- function(ranking_docs, grau_nomeado, limiar = 1, k
   ndcg_grad <- if (idcg_grad > 0) dcg(g) / idcg_grad else 0
   
   data.frame(
-    P_at_3 = round(precisao[min(3, length(precisao))], 3),
+    P_at_3 = round(sum(c(rel, 0, 0, 0)[1:3]) / 3, 3), # ranking curto conta como nao relevante nas posicoes vazias
     AP = round(ap, 3),
-    MRR = round(mrr, 3),
+    RR = round(mrr, 3), # Reciprocal Rank por consulta; MRR e a media entre consultas
     nDCG_bin = round(ndcg_bin, 3),
     nDCG_grad = round(ndcg_grad, 3),
     R_total = R

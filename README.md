@@ -3,7 +3,7 @@
 **Grupo:** APPA — Arthur Galvão, Pedro Henrique e Ailana.
 **Apoio:** ChatGPT.
 
-Repositório do grupo APPA para o estudo de recuperação de informação. O motor usa textos sobre clubes tradicionais da Baixada Santista e evolui de uma busca por ocorrência para TF-IDF, busca booleana e BM25.
+Repositório do grupo APPA para o estudo de recuperação de informação. O motor usa textos sobre clubes tradicionais da Baixada Santista e evolui de uma busca por ocorrência para TF-IDF, busca booleana, BM25, realimentação de relevância (Rocchio) e busca híbrida (LSA + fusão RRF).
 
 > **Módulos Iniciais (Aulas 00 e 01):**
 > Os artefatos fundamentais das Aulas 00 e 01 (introdução ao R, tokenização, extração do corpus e busca booleana) também têm um histórico no repositório dedicado: **[Arthur-galvao/pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)**.
@@ -30,6 +30,9 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 - [Espaço Vetorial e Cosseno (Aula 02)](estrutura/codigos/2026-10-09-appa-Aula02-EspacoVetorial.R): implementações geradas via tutora (cosseno, normalização, etc);
 - [Motor Cosseno (Parte D)](estrutura/codigos/2026-10-09-appa-Aula02-ParteD-MotorCosseno.R): script da sessão de grupo ranqueando o corpus real com o modelo do espaço vetorial;
 - [Realimentação de Relevância e Rocchio](estrutura/codigos/2026-10-09-appa-Atividade06-RocchioFeedback.r): implementação de Rocchio para expansão de consulta;
+- [Motor local do grupo (`motor-appa.R`)](estrutura/codigos/motor-appa.R): carrega o motor do professor (`motor-professor/`) e acrescenta stemming Snowball ao preparo;
+- [Guias de estudo (`2026-10-25-appa-GuiasEstudo.R`)](estrutura/codigos/2026-10-25-appa-GuiasEstudo.R): métricas, Rocchio/PRF e grade de BM25 sobre o corpus congelado;
+- [LSA e fusão (`aula07_lsa.R`)](estrutura/codigos/aula07_lsa.R): escolha de modelo e dimensão no desenvolvimento, relato no teste retrospectivo;
 - [Arquivo de Configuração do Grupo (`estrutura/codigos/config.R`)](estrutura/codigos/config.R): parâmetros canônicos do grupo APPA (`minimo = 50`, `grupo = "APPA"`).
 
 ## Ficha do Projeto e Governança
@@ -44,7 +47,7 @@ A pasta [entregas/](entregas/) reúne a entrega final e os modelos da disciplina
   - [Entrega 1: Corpus do Projeto (PDF)](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.pdf) ([Fonte Sweave](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.Rnw), [LaTeX](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.tex))
 - **[entregas/modelo_base/](entregas/modelo_base/):** modelos e templates originais fornecidos pela disciplina:
   - [Modelo Base: Corpus do Projeto](entregas/modelo_base/entrega-1-corpus.pdf) ([Fonte Sweave](entregas/modelo_base/entrega-1-corpus.Rnw), [LaTeX](entregas/modelo_base/entrega-1-corpus.tex))
-  - [Modelo Base: Pergunta do Trabalho](entregas/modelo_base/entrega-1-pergunta.pdf) ([Fonte Sweave](entregas/modelo_base/entrega-1-pergunta.Rnw), [LaTeX](entregas/modelo_base/entrega-1-pergunta.tex))
+  - Modelo "Pergunta do Trabalho" ([Fonte Sweave](entregas/modelo_base/entrega-1-pergunta.Rnw)): é o modelo de **Teoria do Aprendizado Estatístico** (resposta Y e preditores), não do PI III; o motor de busca não tem variável-alvo. Mantido apenas como referência.
 
 ## Atividades e Consolidados
 
@@ -61,13 +64,15 @@ A pasta [entregas/](entregas/) reúne a entrega final e os modelos da disciplina
 
 ## Como executar
 
-No RStudio, abra um dos scripts e use `Source`. Pelo terminal, execute, a partir da raiz do repositório:
+Os resultados atuais usam o corpus congelado (`estrutura/corpus/` e `estrutura/banco-de-dados/`), sem rede. Na raiz do repositório:
 
 ```r
-source("estrutura/codigos/2026-09-04-appa-MotorBuscaBm25.r")
+source("estrutura/codigos/motor-appa.R")
 ```
 
-É necessária conexão com a internet para carregar as páginas da Wikipédia. O corpus pode mudar quando as páginas forem atualizadas. O script BM25 também usa o pacote `SnowballC`:
+Para refazer todas as etapas: `Rscript estrutura/codigos/executar_atualizacao.R` (dependências: SnowballC e ggplot2). Isso reescreve arquivos versionados (`config.R`, resultados e o "Estado do R" dos consolidados).
+
+Os scripts de setembro (`2026-08-25-appa-MotorBuscaTfIdf.r`, `2026-09-04-appa-MotorBuscaBm25.r`) baixam a Wikipédia ao vivo e podem gerar um corpus diferente do congelado:
 
 ```r
 install.packages("SnowballC")

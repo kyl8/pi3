@@ -13,7 +13,7 @@ ler_csv_utf8 <- function(caminho) {
 corpus <- ler_csv_utf8(file.path(dir_csv, "2026-09-15-appa-05-corpus.csv"))
 necessidades <- ler_csv_utf8(file.path(dir_csv, "2026-09-15-appa-05-necessidades.csv"))
 
-source("..\\2026-09-04-appa-MotorBuscaBm25.r")
+source("../2026-09-04-appa-MotorBuscaBm25.r")
 
 pool <- do.call(rbind, lapply(necessidades$id, function(id) {
   consulta <- necessidades$texto_consulta[necessidades$id == id]
