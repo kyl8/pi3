@@ -127,5 +127,4 @@ e o escolhido. As consultas de teste já eram conhecidas: a ressalva de teste re
 As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, com `prf_k=0`.
 
 ## Referências
-
-Materiais da disciplina: [Danilo — Projeto Integrador III](https://github.com/danilopradooficial/projetointegrador3), versão `677788d`. Motor de referência: [origem e autoria](estrutura/codigos/motor-professor/ORIGEM.md).
+ Motor de referência: [origem e autoria](estrutura/codigos/motor-professor/ORIGEM.md).
