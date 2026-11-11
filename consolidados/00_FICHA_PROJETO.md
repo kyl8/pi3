@@ -1,5 +1,5 @@
 # Ficha do Projeto — Motor de Busca
-*criada na Aula 01 · última atualização: Aula 07 Parte D, 25/10/2026, motor07*
+*criada na Aula 01 · última revisão: 11/11/2026 · motor configurado até a Aula 07; Aula 08 pendente*
 
 ## 1. Identificação do Projeto, Repositório e Equipe
 - **Nome do Grupo:** APPA
@@ -46,6 +46,38 @@
   - Termos com acentuação diversa mantidos como tokens distintos (ex.: `pelé` com 18 ocorrências).
   - Preservação deliberada do texto bruto nesta etapa para servir de base experimental comparativa às etapas de normalização e filtragem da Aula 03.
 
+### 4.1. Consultas e rankings da demonstração
+
+Estas são as três consultas literais de `estrutura/codigo/aula02.R`, na ordem da execução.
+São consultas de demonstração do cosseno; as seis necessidades `q01`–`q06` continuam sendo
+o conjunto de avaliação separado, com sua divisão em desenvolvimento e teste.
+
+- `santos fundado primeiros titulos`
+- `portuguesa santista estadio cores`
+- `jabaquara historia santos`
+
+| Consulta | Posição | Documento | Cosseno |
+|---|---:|---|---:|
+| 1 | 1 | d131 | 0.130011 |
+| 1 | 2 | d108 | 0.128486 |
+| 1 | 3 | d12 | 0.128449 |
+| 1 | 4 | d123 | 0.127776 |
+| 1 | 5 | d52 | 0.127179 |
+| 2 | 1 | d129 | 0.230774 |
+| 2 | 2 | d6 | 0.227504 |
+| 2 | 3 | d108 | 0.220404 |
+| 2 | 4 | d49 | 0.205883 |
+| 2 | 5 | d115 | 0.167038 |
+| 3 | 1 | d110 | 0.201465 |
+| 3 | 2 | d131 | 0.180962 |
+| 3 | 3 | d133 | 0.148803 |
+| 3 | 4 | d115 | 0.142705 |
+| 3 | 5 | d139 | 0.125106 |
+
+Reprodução: `Rscript estrutura/banco-de-dados/coletar.R` e `Rscript estrutura/codigo/aula02.R`.
+Os textos completos e a decomposição por termo estão em `estrutura/resultados/guias/entrega1_tres_consultas.csv`
+e `estrutura/resultados/guias/entrega1_contribuicoes.csv`.
+
 ## 5. Estado dos módulos
 | Etapa | Situação | Evidência |
 |---|---|---|
@@ -53,10 +85,11 @@
 | 02 | cosseno e normalização executados | `aula02_04_top5_com_textos.csv` |
 | 03 | limpeza, stopwords, stemming e índice | 1902 termos preparados |
 | 04 | BM25 e grade de parâmetros executados | `aula04_exploracao_bm25.csv` |
-| 05 | corpus congelado; pool e julgamento assistido completos | 66 pares; votos humanos ainda ausentes |
+| 05 | corpus congelado; pool v2 e referências LLM separadas | 101 pares no pool; 152 julgamentos Claude; três planilhas humanas ainda vazias |
 | 05b | métricas no ranking completo | `aula05b_metricas_grupo.csv` |
 | 06 | realimentação explícita e residual; PRF desligado | `prf_k=0`; candidatos no desenvolvimento |
 | 07 | LSA e busca híbrida; guias v2 completos | `estrutura/codigo/aula07.ipynb`; `modelo=hibrido`, `lsa_k=20`, `rrf_c=60` |
+| 08 | material incorporado; aplicação ao APPA pendente | `tutoras/GUIA_ESTUDO_aula08.md` e `tutoras/GUIA_ESTUDO_aula08_parteD.md` |
 
 ## 6. Decisões e parâmetros
 - Fonte canônica das avaliações: CSV congelado da Aula 05; não recoletar páginas para recalcular estas métricas.
@@ -77,6 +110,7 @@
   Ganho lido em `q05`; perda em `q04`, por aproximar textos da Portuguesa à consulta sobre Jabaquara.
 
 ## 7. Diário de bordo
+- 2026-11-11 — referências do Danilo atualizadas (`fafe046`); material da Aula 08 incorporado. Pool humano atualizado para 101 pares, sem votos atribuídos por script; preparação protege votos existentes. Rankings da demonstração registrados na seção 4.1. Julgamento humano e aplicação da Aula 08 seguem pendentes.
 - 2026-10-02 — fundação do corpus APPA, histórico preservado nas entregas anteriores.
 - 2026-10-25 — sincronização com Danilo `677788d`; guias 00–06 resolvidos, exemplos executados e
   aplicações ao corpus congelado; Aula 07 refeita com candidatos de dimensão e configuração persistida.

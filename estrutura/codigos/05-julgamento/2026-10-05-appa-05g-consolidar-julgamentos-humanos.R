@@ -14,9 +14,9 @@ args <- commandArgs(trailingOnly = FALSE)
 arquivo <- grep("^--file=", args, value = TRUE)
 if (length(arquivo)) setwd(dirname(normalizePath(sub("^--file=", "", arquivo[1]))))
 
-dir_csv <- "csv"
+dir_csv <- if (dir.exists("estrutura/codigos/05-julgamento/csv")) "estrutura/codigos/05-julgamento/csv" else "csv"
 dir_juizes <- file.path(dir_csv, "julgamentos-humanos")
-pool <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-pool.csv"),
+pool <- read.csv(file.path(dir_csv, "2026-11-06-appa-05-pool-v2.csv"),
   stringsAsFactors = FALSE, fileEncoding = "UTF-8")
 arquivos <- list.files(dir_juizes, pattern = "^juiz_[0-9]+\\.csv$", full.names = TRUE)
 if (length(arquivos) != 3) stop("Sao necessarios exatamente tres arquivos juiz_XX.csv.")

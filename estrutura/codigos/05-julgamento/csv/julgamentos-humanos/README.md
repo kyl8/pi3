@@ -10,11 +10,11 @@ Na pasta `estrutura/codigos/05-julgamento`, execute:
 source("2026-10-05-appa-05f-preparar-julgamentos-humanos.R")
 ```
 
-Isso cria `juiz_01.csv`, `juiz_02.csv` e `juiz_03.csv` com os 66 pares do pool e sem nenhum grau.
+Isso cria `juiz_01.csv`, `juiz_02.csv` e `juiz_03.csv` com os 101 pares do pool v2 e sem nenhum grau. Planilhas do mesmo pool são preservadas. Se o pool mudou e há votos preenchidos, o script para antes de gravar: os votos precisam ser migrados.
 
 ## Cada avaliador
 
-Cada pessoa abre `2026-09-15-appa-05-julgar.html`, informa sua identificacao (`juiz_01`, `juiz_02` ou `juiz_03`), carrega corpus, necessidades e pool, e julga sem ver os votos dos outros.
+Cada pessoa abre `2026-09-15-appa-05-julgar.html`, informa sua identificacao (`juiz_01`, `juiz_02` ou `juiz_03`), carrega corpus, necessidades e `2026-11-06-appa-05-pool-v2.csv`, e julga sem ver os votos dos outros. Os arquivos com graus de LLM e a origem dos rankings ficam separados desse julgamento.
 
 Use os mesmos criterios:
 

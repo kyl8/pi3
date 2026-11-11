@@ -15,8 +15,8 @@ Repositório do grupo APPA para o estudo de recuperação de informação. O mot
 - [estrutura/codigos](estrutura/codigos/): scripts em R;
 - [estrutura/corpus](estrutura/corpus/): informações e artefatos do corpus;
 - [estrutura/resultados](estrutura/resultados/): métricas e saídas das execuções;
-- [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio das aulas avançadas (Aulas 00 a 07);
-- [tutoras](tutoras/): guias de estudo autônomos das aulas do projeto (Aulas 00 a 07).
+- [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio das aulas avançadas (Aulas 00 a 08);
+- [tutoras](tutoras/): guias de estudo autônomos das aulas do projeto (Aulas 00 a 08).
 
 Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
@@ -133,3 +133,10 @@ As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, co
 
 ## Referências
  Motor de referência: [origem e autoria](estrutura/codigos/motor-professor/ORIGEM.md).
+
+## Situação em 11/11/2026
+
+Referência conferida: [Danilo, PI III (`fafe046`)](https://github.com/danilopradooficial/projetointegrador3/tree/fafe046).
+Os guias e o PDF da Aula 08 estão disponíveis; a aplicação ao APPA e o julgamento humano seguem
+na [lista de pendências](PENDENCIAS-GRUPO.md). A [ficha](consolidados/00_FICHA_PROJETO.md)
+registra as consultas literais e os top-5 da demonstração na seção 4.1.
