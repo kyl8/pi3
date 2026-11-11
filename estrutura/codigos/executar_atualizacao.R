@@ -9,3 +9,4 @@ source("estrutura/codigo/aula07_teoria.R", local = new.env(parent = globalenv())
 source("estrutura/codigos/aula07_lsa.R", local = new.env(parent = globalenv()), encoding = "UTF-8") # Reexecuta a etapa com os dados proprios.
 source("estrutura/codigo/aula08_tarefa.R", local = new.env(parent = globalenv()), encoding = "UTF-8")
 source("estrutura/codigo/aula08.R", local = new.env(parent = globalenv()), encoding = "UTF-8")
+source("estrutura/codigos/05-julgamento/2026-11-11-appa-05j-consolidar-assistidos.R", local = new.env(parent = globalenv()), encoding = "UTF-8")

@@ -137,3 +137,5 @@ As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, co
 ## Situação em 11/11/2026
 
 Na Aula 08, a [teoria](consolidados/aula08_consolidado.md) e a [aplicação ao APPA](consolidados/aula08_parteD_consolidado.md) incluem resolução, comparação de textos e avaliação assistida. O teste é retrospectivo e o reordenador está desligado por padrão. As decisões e os julgamentos que dependem de pessoas constam na [lista de pendências](PENDENCIAS-GRUPO.md).
+
+O [consolidado dos julgamentos assistidos](consolidados/2026-11-11-appa-julgamentos-assistidos-consolidados.md) registra a união dos pares, as divergências, a concordância entre referências de IA e a reavaliação dos modelos.
