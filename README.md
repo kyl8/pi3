@@ -136,7 +136,4 @@ As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, co
 
 ## Situação em 11/11/2026
 
-Referência conferida: [Danilo, PI III (`fafe046`)](https://github.com/danilopradooficial/projetointegrador3/tree/fafe046).
-Os guias e o PDF da Aula 08 estão disponíveis; a aplicação ao APPA e o julgamento humano seguem
-na [lista de pendências](PENDENCIAS-GRUPO.md). A [ficha](consolidados/00_FICHA_PROJETO.md)
-registra as consultas literais e os top-5 da demonstração na seção 4.1.
+Na Aula 08, a [teoria](consolidados/aula08_consolidado.md) e a [aplicação ao APPA](consolidados/aula08_parteD_consolidado.md) incluem resolução, comparação de textos e avaliação assistida. O teste é retrospectivo e o reordenador está desligado por padrão. As decisões e os julgamentos que dependem de pessoas constam na [lista de pendências](PENDENCIAS-GRUPO.md).

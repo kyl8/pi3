@@ -1,7 +1,7 @@
 # Atividade 07 — LSA e fusão de rankings
 **APPA · 2026-10-25 · corpus congelado de 141 documentos.**
 
-Refiz a atividade conforme a atualização do Danilo, aplicando o procedimento ao corpus dos clubes do APPA.
+Atividade aplicada ao corpus dos clubes do APPA, com apoio de IA.
 Decomponho $W=U\Sigma V^T$, represento documentos pelas linhas de $V_k\Sigma_k$ e a consulta por $U_k^Tq$.
 O RRF soma $1/(c+\mathrm{posição})$, com $c=60$, sem combinar escalas incompatíveis de escores.
 

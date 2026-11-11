@@ -1,5 +1,5 @@
 # Ficha do Projeto — Motor de Busca
-*criada na Aula 01 · última revisão: 11/11/2026 · motor configurado até a Aula 07; Aula 08 pendente*
+*criada na Aula 01 · última revisão: 11/11/2026 · Aula 08 testada com referência assistida*
 
 ## 1. Identificação do Projeto, Repositório e Equipe
 - **Nome do Grupo:** APPA
@@ -89,7 +89,7 @@ e `estrutura/resultados/guias/entrega1_contribuicoes.csv`.
 | 05b | métricas no ranking completo | `aula05b_metricas_grupo.csv` |
 | 06 | realimentação explícita e residual; PRF desligado | `prf_k=0`; candidatos no desenvolvimento |
 | 07 | LSA e busca híbrida; guias v2 completos | `estrutura/codigo/aula07.ipynb`; `modelo=hibrido`, `lsa_k=20`, `rrf_c=60` |
-| 08 | material incorporado; aplicação ao APPA pendente | `tutoras/GUIA_ESTUDO_aula08.md` e `tutoras/GUIA_ESTUDO_aula08_parteD.md` |
+| 08 | reordenação avaliada e disponível, desligada por padrão | `estrutura/codigo/aula08.ipynb`; `consolidados/aula08_parteD_consolidado.md` |
 
 ## 6. Decisões e parâmetros
 - Fonte canônica das avaliações: CSV congelado da Aula 05; não recoletar páginas para recalcular estas métricas.
@@ -100,6 +100,7 @@ e `estrutura/resultados/guias/entrega1_contribuicoes.csv`.
 - Desenvolvimento: q01, q03, q05, q06; teste retrospectivo: q02, q04. Não é teste historicamente intocado.
 - Pseudo-feedback não usado: `prf_k=0`; pesos Rocchio $(1;0{,}75;0{,}15)$; negativos truncados em zero.
 - Híbrido $k=20$ escolhido no desenvolvimento; piora no teste retrospectivo registrada, sem retocar a seleção.
+- Aula 08: `rerank_k=0` (desligado), `janela=2`. Na referência Claude assistida, desenvolvimento 0,312995 → 0,368550 com top-10; teste retrospectivo q02 0,572876 → 0,572876 e q04 0,352333 → 0,337181. A reordenação foi testada, não adotada; o teste já era conhecido e o ganho concentrou-se em q01.
 
 - Aula 07, guias v2: modelo do motor `hibrido`, $k=20$, $c=60$;
   MAP dev BM25 $0,594298$, LSA $0,583712$, híbrido $0,653319$;
@@ -110,9 +111,9 @@ e `estrutura/resultados/guias/entrega1_contribuicoes.csv`.
   Ganho lido em `q05`; perda em `q04`, por aproximar textos da Portuguesa à consulta sobre Jabaquara.
 
 ## 7. Diário de bordo
-- 2026-11-11 — referências do Danilo atualizadas (`fafe046`); material da Aula 08 incorporado. Pool humano atualizado para 101 pares, sem votos atribuídos por script; preparação protege votos existentes. Rankings da demonstração registrados na seção 4.1. Julgamento humano e aplicação da Aula 08 seguem pendentes.
+- 2026-11-11 — Aula 08 aplicada com apoio de IA; grade e leitura de textos registradas. Pool humano com 101 pares e sem votos atribuídos por script; julgamentos independentes seguem pendentes.
 - 2026-10-02 — fundação do corpus APPA, histórico preservado nas entregas anteriores.
-- 2026-10-25 — sincronização com Danilo `677788d`; guias 00–06 resolvidos, exemplos executados e
+- 2026-10-25 — atualização dos guias; guias 00–06 resolvidos, exemplos executados e
   aplicações ao corpus congelado; Aula 07 refeita com candidatos de dimensão e configuração persistida.
 - Documentação do grupo APPA com apoio de ChatGPT: resoluções, código, resultados e configuração
   organizados para revisão e continuidade. Julgamentos humanos permanecem pendentes.
@@ -123,7 +124,7 @@ e `estrutura/resultados/guias/entrega1_contribuicoes.csv`.
 
 <!-- estado-R:inicio -->
 ## Estado do R ao fim da sessão
-*gerado por `anexar_estado()` em 2026-10-25 22:01 · R version 4.6.1 (2026-06-24 ucrt) · motor07 v1 2026-10-15 · não edite à mão*
+*gerado por `anexar_estado()` em 2026-11-11 01:03 · R version 4.6.1 (2026-06-24 ucrt) · motor07 v1 2026-10-15 · não edite à mão*
 
 ### Objetos
 
@@ -146,6 +147,8 @@ e `estrutura/resultados/guias/entrega1_contribuicoes.csv`.
 | `cfg$modelo` | character | 1 | hibrido |
 | `cfg$lsa_k` | integer | 1 | 20 |
 | `cfg$rrf_c` | numeric | 1 | 60 |
+| `cfg$rerank_k` | integer | 1 | 0 |
+| `cfg$janela` | integer | 1 | 2 |
 | `cfg$grupo` | character | 1 | APPA |
 | `docs` | character, nomeado | 141 | d1 Santos Futebol Clube , mais..., d2 O Santos tornou-se no futeb..., d3 Ao longo de sua história, o..., d4 O Santos foi eleito pela FI..., d5 O Santos Futebol Clube foi ..., d6 As cores iniciais do Santos..., ... |
 | `escolha` | data.frame | 1 × 3 | colunas: modelo, k, AP |

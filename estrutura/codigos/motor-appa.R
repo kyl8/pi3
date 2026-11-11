@@ -1,6 +1,6 @@
 # R | motor-appa.R | R 4.3+ | executar na raiz de pi3.
 if (.Platform$OS.type == "windows") invisible(Sys.setlocale("LC_CTYPE", "English_United States.utf8")) # Habilita leitura UTF-8.
-source("estrutura/codigos/motor-professor/motor08.R", encoding = "UTF-8") # Carrega o contrato da disciplina localmente.
+source("estrutura/codigos/motor-professor/motor08.R", local = TRUE, encoding = "UTF-8") # Carrega o contrato no ambiente da etapa.
 preparar_professor <- preparar # Preserva o preparo original sem alterar o arquivo do professor.
 preparar <- function(texto, cfg = cfg_aula()) { # Estende o preparo com a decisao APPA sobre radicais.
   termos <- preparar_professor(texto, cfg) # Aplica a mesma limpeza e stopwords no corpus e na consulta.

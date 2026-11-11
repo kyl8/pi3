@@ -27,4 +27,26 @@ ranking_modelo <- function(txt, modelo, ix, cfg, m = NULL, c = 60) { # Seleciona
   if (modelo == "lsa") rl else rrf(ranking_bm25(txt, ix, cfg), rl, c = c) # Retorna LSA puro ou fusao.
 } # Fecha a escolha de modelo.
 ap_modelo <- function(q, modelo, m, consultas, qrels, ix, cfg) metricas(ranking_modelo(consultas[[q]], modelo, ix, cfg, m, c = cfg$rrf_c), qrels[[q]], cfg$limiar)[["AP"]] # Mede AP no mesmo gabarito.
-ranking_motor <- function(txt, ix, cfg) ranking_modelo(txt, cfg$modelo, ix, cfg, c = cfg$rrf_c) # Aplica a decisao persistida no config.
+proximidade <- function(qt, dt, janela) {
+  s <- 0
+  for (i in seq_along(qt)) for (j in seq_along(qt)) if (i < j && qt[i] != qt[j]) {
+    a <- which(dt == qt[i]); b <- which(dt == qt[j])
+    if (length(a) && length(b)) {
+      dist <- outer(b, a, "-"); dist <- dist[dist > 0 & dist <= janela]
+      if (length(dist)) s <- s + 1 / min(dist)
+    }
+  }
+  s
+}
+reordenar_appa <- function(rk, qt, ix, k, janela) {
+  if (length(k) != 1L || !is.finite(k) || k < 0 || k != floor(k)) stop("rerank_k deve ser inteiro nao negativo.")
+  if (length(janela) != 1L || !is.finite(janela) || janela < 1 || janela != floor(janela)) stop("janela deve ser inteiro positivo.")
+  k <- min(k, length(rk)); if (k == 0) return(rk)
+  top <- names(rk)[seq_len(k)]
+  sc <- vapply(ix$tokens[top], function(dt) proximidade(qt, dt, janela), numeric(1))
+  rk[c(top[order(-sc, seq_along(top))], names(rk)[-seq_len(k)])]
+}
+ranking_motor <- function(txt, ix, cfg) {
+  rk <- ranking_modelo(txt, cfg$modelo, ix, cfg, c = cfg$rrf_c)
+  reordenar_appa(rk, preparar(txt, cfg), ix, cfg$rerank_k, cfg$janela)
+}
