@@ -17,7 +17,7 @@ dir_csv <- "estrutura/codigos/05-julgamento/csv"
 cp  <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-corpus.csv"), fileEncoding = "UTF-8", stringsAsFactors = FALSE)
 docs <- setNames(cp$texto, cp$id)
 ix  <- montar(docs, cfg)
-nec <- read.csv("estrutura/banco-de-dados/necessidades.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE)
+nec <- read.csv("estrutura/corpus/banco-de-dados/necessidades.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE)
 modelo_lsa <- lsa(ix, LSA_K)
 
 sistemas <- function(q) {

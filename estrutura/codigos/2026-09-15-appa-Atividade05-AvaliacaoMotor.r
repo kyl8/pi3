@@ -6,7 +6,7 @@ if (!file.exists(caminho_bm25)) setwd("../..") # Aceita execucao a partir de est
 caminho_base <- "."
 source(caminho_bm25)
 
-dir_resultados <- file.path(caminho_base, "estrutura/resultados")
+dir_resultados <- file.path(caminho_base, "estrutura/codigos/resultados")
 dir.create(dir_resultados, showWarnings = FALSE, recursive = TRUE)
 
 necessidades <- data.frame(

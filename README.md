@@ -11,12 +11,13 @@ Repositório do grupo APPA para o estudo de recuperação de informação. O mot
 ## Estrutura
 
 - [entregas](entregas/): relatórios formais e entregas acadêmicas em LaTeX/Sweave;
-- [consolidados](consolidados/): atividades documentadas;
+- [consolidados-aulas](consolidados-aulas/): atividades documentadas;
+- [consolidados-tutora](consolidados-tutora/): estudos e resoluções dos guias;
 - [estrutura/codigos](estrutura/codigos/): scripts em R;
 - [estrutura/corpus](estrutura/corpus/): informações e artefatos do corpus;
-- [estrutura/resultados](estrutura/resultados/): métricas e saídas das execuções;
+- [estrutura/codigos/resultados](estrutura/codigos/resultados/): métricas e saídas das execuções;
 - [materiais-aulas](materiais-aulas/): PDFs e materiais de apoio das aulas avançadas (Aulas 00 a 08);
-- [tutoras](tutoras/): guias de estudo autônomos das aulas do projeto (Aulas 00 a 08).
+- [materiais-tutora](materiais-tutora/): guias de estudo autônomos das aulas do projeto (Aulas 00 a 08).
 
 Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
@@ -37,34 +38,34 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
 ## Ficha do Projeto e Governança
 
-- **[Ficha do Projeto Oficial](consolidados/00_FICHA_PROJETO.md)**: documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
+- **[Ficha do Projeto Oficial](consolidados-aulas/00_FICHA_PROJETO.md)**: documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
 
 ## Entregas Formais
 
 A pasta [entregas/](entregas/) reúne a entrega final e os modelos da disciplina:
 
-- **[entregas/finalizada/](entregas/finalizada/):** versão final consolidada do grupo APPA:
-  - [Entrega 1: Corpus do Projeto (PDF)](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.pdf) ([Fonte Sweave](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.Rnw), [LaTeX](entregas/finalizada/2026-10-02-appa-entrega-1-corpus.tex))
-- **[entregas/modelo_base/](entregas/modelo_base/):** modelos e templates originais fornecidos pela disciplina:
-  - [Modelo Base: Corpus do Projeto](entregas/modelo_base/entrega-1-corpus.pdf) ([Fonte Sweave](entregas/modelo_base/entrega-1-corpus.Rnw), [LaTeX](entregas/modelo_base/entrega-1-corpus.tex))
-  - Modelo "Pergunta do Trabalho" ([Fonte Sweave](entregas/modelo_base/entrega-1-pergunta.Rnw)): é o modelo de **Teoria do Aprendizado Estatístico** (resposta Y e preditores), não do PI III; o motor de busca não tem variável-alvo. Mantido apenas como referência.
+- **[entregas/entrega-1/](entregas/entrega-1/):** versão final consolidada do grupo APPA:
+  - [Entrega 1: Corpus do Projeto (PDF)](entregas/entrega-1/2026-10-02-appa-entrega-1-corpus.pdf) ([Fonte Sweave](entregas/entrega-1/2026-10-02-appa-entrega-1-corpus.Rnw), [LaTeX](entregas/entrega-1/2026-10-02-appa-entrega-1-corpus.tex))
+- **[entregas/entrega-1/modelo-professor/](entregas/entrega-1/modelo-professor/):** modelos e templates originais fornecidos pela disciplina:
+  - [Modelo Base: Corpus do Projeto](entregas/entrega-1/modelo-professor/entrega-1-corpus.pdf) ([Fonte Sweave](entregas/entrega-1/modelo-professor/entrega-1-corpus.Rnw), [LaTeX](entregas/entrega-1/modelo-professor/entrega-1-corpus.tex))
+  - Modelo "Pergunta do Trabalho" ([Fonte Sweave](entregas/entrega-1/modelo-professor/entrega-1-pergunta.Rnw)): é o modelo de **Teoria do Aprendizado Estatístico** (resposta Y e preditores), não do PI III; o motor de busca não tem variável-alvo. Mantido apenas como referência.
 
 ## Atividades e Consolidados
 
 - **Aulas 00 e 01 (Fundamentos):** Disponíveis no repositório [pi3-aulas-00-01](https://github.com/Arthur-galvao/pi3-aulas-00-01)
-- [02: TF-IDF e cosseno](consolidados/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
-- [02: teoria e cosseno (novo)](consolidados/2026-10-09-appa-Atividade02-ConsolidadoTeoria.md)
-- [02: prática e motor de busca (novo)](consolidados/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
-- [03: pré-processamento e índice](consolidados/2026-09-15-appa-Atividade03-PreProcessamentoIndice.md)
-- [04: Poisson, saturação e BM25](consolidados/2026-09-15-appa-Atividade04-PoissonBm25.md)
-- [05: avaliação do motor](consolidados/2026-09-15-appa-Atividade05-AvaliacaoMotor.md)
-- [05b: métricas de avaliação teóricas](consolidados/2026-09-18-appa-Atividade05b-MetricasAvaliacao.md)
-- [05b: métricas no gabarito próprio (Parte D)](consolidados/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.md)
-- [06: expansão de consulta e Rocchio](consolidados/2026-10-09-appa-Atividade06-RocchioFeedback.md)
+- [02: TF-IDF e cosseno](consolidados-aulas/2026-09-15-appa-Atividade02-TfIdfCosseno.md)
+- [02: teoria e cosseno (novo)](consolidados-aulas/2026-10-09-appa-Atividade02-ConsolidadoTeoria.md)
+- [02: prática e motor de busca (novo)](consolidados-aulas/2026-10-09-appa-Atividade02-ParteD-MotorCosseno.md)
+- [03: pré-processamento e índice](consolidados-aulas/2026-09-15-appa-Atividade03-PreProcessamentoIndice.md)
+- [04: Poisson, saturação e BM25](consolidados-aulas/2026-09-15-appa-Atividade04-PoissonBm25.md)
+- [05: avaliação do motor](consolidados-aulas/2026-09-15-appa-Atividade05-AvaliacaoMotor.md)
+- [05b: métricas de avaliação teóricas](consolidados-aulas/2026-09-18-appa-Atividade05b-MetricasAvaliacao.md)
+- [05b: métricas no gabarito próprio (Parte D)](consolidados-aulas/2026-09-18-appa-Atividade05b-ParteD-MetricasGabaritoProprio.md)
+- [06: expansão de consulta e Rocchio](consolidados-aulas/2026-10-09-appa-Atividade06-RocchioFeedback.md)
 
 ## Como executar
 
-Os resultados atuais usam o corpus congelado (`estrutura/corpus/` e `estrutura/banco-de-dados/`), sem rede. Na raiz do repositório:
+Os resultados atuais usam o corpus congelado (`estrutura/corpus/` e `estrutura/corpus/banco-de-dados/`), sem rede. Na raiz do repositório:
 
 ```r
 source("estrutura/codigos/motor-appa.R")
@@ -92,10 +93,10 @@ A pasta `estrutura/codigos/05-julgamento` guarda o fluxo completo da Aula 05:
 
 ## Guias e aplicações
 
-- [Resoluções individuais de todos os guias](resolucoes/)
-- [Consolidados da teoria e das Partes D](consolidados/)
-- [07: LSA e fusão de rankings](consolidados/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
-- [Guias originais completos 00–07](tutoras/)
+- [Resoluções individuais de todos os guias](consolidados-tutora/)
+- [Consolidados da teoria e das Partes D](consolidados-aulas/)
+- [07: LSA e fusão de rankings](consolidados-aulas/2026-10-25-appa-Atividade07-LsaFusaoRankings.md)
+- [Guias originais completos 00–07](materiais-tutora/)
 
 ```powershell
 Rscript estrutura/codigos/executar_guias_teoria.R
@@ -106,7 +107,7 @@ Rscript estrutura/codigos/aula07_lsa.R
 Os motores do professor estão fixados localmente com autoria e commit. As métricas usam
 o corpus congelado e o julgamento assistido identificado; os votos humanos continuam separados.
 
-A atualização inclui os fundamentos localmente: [Shannon](consolidados/2026-10-25-appa-Atividade01b-Shannon.md), coleta reproduzível e demonstração em `estrutura/codigo/aula02.R`.
+A atualização inclui os fundamentos localmente: [Shannon](consolidados-aulas/2026-10-25-appa-Atividade01b-Shannon.md), coleta reproduzível e demonstração em `estrutura/codigos/aula02.R`.
 
 Executar todas as etapas: `Rscript estrutura/codigos/executar_atualizacao.R`. Dependências: SnowballC e ggplot2. Os PDFs históricos permanecem preservados; revisões atuais estão nos consolidados em Markdown.
 
@@ -116,15 +117,15 @@ No Windows, execute `powershell -ExecutionPolicy Bypass -File .\executar_atualiz
 
 A Aula 07 compara LSA, BM25 e fusão RRF no corpus do APPA.
 
-- [Teoria resolvida: seis módulos, checkpoints, teste e tarefa individual](resolucoes/aula07_resolvido.md)
-- [Consolidado individual com estado real do R](consolidados/aula07_consolidado.md)
-- [Parte D resolvida: comparação dos textos e decisão](resolucoes/aula07_parteD_resolvido.md)
-- [Consolidado do grupo com estado real do R](consolidados/aula07_parteD_consolidado.md)
-- [Notebook da teoria](estrutura/codigo/aula07_teoria.ipynb) e [notebook da Parte D](estrutura/codigo/aula07.ipynb)
+- [Teoria resolvida: seis módulos, checkpoints, teste e tarefa individual](consolidados-tutora/aula07_resolvido.md)
+- [Consolidado individual com estado real do R](consolidados-tutora/aula07_consolidado.md)
+- [Parte D resolvida: comparação dos textos e decisão](consolidados-tutora/aula07_parteD_resolvido.md)
+- [Consolidado do grupo com estado real do R](consolidados-tutora/aula07_parteD_consolidado.md)
+- [Notebook da teoria](estrutura/codigos/aula07_teoria.ipynb) e [notebook da Parte D](estrutura/codigos/aula07.ipynb)
 
 ```powershell
-Rscript estrutura/codigo/aula07_teoria.R
-Rscript estrutura/codigo/aula07.R
+Rscript estrutura/codigos/aula07_teoria.R
+Rscript estrutura/codigos/aula07.R
 ```
 
 A avaliação atual varre os candidatos apenas no desenvolvimento e mede no teste somente BM25
@@ -136,6 +137,6 @@ As cópias da configuração têm `modelo="hibrido"`, `lsa_k=20`, `rrf_c=60`, co
 
 ## Situação em 11/11/2026
 
-Na Aula 08, a [teoria](consolidados/aula08_consolidado.md) e a [aplicação ao APPA](consolidados/aula08_parteD_consolidado.md) incluem resolução, comparação de textos e avaliação assistida. O teste é retrospectivo e o reordenador está desligado por padrão. As decisões e os julgamentos que dependem de pessoas constam na [lista de pendências](PENDENCIAS-GRUPO.md).
+Na Aula 08, a [teoria](consolidados-tutora/aula08_consolidado.md) e a [aplicação ao APPA](consolidados-tutora/aula08_parteD_consolidado.md) incluem resolução, comparação de textos e avaliação assistida. O teste é retrospectivo e o reordenador está desligado por padrão. As decisões e os julgamentos que dependem de pessoas constam na [lista de pendências](PENDENCIAS-GRUPO.md).
 
-O [consolidado dos julgamentos assistidos](consolidados/2026-11-11-appa-julgamentos-assistidos-consolidados.md) registra a união dos pares, as divergências, a concordância entre referências de IA e a reavaliação dos modelos.
+O [consolidado dos julgamentos assistidos](consolidados-aulas/2026-11-11-appa-julgamentos-assistidos-consolidados.md) registra a união dos pares, as divergências, a concordância entre referências de IA e a reavaliação dos modelos.

@@ -1,7 +1,7 @@
 # R | GuiasEstudo.R | R 4.3+ | executar na raiz de pi3.
 source("estrutura/codigos/motor-appa.R", encoding = "UTF-8") # Carrega o motor local e a adaptacao do grupo.
 source("estrutura/codigos/config.R", encoding = "UTF-8") # Le parametros canonicos APPA.
-out <- "estrutura/resultados/guias" # Separa as evidencias dos guias.
+out <- "estrutura/codigos/resultados/guias" # Separa as evidencias dos guias.
 dir.create(out, recursive = TRUE, showWarnings = FALSE) # Cria o diretorio das saidas.
 salvar <- function(x, nome) write.csv(x, file.path(out, paste0(nome, ".csv")), row.names = FALSE, fileEncoding = "UTF-8") # Exporta tabelas.
 docs_curso <- docs_aula(); cfg_curso <- cfg_aula(); ix_curso <- montar(docs_curso, cfg_curso) # Reproduz os oito textos sem stemming.

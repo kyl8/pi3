@@ -5,8 +5,8 @@
 if (!file.exists("estrutura/codigos/motor-appa.R")) setwd("../..") # Aceita execucao a partir de estrutura/codigos.
 source("estrutura/codigos/motor-appa.R", encoding = "UTF-8") # Funcoes do curso (cosseno, norm_cols, ranking_cosseno...) e preparo APPA.
 source("estrutura/codigos/config.R", encoding = "UTF-8")     # cfg: decisoes do grupo.
-docs   <- readRDS("estrutura/banco-de-dados/docs.rds")
-origem <- readRDS("estrutura/banco-de-dados/origem.rds")
+docs   <- readRDS("estrutura/corpus/banco-de-dados/docs.rds")
+origem <- readRDS("estrutura/corpus/banco-de-dados/origem.rds")
 ix     <- montar(docs, cfg)
 estado()
 

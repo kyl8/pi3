@@ -12,9 +12,9 @@
 #    docs <- docs_aula();  cfg <- cfg_aula();  ix <- montar(docs, cfg)
 #  DEPOIS (Parte D, com o corpus do grupo, no Colab):
 #    REPO <- "https://raw.githubusercontent.com/<usuario>/projeto-<grupo>/main/"
-#    download.file(paste0(REPO, "estrutura/codigo/config.R"), "config.R")
+#    download.file(paste0(REPO, "estrutura/codigos/config.R"), "config.R")
 #    source("config.R")     # cria cfg
-#    docs <- readRDS(gzcon(url(paste0(REPO, "estrutura/banco-de-dados/docs.rds"))))
+#    docs <- readRDS(gzcon(url(paste0(REPO, "estrutura/corpus/banco-de-dados/docs.rds"))))
 #    ix   <- montar(docs, cfg)
 #
 #  FUNCOES: tokenizar, docs_aula, matriz_tf, busca_booleana, idf_classico, cfg_aula, montar, cosseno, norm_cols, vetor_consulta, ranking_cosseno, stopwords_aula, limpar, sem_stop, preparar, indice_invertido, busca_AND, idf_bm25, saturacao, bm25, bm25_doc, ranking_bm25

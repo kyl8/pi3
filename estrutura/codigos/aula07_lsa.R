@@ -7,7 +7,7 @@ source("estrutura/codigos/aula07_funcoes.R", local = TRUE, encoding = "UTF-8") #
 source("estrutura/codigos/config.R", local = TRUE, encoding = "UTF-8") # Le parametros APPA no mesmo ambiente.
 cp <- read.csv("estrutura/codigos/05-julgamento/csv/2026-09-15-appa-05-corpus.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE) # Usa o corpus congelado.
 docs <- setNames(cp$texto, cp$id); ix <- montar(docs, cfg) # Garante representacao identica a usada nos guias.
-nec <- read.csv("estrutura/banco-de-dados/necessidades.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE) # Le as necessidades e a divisao persistida no caminho do guia.
+nec <- read.csv("estrutura/corpus/banco-de-dados/necessidades.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE) # Le as necessidades e a divisao persistida no caminho do guia.
 stopifnot(all(c("consulta", "texto_consulta", "conjunto") %in% names(nec)), all(nec$conjunto %in% c("dev", "teste"))) # Exige a divisao antes de medir candidatos.
 nec$id <- nec$consulta; nec$conjunto[nec$conjunto == "teste"] <- "teste_retrospectivo" # Preserva a ressalva: consultas ja foram vistas em versoes anteriores.
 qr <- read.csv("estrutura/codigos/05-julgamento/csv/2026-10-25-appa-05-qrels-assistidos.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE) # Usa a referencia assistida identificada.
@@ -44,10 +44,9 @@ for (i in which(nec$conjunto == "teste_retrospectivo")) { # Abre o teste depois 
   } # Termina a referencia e o escolhido.
 } # Termina o relato retrospectivo.
 if (length(linhas_teste)) tab <- rbind(tab, do.call(rbind, linhas_teste)) # Mantem dev completo e teste da unica escolha.
-cfg$prf_k <- read.csv("estrutura/resultados/guias/aula06_escolha.csv")$prf_k # Mantem a escolha de pseudo-feedback no dev.
-writeLines(trimws(c("# Configuracao APPA; parametros escolhidos no desenvolvimento; ver consolidados/00_FICHA_PROJETO.md.", "cfg <-", capture.output(dput(cfg))), which = "right"), "estrutura/codigos/config.R") # Persiste os parametros sem espacos finais.
-file.copy("estrutura/codigos/config.R", "estrutura/codigo/config.R", overwrite = TRUE) # Mantem o caminho exigido pelos guias sincronizado.
-prefixo <- "estrutura/resultados/2026-10-25-appa-07-" # Centraliza as saidas da aula sete.
+cfg$prf_k <- read.csv("estrutura/codigos/resultados/guias/aula06_escolha.csv")$prf_k # Mantem a escolha de pseudo-feedback no dev.
+writeLines(trimws(c("# Configuracao APPA; parametros escolhidos no desenvolvimento; ver consolidados-aulas/00_FICHA_PROJETO.md.", "cfg <-", capture.output(dput(cfg))), which = "right"), "estrutura/codigos/config.R") # Persiste os parametros sem espacos finais.
+prefixo <- "estrutura/codigos/resultados/2026-10-25-appa-07-" # Centraliza as saidas da aula sete.
 salvar <- function(x, nome) write.csv(x, paste0(prefixo, nome, ".csv"), row.names = FALSE, fileEncoding = "UTF-8") # Grava evidencias sem arredondamento interno.
 salvar(dev, "LsaMapPorKDev"); salvar(tab, "LsaPorConsultaTodosK") # Entrega candidatos e numeros por consulta.
 selecionados <- subset(tab, k == melhor_k) # Congela a dimensao selecionada.
@@ -81,4 +80,4 @@ for (metodo in c("bm25", "lsa", "hibrido")) { # Desenha as curvas dos candidatos
 legend("bottomright", c("BM25", "LSA", "RRF"), col = c("gray40", "steelblue", "firebrick"), lty = 1, pch = 1); dev.off() # Fecha figura com legenda.
 print(escolha); print(placar) # Mostra a escolha e as limitacoes documentadas no consolidado.
 memoria <- list2env(list(MOTOR_VERSAO = MOTOR_VERSAO, docs = docs, cfg = cfg, ix = ix, modelo_teste = modelo_teste, nec = nec, graus = graus, tab_dev = dev, placar = placar, escolha = escolha, lsa = lsa, ranking_lsa = ranking_lsa, rrf = rrf, ranking_modelo = ranking_modelo, ap_modelo = ap_modelo, ranking_motor = ranking_motor)) # Seleciona os objetos reais relevantes para continuar a proxima aula.
-for (arquivo in c("consolidados/00_FICHA_PROJETO.md", "consolidados/aula07_parteD_consolidado.md")) if (file.exists(arquivo)) anexar_estado(arquivo, env = memoria) # O motor gera o estado a partir dos objetos calculados.
+for (arquivo in c("consolidados-aulas/00_FICHA_PROJETO.md", "consolidados-tutora/aula07_parteD_consolidado.md")) if (file.exists(arquivo)) anexar_estado(arquivo, env = memoria) # O motor gera o estado a partir dos objetos calculados.

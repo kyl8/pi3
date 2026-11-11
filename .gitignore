@@ -12,9 +12,9 @@
 Rplots.pdf
 
 # Registros locais de execucao
-estrutura/resultados/guias/teoria/*-execucao.txt
-estrutura/resultados/guias/teoria-status.csv
-estrutura/resultados/guias/sessionInfo.txt
+estrutura/codigos/resultados/guias/teoria/*-execucao.txt
+estrutura/codigos/resultados/guias/teoria-status.csv
+estrutura/codigos/resultados/guias/sessionInfo.txt
 
 # Checkpoints de notebooks e arquivos soltos criados por scripts
 .ipynb_checkpoints/

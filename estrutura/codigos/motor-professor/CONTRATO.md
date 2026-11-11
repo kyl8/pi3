@@ -37,15 +37,15 @@ ix   <- montar(docs, cfg)        # tudo que as aulas anteriores calcularam
 ```r
 source("https://raw.githubusercontent.com/fractalarea/pi3-motor-de-busca/main/motor/motorNN.R")   # as funções do curso
 REPO <- "https://raw.githubusercontent.com/<usuario>/projeto-<grupo>/main/"           # o repositório do grupo (público)
-download.file(paste0(REPO, "estrutura/codigo/config.R"), "config.R")
+download.file(paste0(REPO, "estrutura/codigos/config.R"), "config.R")
 source("config.R")                                                               # cfg: as decisões do grupo
-docs <- readRDS(gzcon(url(paste0(REPO, "estrutura/banco-de-dados/docs.rds"))))  # o corpus do grupo
+docs <- readRDS(gzcon(url(paste0(REPO, "estrutura/corpus/banco-de-dados/docs.rds"))))  # o corpus do grupo
 ix   <- montar(docs, cfg)                                                        # tudo derivado
 ```
 
-A partir da Parte D da Aula 5,5, o corpus vem do arquivo congelado: `cp <- read.csv(paste0(REPO, "estrutura/banco-de-dados/corpus.csv"), fileEncoding = "UTF-8"); docs <- setNames(cp$texto, cp$id)`.
+A partir da Parte D da Aula 5,5, o corpus vem do arquivo congelado: `cp <- read.csv(paste0(REPO, "estrutura/corpus/banco-de-dados/corpus.csv"), fileEncoding = "UTF-8"); docs <- setNames(cp$texto, cp$id)`.
 
-Quem tem o repositório clonado (RStudio) pode trocar o endereço pelo caminho local: `source("estrutura/codigo/config.R")`, `readRDS("estrutura/banco-de-dados/docs.rds")`.
+Quem tem o repositório clonado (RStudio) pode trocar o endereço pelo caminho local: `source("estrutura/codigos/config.R")`, `readRDS("estrutura/corpus/banco-de-dados/docs.rds")`.
 
 ---
 

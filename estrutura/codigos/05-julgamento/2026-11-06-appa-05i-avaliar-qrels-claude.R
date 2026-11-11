@@ -7,13 +7,13 @@
 # Nao altera config.R nem os qrels existentes.
 if (!file.exists("estrutura/codigos/motor-appa.R")) setwd("../../..")
 source("estrutura/codigos/motor-appa.R", encoding = "UTF-8"); source("estrutura/codigos/config.R", encoding = "UTF-8")
-dir_csv <- "estrutura/codigos/05-julgamento/csv"; dir_res <- "estrutura/resultados"
+dir_csv <- "estrutura/codigos/05-julgamento/csv"; dir_res <- "estrutura/codigos/resultados"
 LSA_K <- 20L; LIMIAR <- 2L; K <- 3L
 
 cl  <- read.csv(file.path(dir_csv, "2026-11-06-appa-05-qrels-claude.csv"), stringsAsFactors = FALSE)
 cx  <- read.csv(file.path(dir_csv, "2026-10-25-appa-05-qrels-assistidos.csv"), fileEncoding = "UTF-8", stringsAsFactors = FALSE)
 cp  <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-corpus.csv"), fileEncoding = "UTF-8", stringsAsFactors = FALSE)
-nec <- read.csv("estrutura/banco-de-dados/necessidades.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE)
+nec <- read.csv("estrutura/corpus/banco-de-dados/necessidades.csv", fileEncoding = "UTF-8", stringsAsFactors = FALSE)
 ix  <- montar(setNames(cp$texto, cp$id), cfg); modelo_lsa <- lsa(ix, LSA_K)
 
 # ---- 1) kappa claude x codex --------------------------------------------

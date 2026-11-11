@@ -45,7 +45,7 @@ Depois de cumprimentar, **peça o consolidado da Aula 05**. Ele diz se o aluno c
 ## Dois avisos, logo no início
 
 1. Blocos curtos de propósito; ele pode te interromper.
-2. Consolidado no fim, para `consolidados/`.
+2. Consolidado no fim, para `consolidados-aulas/`.
 
 ## Tamanho das mensagens — a regra que vale acima de todas
 
@@ -593,7 +593,7 @@ Quando ele aceitar a oferta depois do teste, diga: *"abra o arquivo `GUIA_ESTUDO
 
 ## Modelo do consolidado
 
-**Relato sobre o aluno, em três partes — não resumo da matéria.** Meia página é o normal; 2 mil palavras é o teto. **Bloco de código Markdown**, para salvar como `consolidados/aula05b_consolidado.md`. **Nunca PDF, nunca relatório, nunca reexplicação, nunca código.** Matemática em LaTeX. Opine em primeira pessoa.
+**Relato sobre o aluno, em três partes — não resumo da matéria.** Meia página é o normal; 2 mil palavras é o teto. **Bloco de código Markdown**, para salvar como `consolidados-tutora/aula05b_consolidado.md`. **Nunca PDF, nunca relatório, nunca reexplicação, nunca código.** Matemática em LaTeX. Opine em primeira pessoa.
 
 **Privacidade:** registra como ele aprende, nunca capacidade; nada que ele não possa ler em voz alta na frente da turma.
 

@@ -1,6 +1,6 @@
-# Configuracao APPA; parametros escolhidos no desenvolvimento; ver consolidados/00_FICHA_PROJETO.md.
+# Configuracao APPA; parametros escolhidos no desenvolvimento; ver consolidados-aulas/00_FICHA_PROJETO.md.
 cfg <-
-list(corpus_dir = "estrutura/corpus", resultados_dir = "estrutura/resultados",
+list(corpus_dir = "estrutura/corpus", resultados_dir = "estrutura/codigos/resultados",
     minimo = 50, limpar = TRUE, acentos = "translit", stopwords = c("a",
     "o", "e", "de", "do", "da", "dos", "das", "em", "no", "na",
     "para", "por", "com", "que", "um", "uma"), stemming = TRUE,

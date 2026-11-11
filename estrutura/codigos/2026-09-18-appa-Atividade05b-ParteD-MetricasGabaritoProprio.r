@@ -15,7 +15,7 @@ caminho_base <- "."
 source(caminho_bm25)
 
 dir_csv <- file.path(caminho_base, "estrutura/codigos/05-julgamento/csv")
-dir_resultados <- file.path(caminho_base, "estrutura/resultados")
+dir_resultados <- file.path(caminho_base, "estrutura/codigos/resultados")
 dir.create(dir_resultados, showWarnings = FALSE, recursive = TRUE)
 
 necessidades <- read.csv(file.path(dir_csv, "2026-09-15-appa-05-necessidades.csv"),
@@ -156,4 +156,4 @@ cat("=======================================================\n")
 todos_resultados <- rbind(resultados_ge1, resultados_ge2)
 write.csv2(todos_resultados, file.path(dir_resultados, "2026-09-18-appa-05b-MetricasGabaritoProprio.csv"),
            row.names = FALSE)
-cat("\nArquivo de métricas salvo em: estrutura/resultados/2026-09-18-appa-05b-MetricasGabaritoProprio.csv\n")
+cat("\nArquivo de métricas salvo em: estrutura/codigos/resultados/2026-09-18-appa-05b-MetricasGabaritoProprio.csv\n")

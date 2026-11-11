@@ -19,13 +19,13 @@ out$origem <- ifelse(chave(out) %in% chave(ajuste), "revisao_chatgpt", ifelse(ch
 out <- out[order(out$consulta,as.integer(sub("d","",out$documento))), ]
 stopifnot(!anyDuplicated(chave(out)), all(out$grau %in% 0:2), all(chave(pool) %in% chave(out)))
 write.csv(out,file.path(base,"2026-11-11-appa-05-qrels-consolidado-assistido.csv"),row.names=FALSE,fileEncoding="UTF-8")
-write.csv(merge(discord, ajuste, by=c("consulta","documento")),"estrutura/resultados/2026-11-11-appa-divergencias-assistidas.csv",row.names=FALSE,fileEncoding="UTF-8")
+write.csv(merge(discord, ajuste, by=c("consulta","documento")),"estrutura/codigos/resultados/2026-11-11-appa-divergencias-assistidas.csv",row.names=FALSE,fileEncoding="UTF-8")
 kap <- function(a,b,niveis) { tab <- table(factor(a,levels=niveis),factor(b,levels=niveis)); n <- sum(tab); po <- sum(diag(tab))/n; pe <- sum(rowSums(tab)*colSums(tab))/n^2; c(n=n,acordo=po,kappa=if(pe==1) NA else (po-pe)/(1-pe)) }
 com_pool <- compar[chave(compar) %in% chave(pool), ]
 k <- rbind(tres_niveis_geral=kap(compar$grau_claude,compar$grau_codex,0:2), binario_geral=kap(compar$grau_claude>=2,compar$grau_codex>=2,c(FALSE,TRUE)), tres_niveis_pool=kap(com_pool$grau_claude,com_pool$grau_codex,0:2))
-write.csv(data.frame(escala=rownames(k),k,row.names=NULL),"estrutura/resultados/2026-11-11-appa-kappa-assistido.csv",row.names=FALSE)
+write.csv(data.frame(escala=rownames(k),k,row.names=NULL),"estrutura/codigos/resultados/2026-11-11-appa-kappa-assistido.csv",row.names=FALSE)
 corpus <- read.csv(file.path(base,"2026-09-15-appa-05-corpus.csv"),fileEncoding="UTF-8")
-nec <- read.csv("estrutura/banco-de-dados/necessidades.csv",fileEncoding="UTF-8")
+nec <- read.csv("estrutura/corpus/banco-de-dados/necessidades.csv",fileEncoding="UTF-8")
 ix <- montar(setNames(corpus$texto,corpus$id),cfg); mod <- lsa(ix,cfg$lsa_k)
 res <- do.call(rbind,lapply(seq_len(nrow(nec)),function(i) {
  q <- nec[i,]; g <- out[out$consulta==q$consulta,]; graus <- setNames(g$grau,g$documento)
@@ -34,6 +34,6 @@ res <- do.call(rbind,lapply(seq_len(nrow(nec)),function(i) {
  do.call(rbind,lapply(names(modelos),function(m) data.frame(consulta=q$consulta,conjunto=q$conjunto,modelo=m,AP=unname(metricas(modelos[[m]],graus,2)["AP"]),relevantes=sum(g$grau>=2))))
 }))
 placar <- aggregate(AP ~ conjunto+modelo,res,mean)
-write.csv(res,"estrutura/resultados/2026-11-11-appa-modelos-assistidos.csv",row.names=FALSE)
-write.csv(placar,"estrutura/resultados/2026-11-11-appa-placar-assistido.csv",row.names=FALSE)
+write.csv(res,"estrutura/codigos/resultados/2026-11-11-appa-modelos-assistidos.csv",row.names=FALSE)
+write.csv(placar,"estrutura/codigos/resultados/2026-11-11-appa-placar-assistido.csv",row.names=FALSE)
 print(k); print(placar); cat("Pares consolidados:",nrow(out),"\n")

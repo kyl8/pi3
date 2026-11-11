@@ -2,8 +2,8 @@
 if (.Platform$OS.type == "windows") invisible(Sys.setlocale("LC_CTYPE", "English_United States.utf8")) # Le UTF-8 nos guias originais.
 options(repos = c(CRAN = "https://cloud.r-project.org")) # Define o espelho para a celula de dependencia da Aula 03.
 dir.create("estrutura/codigos/guias", recursive = TRUE, showWarnings = FALSE) # Guarda os trechos literais extraidos.
-dir.create("estrutura/resultados/guias/teoria", recursive = TRUE, showWarnings = FALSE) # Guarda as transcricoes computacionais.
-arquivos <- list.files("tutoras", pattern = "^GUIA_ESTUDO_aula[0-9]+b?\\.md$", full.names = TRUE) # Seleciona todas as teorias locais, incluindo a Aula 07.
+dir.create("estrutura/codigos/resultados/guias/teoria", recursive = TRUE, showWarnings = FALSE) # Guarda as transcricoes computacionais.
+arquivos <- list.files("materiais-tutora", pattern = "^GUIA_ESTUDO_aula[0-9]+b?\\.md$", full.names = TRUE) # Seleciona todas as teorias locais, incluindo a Aula 07.
 log <- list() # Acumula o status de cada bloco.
 for (arquivo in arquivos) { # Executa cada aula isoladamente.
   nome <- sub("GUIA_ESTUDO_", "", sub("\\.md$", "", basename(arquivo))) # Define nome local do roteiro.
@@ -23,7 +23,7 @@ for (arquivo in arquivos) { # Executa cada aula isoladamente.
   for (j in seq_along(aberturas)) { # Avalia um bloco por vez.
     a <- aberturas[j]; b <- a + which(grepl("^```", conteudo[(a + 1):length(conteudo)]))[1] # Encontra o fechamento do bloco.
     codigo <- paste(conteudo[(a + 1):(b - 1)], collapse = "\n") # Preserva exatamente o corpo R.
-    if (!figura_aberta && grepl("(?<![A-Za-z_])(plot|ggplot|image|hist|barplot)\\s*\\(", codigo, perl = TRUE)) { png(file.path("estrutura/resultados/guias/teoria", paste0(nome, "-%02d.png")), width = 1100, height = 750, res = 120); figura_aberta <- TRUE } # Nao gera imagens vazias para aulas sem graficos.
+    if (!figura_aberta && grepl("(?<![A-Za-z_])(plot|ggplot|image|hist|barplot)\\s*\\(", codigo, perl = TRUE)) { png(file.path("estrutura/codigos/resultados/guias/teoria", paste0(nome, "-%02d.png")), width = 1100, height = 750, res = 120); figura_aberta <- TRUE } # Nao gera imagens vazias para aulas sem graficos.
     roteiro <- c(roteiro, paste0("\n# Bloco ", j), codigo) # Mantem o codigo disponivel para leitura.
     if (grepl("download.file|readline\\(|file.choose\\(|source\\(.*https|<(arquivo|usuario|nome)", codigo)) { # Detecta somente parametros ilustrativos, sem confundir comparacoes numericas.
       log[[length(log) + 1]] <- data.frame(aula = nome, bloco = j, status = "instrucao_ambiente", detalhe = "Nao e um exercicio numerico; dependencias instaladas previamente.") # Explica porque esse trecho nao precisa ser repetido.
@@ -36,8 +36,8 @@ for (arquivo in arquivos) { # Executa cada aula isoladamente.
   } # Termina a execucao dos exemplos da aula.
   if (figura_aberta) dev.off() # Conclui apenas o dispositivo aberto pelo roteiro.
   writeLines(roteiro, file.path("estrutura/codigos/guias", paste0(nome, "_teoria.R"))) # Salva o roteiro extraido.
-  writeLines(transcricao, file.path("estrutura/resultados/guias/teoria", paste0(nome, "-execucao.txt"))) # Salva as saidas verificadas.
+  writeLines(transcricao, file.path("estrutura/codigos/resultados/guias/teoria", paste0(nome, "-execucao.txt"))) # Salva as saidas verificadas.
 } # Termina todas as teorias.
 log <- do.call(rbind, log) # Reune o status dos exemplos.
-write.csv(log, "estrutura/resultados/guias/teoria-status.csv", row.names = FALSE, fileEncoding = "UTF-8") # Permite auditar cobertura e falhas.
+write.csv(log, "estrutura/codigos/resultados/guias/teoria-status.csv", row.names = FALSE, fileEncoding = "UTF-8") # Permite auditar cobertura e falhas.
 print(table(log$aula, log$status)); print(subset(log, status == "erro_a_conferir")) # Mostra o que precisa de verificacao.

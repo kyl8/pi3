@@ -1,6 +1,6 @@
 # ==========================================================================
 #  config.R  --  as decisoes do grupo, para o R
-#  Copie para  estrutura/codigo/config.R  no repositorio do grupo.
+#  Copie para  estrutura/codigos/config.R  no repositorio do grupo.
 # ==========================================================================
 #
 #  A ficha do projeto diz as decisoes em prosa (e o porque).

@@ -160,4 +160,4 @@ Ordem: **perguntas guardadas → tarefa → o que vem → consolidado.** (O test
 3. **O que vem:** *"Hoje o seu gabarito foi régua. Na Aula 06 ele vira entrada: o Rocchio pega os documentos que você marcou como relevantes e reescreve a consulta com as palavras deles — e você mede, com estas mesmas cinco métricas, se a consulta reescrita ranqueia melhor que a original. É a primeira vez que o gabarito melhora o motor em vez de só medi-lo."*
 4. **Gere o consolidado** — avise que está gerando. Mesmo formato de três partes (`.md` em bloco de código, nunca PDF, sem código, sem reexplicação, LaTeX). Parte 1: Módulos 10–12. Parte 2: ele escolheu o limiar antes de calcular, com justificativa? Tratou os não julgados como zero sem reclamar? Declarou o vencedor com ressalva ou sem? Parte 3, "Produzido": o limiar e o motivo; a tabela-resumo (quem venceu em cada consulta); o MAP dos dois; a ressalva que ele escreveu.
 
-Salvar como `consolidados/aula05b_parteD_consolidado.md`.
+Salvar como `consolidados-tutora/aula05b_parteD_consolidado.md`.
