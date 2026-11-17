@@ -3,8 +3,8 @@
 
 ## 1. Identificação do Projeto, Repositório e Equipe
 - **Nome do Grupo:** APPA
-- **Integrantes:** Arthur Galvão, Pedro Henrique, Ailana
-- **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana
+- **Integrantes:** Arthur Galvão, Pedro Henrique, Ailana Pereira Gonsalez
+- **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez
 - **Apoio:** ChatGPT
 - **Repositório GitHub:** `https://github.com/kyl8/pi3`
 - **Branch Principal:** `main`

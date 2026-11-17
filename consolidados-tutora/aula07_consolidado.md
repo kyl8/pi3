@@ -1,7 +1,7 @@
 # Consolidado — PI III — Aula 07 — 25/10/2026
 *Guia versão 2 · apoio: ChatGPT · estudo teórico e aplicação · motor07.*
 **Aluno:** Pedro Henrique · **Grupo:** APPA.
-**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez.
 
 ## 1. O que foi passado
 - M1 — descasamento de vocabulário: “busca”, “ranqueamento”, “buscar”.

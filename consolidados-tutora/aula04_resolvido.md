@@ -2,7 +2,7 @@
 
 **Apoio:** ChatGPT.
 **Aluno:** Pedro Henrique · **Grupo:** APPA · **Data:** 2026-10-25.
-**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez.
 Caderno de resoluções: checkpoints, respostas e exemplos da disciplina.
 Fonte: [guia original](../materiais-tutora/GUIA_ESTUDO_aula04.md); exemplos e gabaritos da disciplina.
 

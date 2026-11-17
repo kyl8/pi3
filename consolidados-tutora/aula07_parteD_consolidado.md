@@ -1,6 +1,6 @@
 # Consolidado — PI III — Aula 07 — Parte D — 25/10/2026
 *Guia versão 2 · apoio: ChatGPT · preparação da aplicação de grupo · motor07.*
-**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez.
 
 ## 1. O que foi feito
 - M7 — LSA no corpus congelado; em `q01`, três documentos em comum nos top-5;

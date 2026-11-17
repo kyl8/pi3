@@ -1,5 +1,5 @@
 # Resolução — PI III — Aula 07: LSA e busca híbrida
-**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez.
 **Pedro Henrique · APPA · 25/10/2026 · Guia versão 2.**
 **Apoio:** ChatGPT.
 Caderno de teoria, checkpoints, teste e tarefa individual.

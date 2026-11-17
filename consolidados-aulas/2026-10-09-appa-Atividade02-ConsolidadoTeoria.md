@@ -1,6 +1,6 @@
 # Consolidado — PI III — Aula 02 — 2026-10-09
 *guia versão 3 · tutora: Antigravity Lead Agent · sessão individual (teoria) · motor02*
-**Aluno:** Grupo APPA (Arthur Galvão, Pedro Henrique, Ailana)
+**Aluno:** Grupo APPA (Arthur Galvão, Pedro Henrique, Ailana Pereira Gonsalez)
 
 ## 1. O que foi passado
 - M1 — por que somar pesos não ordena

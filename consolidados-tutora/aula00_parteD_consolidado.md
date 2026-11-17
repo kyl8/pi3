@@ -1,5 +1,5 @@
 # Consolidado — PI III — Aula 00 — Parte D — 2026-10-25
-**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana · **Apoio:** ChatGPT.
+**Grupo:** APPA · **Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez · **Apoio:** ChatGPT.
 
 ## 1. O que foi feito
 - M12 — Três frases suas: sujar, limpar, contar

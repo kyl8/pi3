@@ -1,6 +1,6 @@
 # Consolidado — PI III — aula05b — 2026-10-25
 **Aluno:** Pedro Henrique · **Grupo:** APPA · **Apoio:** ChatGPT.
-**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez.
 
 ## 1. O que foi passado
 - M1 — O cenário: ranking, gabarito e limiar viram `rel`

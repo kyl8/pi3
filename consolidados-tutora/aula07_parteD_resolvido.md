@@ -1,6 +1,6 @@
 # Aula 07 — Parte D resolvida no APPA
 **Grupo APPA · Guia versão 2 · 25/10/2026 · apoio: ChatGPT.**
-**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana.
+**Solicitante:** Grupo APPA — Arthur Galvão, Pedro Henrique e Ailana Pereira Gonsalez.
 
 ## Ficha em três linhas
 APPA estuda um buscador sobre Santos FC, Portuguesa Santista e Jabaquara, voltado à memória do futebol regional.

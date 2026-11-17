@@ -36,7 +36,7 @@
 \tituloestrangeiro{}
 \autor{Grupo APPA}
 \local{Santos-SP}
-\data{\today}
+\data{2 de outubro de 2026}
 
 \newcommand{\nomecurso}{Tecnologia em Ciência de Dados}
 \newcommand{\nomedisciplina}{Projeto Integrador III --- Motor de Busca}
@@ -45,7 +45,7 @@
 \newcommand{\integrantes}{%
   Arthur Galvão \\
   Pedro Henrique \\
-  Ailana%
+  Ailana Pereira Gonsalez%
 }
 
 \begin{document}
