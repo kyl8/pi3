@@ -40,10 +40,17 @@ Todos os artefatos seguem a convenção de prefixo `YYYY-MM-DD-appa`.
 
 - **[Ficha do Projeto Oficial](consolidados-aulas/00_FICHA_PROJETO.md)**: documento canônico de memória contínua do projeto integrador, detalhando tema regional, usuários, perguntas de busca, fonte aberta (Wikipédia CC BY-SA 4.0), estatísticas do corpus (141 documentos, 3.073 termos), pipeline de módulos e estado do R.
 
+## Aula 08: MMR
+
+- [Apresentação de PI III](entregas/apresentacao-final/README.md) com HTML offline, PDF e código React/Remotion.
+- [Consolidados individuais simulados e notas de execução](consolidados/aula08_tema/CONSOLIDADOS.md).
+- [Execução reproduzível do Tema 5](estrutura/codigos/aula08_mmr.R) e [grade de desenvolvimento](estrutura/codigos/resultados/aula08-mmr-dev.csv).
+
 ## Entregas Formais
 
 A pasta [entregas/](entregas/) reúne a entrega final e os modelos da disciplina:
 
+- **[Entrega final do APPA](entregas/entrega-final/README.md):** consolidados individuais do Tema 5, apresentação e motor de busca interativo com o corpus do grupo.
 - **[entregas/entrega-1/](entregas/entrega-1/):** versão final consolidada do grupo APPA:
   - [Entrega 1: Corpus do Projeto (PDF)](entregas/entrega-1/2026-10-02-appa-entrega-1-corpus.pdf) ([Fonte Sweave](entregas/entrega-1/2026-10-02-appa-entrega-1-corpus.Rnw), [LaTeX](entregas/entrega-1/2026-10-02-appa-entrega-1-corpus.tex))
 - **[entregas/entrega-1/modelo-professor/](entregas/entrega-1/modelo-professor/):** modelos e templates originais fornecidos pela disciplina:

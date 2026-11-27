@@ -1,0 +1,203 @@
+{
+  "grade": [
+    {
+      "lambda": 1.0,
+      "AP": 0.315487594214743,
+      "nDCG_grad": 0.707933499755517,
+      "red": 0.146209797597884
+    },
+    {
+      "lambda": 0.9,
+      "AP": 0.316876483103632,
+      "nDCG_grad": 0.705422281621547,
+      "red": 0.146209797597884
+    },
+    {
+      "lambda": 0.7,
+      "AP": 0.289098705325854,
+      "nDCG_grad": 0.684454256445181,
+      "red": 0.10479506065355
+    },
+    {
+      "lambda": 0.5,
+      "AP": 0.270919141833791,
+      "nDCG_grad": 0.659058657789382,
+      "red": 0.0708368510291885
+    }
+  ],
+  "teste": [
+    {
+      "consulta": "q02",
+      "antes": 0.260695250867448,
+      "depois": 0.254028584200781
+    },
+    {
+      "consulta": "q04",
+      "antes": 0.321799844365482,
+      "depois": 0.291496814062452
+    }
+  ],
+  "top": [
+    {
+      "id": "d4",
+      "texto": "O Santos foi eleito pela FIFA em 2000 o quinto maior clube de futebol do Século XX , sendo o melhor clube das Américas na lista, e também recebeu no ano de seu centenário na câmara dos deputados em Brasília pela FIFA o título de \"maior clube sul-americano do Século XX\". Além de ser o clube brasileiro que mais enfrentou estrangeiros na história, o Santos é também o único clube brasileiro a ser campeão estadual , nacional, continental e mundial no mesmo ano, em 1962. Outro feito único do clube é ser o que mais marcou gols na história do futebol mundial, tendo sido o primeiro a alcançar a marca de doze mil gols.",
+      "assunto": "conquistas",
+      "lambda": 1.0
+    },
+    {
+      "id": "d2",
+      "texto": "O Santos tornou-se no futebol um dos clubes mais bem-sucedidos do Brasil e reconhecidos mundialmente. Ficou famoso na década de 1960 pelos vários títulos internacionais e nacionais conquistados e por ter formado a carreira profissional de Pelé , considerado por muitos como o maior jogador da história do esporte, e segundo a FIFA , o melhor jogador do século XX . Além disso, o Rei também tem o marco de maior artilheiro da história do Santos e o segundo maior artilheiro da Seleção Brasileira . À frente de Pelé, com mais de 70 gols pela Seleção em jogos oficiais, está Neymar , outro jogador também revelado pelo clube.",
+      "assunto": "Pelé e títulos",
+      "lambda": 1.0
+    },
+    {
+      "id": "d95",
+      "texto": "Conhecidas como as Sereias da Vila , a história do futebol feminino começou em 1997. Para formar sua primeira equipe, o Santos teve como parceira a Marvel Consórcios, que mantinha uma equipe feminina de futebol de salão. Houve também a realização de peneiras, chefiada pelo ídolo Manoel Maria , que também foi o primeiro treinador da equipe feminina do clube.",
+      "assunto": "origem do futebol feminino",
+      "lambda": 1.0
+    },
+    {
+      "id": "d97",
+      "texto": "De 2009 a 2012, o Santos foi considerado o time mais forte de futebol feminino do Brasil, jogadoras como Marta e Cristiane passaram pelo Santos e o clube foi a base da Seleção Brasileira de Futebol Feminino , chegando a ter onze atletas convocadas de uma só vez.",
+      "assunto": "destaque no futebol feminino",
+      "lambda": 1.0
+    },
+    {
+      "id": "d55",
+      "texto": "Há uma grande controvérsia quanto ao hino oficial do Santos Futebol Clube. Nas primeiras décadas de existência, os santistas adotaram como hino do clube uma paródia de uma canção que soldados ingleses entoavam durante a Primeira Guerra Mundial . A situação mudou quando Mangeri Neto e Mangeri Sobrinho resolveram homenagear o Santos, criando a marchinha \"Leão do Mar\" quando o clube foi campeão paulista de 1955.",
+      "assunto": "história do hino",
+      "lambda": 1.0
+    },
+    {
+      "id": "d4",
+      "texto": "O Santos foi eleito pela FIFA em 2000 o quinto maior clube de futebol do Século XX , sendo o melhor clube das Américas na lista, e também recebeu no ano de seu centenário na câmara dos deputados em Brasília pela FIFA o título de \"maior clube sul-americano do Século XX\". Além de ser o clube brasileiro que mais enfrentou estrangeiros na história, o Santos é também o único clube brasileiro a ser campeão estadual , nacional, continental e mundial no mesmo ano, em 1962. Outro feito único do clube é ser o que mais marcou gols na história do futebol mundial, tendo sido o primeiro a alcançar a marca de doze mil gols.",
+      "assunto": "conquistas",
+      "lambda": 0.9
+    },
+    {
+      "id": "d95",
+      "texto": "Conhecidas como as Sereias da Vila , a história do futebol feminino começou em 1997. Para formar sua primeira equipe, o Santos teve como parceira a Marvel Consórcios, que mantinha uma equipe feminina de futebol de salão. Houve também a realização de peneiras, chefiada pelo ídolo Manoel Maria , que também foi o primeiro treinador da equipe feminina do clube.",
+      "assunto": "origem do futebol feminino",
+      "lambda": 0.9
+    },
+    {
+      "id": "d2",
+      "texto": "O Santos tornou-se no futebol um dos clubes mais bem-sucedidos do Brasil e reconhecidos mundialmente. Ficou famoso na década de 1960 pelos vários títulos internacionais e nacionais conquistados e por ter formado a carreira profissional de Pelé , considerado por muitos como o maior jogador da história do esporte, e segundo a FIFA , o melhor jogador do século XX . Além disso, o Rei também tem o marco de maior artilheiro da história do Santos e o segundo maior artilheiro da Seleção Brasileira . À frente de Pelé, com mais de 70 gols pela Seleção em jogos oficiais, está Neymar , outro jogador também revelado pelo clube.",
+      "assunto": "Pelé e títulos",
+      "lambda": 0.9
+    },
+    {
+      "id": "d97",
+      "texto": "De 2009 a 2012, o Santos foi considerado o time mais forte de futebol feminino do Brasil, jogadoras como Marta e Cristiane passaram pelo Santos e o clube foi a base da Seleção Brasileira de Futebol Feminino , chegando a ter onze atletas convocadas de uma só vez.",
+      "assunto": "destaque no futebol feminino",
+      "lambda": 0.9
+    },
+    {
+      "id": "d55",
+      "texto": "Há uma grande controvérsia quanto ao hino oficial do Santos Futebol Clube. Nas primeiras décadas de existência, os santistas adotaram como hino do clube uma paródia de uma canção que soldados ingleses entoavam durante a Primeira Guerra Mundial . A situação mudou quando Mangeri Neto e Mangeri Sobrinho resolveram homenagear o Santos, criando a marchinha \"Leão do Mar\" quando o clube foi campeão paulista de 1955.",
+      "assunto": "história do hino",
+      "lambda": 0.9
+    },
+    {
+      "id": "d4",
+      "texto": "O Santos foi eleito pela FIFA em 2000 o quinto maior clube de futebol do Século XX , sendo o melhor clube das Américas na lista, e também recebeu no ano de seu centenário na câmara dos deputados em Brasília pela FIFA o título de \"maior clube sul-americano do Século XX\". Além de ser o clube brasileiro que mais enfrentou estrangeiros na história, o Santos é também o único clube brasileiro a ser campeão estadual , nacional, continental e mundial no mesmo ano, em 1962. Outro feito único do clube é ser o que mais marcou gols na história do futebol mundial, tendo sido o primeiro a alcançar a marca de doze mil gols.",
+      "assunto": "conquistas",
+      "lambda": 0.7
+    },
+    {
+      "id": "d95",
+      "texto": "Conhecidas como as Sereias da Vila , a história do futebol feminino começou em 1997. Para formar sua primeira equipe, o Santos teve como parceira a Marvel Consórcios, que mantinha uma equipe feminina de futebol de salão. Houve também a realização de peneiras, chefiada pelo ídolo Manoel Maria , que também foi o primeiro treinador da equipe feminina do clube.",
+      "assunto": "origem do futebol feminino",
+      "lambda": 0.7
+    },
+    {
+      "id": "d97",
+      "texto": "De 2009 a 2012, o Santos foi considerado o time mais forte de futebol feminino do Brasil, jogadoras como Marta e Cristiane passaram pelo Santos e o clube foi a base da Seleção Brasileira de Futebol Feminino , chegando a ter onze atletas convocadas de uma só vez.",
+      "assunto": "destaque no futebol feminino",
+      "lambda": 0.7
+    },
+    {
+      "id": "d55",
+      "texto": "Há uma grande controvérsia quanto ao hino oficial do Santos Futebol Clube. Nas primeiras décadas de existência, os santistas adotaram como hino do clube uma paródia de uma canção que soldados ingleses entoavam durante a Primeira Guerra Mundial . A situação mudou quando Mangeri Neto e Mangeri Sobrinho resolveram homenagear o Santos, criando a marchinha \"Leão do Mar\" quando o clube foi campeão paulista de 1955.",
+      "assunto": "história do hino",
+      "lambda": 0.7
+    },
+    {
+      "id": "d2",
+      "texto": "O Santos tornou-se no futebol um dos clubes mais bem-sucedidos do Brasil e reconhecidos mundialmente. Ficou famoso na década de 1960 pelos vários títulos internacionais e nacionais conquistados e por ter formado a carreira profissional de Pelé , considerado por muitos como o maior jogador da história do esporte, e segundo a FIFA , o melhor jogador do século XX . Além disso, o Rei também tem o marco de maior artilheiro da história do Santos e o segundo maior artilheiro da Seleção Brasileira . À frente de Pelé, com mais de 70 gols pela Seleção em jogos oficiais, está Neymar , outro jogador também revelado pelo clube.",
+      "assunto": "Pelé e títulos",
+      "lambda": 0.7
+    },
+    {
+      "id": "d4",
+      "texto": "O Santos foi eleito pela FIFA em 2000 o quinto maior clube de futebol do Século XX , sendo o melhor clube das Américas na lista, e também recebeu no ano de seu centenário na câmara dos deputados em Brasília pela FIFA o título de \"maior clube sul-americano do Século XX\". Além de ser o clube brasileiro que mais enfrentou estrangeiros na história, o Santos é também o único clube brasileiro a ser campeão estadual , nacional, continental e mundial no mesmo ano, em 1962. Outro feito único do clube é ser o que mais marcou gols na história do futebol mundial, tendo sido o primeiro a alcançar a marca de doze mil gols.",
+      "assunto": "conquistas",
+      "lambda": 0.5
+    },
+    {
+      "id": "d95",
+      "texto": "Conhecidas como as Sereias da Vila , a história do futebol feminino começou em 1997. Para formar sua primeira equipe, o Santos teve como parceira a Marvel Consórcios, que mantinha uma equipe feminina de futebol de salão. Houve também a realização de peneiras, chefiada pelo ídolo Manoel Maria , que também foi o primeiro treinador da equipe feminina do clube.",
+      "assunto": "origem do futebol feminino",
+      "lambda": 0.5
+    },
+    {
+      "id": "d55",
+      "texto": "Há uma grande controvérsia quanto ao hino oficial do Santos Futebol Clube. Nas primeiras décadas de existência, os santistas adotaram como hino do clube uma paródia de uma canção que soldados ingleses entoavam durante a Primeira Guerra Mundial . A situação mudou quando Mangeri Neto e Mangeri Sobrinho resolveram homenagear o Santos, criando a marchinha \"Leão do Mar\" quando o clube foi campeão paulista de 1955.",
+      "assunto": "história do hino",
+      "lambda": 0.5
+    },
+    {
+      "id": "d97",
+      "texto": "De 2009 a 2012, o Santos foi considerado o time mais forte de futebol feminino do Brasil, jogadoras como Marta e Cristiane passaram pelo Santos e o clube foi a base da Seleção Brasileira de Futebol Feminino , chegando a ter onze atletas convocadas de uma só vez.",
+      "assunto": "destaque no futebol feminino",
+      "lambda": 0.5
+    },
+    {
+      "id": "d108",
+      "texto": "A Associação Atlética Portuguesa , mais conhecida como Portuguesa Santista (para evitar confusão com a equipe homônima da capital de São Paulo ) e apelidada de Briosa , é um clube de futebol brasileiro fundado e sediado na cidade de Santos , litoral do estado de São Paulo . Foi fundada em 20 de novembro de 1917 por trabalhadores portugueses , que decidiram criar um clube para representar Portugal após assistir uma partida do Hespanha FC, atual Jabaquara Atlético Clube , clube de origem espanhola. Suas cores, vermelho e verde , foram retiradas da bandeira de Portugal .",
+      "assunto": "parágrafo do corpus",
+      "lambda": 0.5
+    }
+  ],
+  "exemplo": [
+    {
+      "AP": 1.0,
+      "redundancia": 0.95
+    },
+    {
+      "AP": 0.833333333333333,
+      "redundancia": 0.1
+    }
+  ],
+  "corpus": 141,
+  "motor": [
+    {
+      "consulta": "q01",
+      "ap_antes": 0.148719336219336,
+      "ap_depois": 0.156655844155844,
+      "red_antes": 0.324526693988528,
+      "red_depois": 0.0824054202245435
+    },
+    {
+      "consulta": "q03",
+      "ap_antes": 0.413186813186813,
+      "ap_depois": 0.413186813186813,
+      "red_antes": 0.120948536388754,
+      "red_depois": 0.120948536388754
+    },
+    {
+      "consulta": "q05",
+      "ap_antes": 0.42558027576811,
+      "ap_depois": 0.420619958307792,
+      "red_antes": 0.118270924879677,
+      "red_depois": 0.118270924879677
+    },
+    {
+      "consulta": "q06",
+      "ap_antes": 0.264492753623188,
+      "ap_depois": 0.114492753623188,
+      "red_antes": 0.120948536388754,
+      "red_depois": 0.0528228588637528
+    }
+  ]
+}

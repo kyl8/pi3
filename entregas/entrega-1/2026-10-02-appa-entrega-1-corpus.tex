@@ -160,7 +160,7 @@ A coleta foi estruturada em script computacional reprodutível em linguagem R, r
   \item \textbf{Isolamento de parágrafos:} seleção dos nós $<\!\text{p}\!>$ pertencentes ao corpo principal da página enciclopédica;
   \item \textbf{Sanitização textual:} remoção de tags de hyperlink, eliminação sistemática de notas sobrescritas de rodapé (como \texttt{[1]} ou \texttt{[nota 2]}) e expurgo de caracteres residuais de escape;
   \item \textbf{Filtragem por tamanho mínimo:} aplicação do limiar de corte de \text{50} caracteres, eliminando legendas órfãs, linhas de navegação e parágrafos sem densidade informativa;
-  \item \textbf{Serialização:} salvamento dos vetores nomeados de documentos e procedência nos arquivos \texttt{docs.rds} e \texttt{origem.rds}.
+  \item \textbf{Serialização:} registro dos parágrafos e de suas páginas de origem para preservar a procedência.
 \end{enumerate}
 
 Durante o processo de extração, três desafios operacionais foram contornados:
@@ -216,9 +216,9 @@ Jabaquara & 11 & 68,8\\
   \end{minipage}
 \end{table}
 
-\textbf{Tamanho.} O corpus conta com $\text{141}$ documentos, superando a faixa de referência (20 a 60). Essa densidade garante suporte estatístico aos cálculos de matriz termo-documento e IDF das próximas etapas.
+\textbf{Tamanho.} O corpus conta com $\text{141}$ documentos, superando a faixa de referência (20 a 60). Esse volume permite contar frequências por documento e calcular IDF no corpus coletado.
 
-\textbf{Domínio de página.} A Tabela~\ref{tab:origem} evidencia o predomínio do Santos FC (\texttt{Santos FC}: 107 de 141 (76\%)), reflexo natural do acervo disponível. A presença de 34 documentos dos demais clubes assegura que o motor recupere dados sobre a história regional integrada.
+\textbf{Domínio de página.} A Tabela~\ref{tab:origem} evidencia o predomínio do Santos FC (\texttt{Santos FC}: 107 de 141 (76\%)), reflexo natural do acervo disponível. Os demais clubes têm menos material disponível, o que pode limitar a cobertura de algumas perguntas.
 
 \textbf{Comprimento e distribuição.} A Figura~\ref{fig:tam} exibe o perfil unimodal de tokens por parágrafo (média de \text{83,6}), confirmando regularidade estrutural.
 
@@ -240,7 +240,16 @@ Jabaquara & 11 & 68,8\\
 
 \textbf{Sujeira e vocabulário.} Os dez termos mais frequentes são \texttt{o}, \texttt{de}, \texttt{a}, \texttt{e}, \texttt{em}, \texttt{do}, \texttt{santos}, \texttt{da}, \texttt{no}, \texttt{na}, sendo \texttt{santos} o único termo temático no topo. Os demais são palavras gramaticais (\emph{stopwords}), comprovando a necessidade do pré-processamento da Aula 03.
 
-\textbf{Veredito.} O corpus atende plenamente às três necessidades de informação e está pronto e serializado para as etapas subsequentes.
+\textbf{Veredito.} O corpus reúne material para buscar sobre os três clubes. A qualidade das respostas depende da consulta, da cobertura dos parágrafos e de sua posição no ranking.
+
+\section{Avaliação complementar da busca}
+
+A busca híbrida combina BM25, que valoriza termos da consulta no texto, com LSA, que aproxima documentos por padrões de vocabulário. A fusão usa a posição de cada parágrafo nas duas listas. Avaliamos também a reordenação dos dez primeiros resultados por MMR. A cada posição, o método desconta a semelhança do candidato com o parágrafo já selecionado que mais se parece com ele.
+
+
+Nas quatro consultas de desenvolvimento, o MAP, que resume a posição dos parágrafos julgados relevantes, passou de 0,315 na busca híbrida para 0,289 com MMR e $\lambda=0{,}7$. A redundância média no top-3 caiu de 0,146 para 0,105. Ela corresponde à média, por consulta, do maior cosseno entre dois dos três primeiros resultados. Os julgamentos usados nessa comparação receberam apoio de IA.
+
+A queda da redundância indica que ficaram menos parecidos entre si. O MAP menor indica que parte dos parágrafos julgados relevantes perdeu posições. Se a prioridade for encontrar um parágrafo relevante cedo, os resultados observados favorecem manter a busca híbrida nessa comparação. Se o objetivo for cobrir mais aspectos de uma pergunta, é preciso ler o topo e verificar quais aspectos aparecem. O cosseno mede semelhança de vocabulário e o MAP mede relevância por documento. Como a saída é uma lista ordenada de parágrafos, usamos AP por consulta e MAP no conjunto, com redundância para descrever a repetição.
 
 % ----------------------------------------------------------
 % REFERÊNCIAS

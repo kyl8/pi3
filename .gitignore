@@ -20,3 +20,9 @@ estrutura/codigos/resultados/guias/sessionInfo.txt
 .ipynb_checkpoints/
 /config.R
 *.Rcheck
+
+# Dependências e renderização local da apresentação
+node_modules/
+.capturas/
+.remotion/
+entregas/apresentacao-final/apresentacao-pi3-appa.mp4
