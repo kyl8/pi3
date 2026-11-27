@@ -1,0 +1,7 @@
+pacotes <- c("shiny", "SnowballC")
+db <- installed.packages()
+dep <- tools::package_dependencies(pacotes, db = db, which = c("Depends", "Imports", "LinkingTo"), recursive = TRUE)
+incluir <- unique(c(pacotes, unlist(dep), db[which(db[, "Priority"] == "base"), "Package"]))
+stopifnot(all(incluir %in% rownames(db)))
+paths <- file.path(db[incluir, "LibPath"], incluir)
+writeLines(normalizePath(paths, winslash = "/", mustWork = TRUE))

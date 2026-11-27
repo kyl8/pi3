@@ -1,4 +1,6 @@
 # Inicie com Rscript. A pasta de trabalho pode ser qualquer uma.
+if (.Platform$OS.type == "windows")
+  invisible(Sys.setlocale("LC_CTYPE", "English_United States.utf8"))
 arquivo <- sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE))
 if (length(arquivo) != 1L) stop("Execute com Rscript.")
 pasta <- dirname(normalizePath(arquivo, winslash = "/", mustWork = TRUE))
@@ -8,6 +10,7 @@ for (pkg in c("shiny", "SnowballC")) {
     stop('Instale os pacotes uma vez: install.packages(c("shiny", "SnowballC"))')
 }
 source(file.path(pasta, "busca.R"), local = TRUE, encoding = "UTF-8")
+shiny::addResourcePath("appa", file.path(pasta, "www"))
 source(file.path(pasta, "app.R"), local = TRUE, encoding = "UTF-8")
 porta <- Sys.getenv("APPA_PORT")
 shiny::runApp(shiny::shinyApp(ui, server), host = "127.0.0.1",

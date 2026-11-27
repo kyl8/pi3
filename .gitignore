@@ -23,6 +23,7 @@ estrutura/codigos/resultados/guias/sessionInfo.txt
 
 # Dependências e renderização local da apresentação
 node_modules/
+.impeccable/review/
 .capturas/
 .remotion/
 entregas/apresentacao-final/apresentacao-pi3-appa.mp4
