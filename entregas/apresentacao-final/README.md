@@ -2,6 +2,8 @@
 
 Abra [a apresentação offline](apresentacao-pi3-appa.html) no navegador. A [versão PDF](apresentacao-pi3-appa.pdf) traz a grade completa no slide de desenvolvimento. O deck usa React e Remotion com a navegação, o índice e as notas do modelo APPA. A paleta verde, creme e dourada identifica PI III.
 
+**Ordem de apresentação:** Arthur Galvão nos slides 1 a 3, Pedro Henrique nos slides 4 a 6 e Ailana Pereira Gonsalez nos slides 7 e 8.
+
 Use as setas para navegar, **M** para o índice, **N** para as notas e **F** para tela cheia. Na grade, selecione o peso de relevância para comparar o MAP, o nDCG graduado, a redundância e a ordem dos cinco primeiros parágrafos. Passe o cursor sobre um resultado para ler o trecho. A leitura no celular inclui um seletor maior.
 
 Os números da grade e do teste vêm da execução em R do Tema 5. O slide do motor ao vivo usa a preparação padrão do APPA com stemming, como na interface. A consulta de história do Santos melhora em AP e fica menos repetitiva. Na busca pelo estádio do Jabaquara, a semelhança diminui e o AP cai. São resultados de desenvolvimento com julgamentos assistidos. O teste retrospectivo do exercício usa o valor de exemplo de 0,7. [Abrir instruções da busca](../entrega-final/README.md).
